@@ -96,7 +96,7 @@ namespace ProyectoProgra3.ProyectoCD
 
         public static SqlConnection obtenerconexionListas()
         {
-            SqlConnection conexion = new SqlConnection("Data source = localhost; Initial Catalog = DB_Veterinaria_Progra3;"
+            SqlConnection conexion = new SqlConnection("Data source = localhost\\sqlexpress; Initial Catalog = DB_TSistemas;"
                 + "Integrated Security = True");
             conexion.Open();
             return conexion;
