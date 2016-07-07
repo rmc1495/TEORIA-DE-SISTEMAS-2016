@@ -1,6 +1,6 @@
-﻿namespace ProyectoProgra3
+﻿namespace ProyectoProgra3.Devolucion
 {
-    partial class frm_Facturacion
+    partial class frm_Devolucion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frm_Devolucion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "frm_Devolucion";
+            this.Text = "frm_Devolucion";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

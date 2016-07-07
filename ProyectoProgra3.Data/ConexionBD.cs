@@ -35,9 +35,11 @@ namespace ProyectoProgra3.ProyectoCD
 
         public string ObtenerConexion()
         {
-            _cadenaConexion = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+           // _cadenaConexion = ConfigurationManager.ConnectionStrings["cadenadeconexion"].ConnectionString; //ese llamado una conectionstring no app setting por lo que no funciona si se usa en el app config actual
+            _cadenaConexion = ConfigurationSettings.AppSettings["connectionString"];
             return _cadenaConexion;
         }
+
 
         public void Ejecutar(SqlCommand comando)
         {

@@ -53,7 +53,10 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,17 +68,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Devolucion\frm_Devolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devolucion\frm_Devolucion.Designer.cs">
+      <DependentUpon>frm_Devolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frm_Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\frm_Facturacion.Designer.cs">
+      <DependentUpon>frm_Facturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Expediente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Expediente.Designer.cs">
       <DependentUpon>frm_Expediente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Facturacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Facturacion.Designer.cs">
-      <DependentUpon>frm_Facturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -151,6 +160,24 @@
     <Compile Include="RecuperarClave.Designer.cs">
       <DependentUpon>RecuperarClave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\frm_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_Ventas.Designer.cs">
+      <DependentUpon>frm_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frm_Ventas_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_Ventas_Pago.Designer.cs">
+      <DependentUpon>frm_Ventas_Pago.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Devolucion\frm_Devolucion.resx">
+      <DependentUpon>frm_Devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frm_Facturacion.resx">
+      <DependentUpon>frm_Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecuperarClave.resx">
       <DependentUpon>RecuperarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_Ventas.resx">
+      <DependentUpon>frm_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_Ventas_Pago.resx">
+      <DependentUpon>frm_Ventas_Pago.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -272,6 +305,7 @@
   <ItemGroup>
     <None Include="Resources\Compras.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

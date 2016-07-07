@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProyectoProgra3
+namespace ProyectoProgra3.Ventas
 {
-    public partial class frm_Facturacion : Form
+    public partial class frm_Ventas : Form
     {
-        public frm_Facturacion()
+        public frm_Ventas()
         {
             InitializeComponent();
         }
