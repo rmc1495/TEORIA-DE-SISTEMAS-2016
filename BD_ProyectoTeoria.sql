@@ -279,18 +279,27 @@ CONSTRAINT FK_BITACORA_EMPLEADO FOREIGN KEY (int_IdEmpleado) REFERENCES tbl_Empl
 --Procedimientos de consulta
 GO
 
-Create Procedure sp_ConsultarEmpleado
-(
-@Consulta varchar(50)
-)
-as
-begin
+CREATE PROCEDURE [dbo].[sp_ConsultarEmpleado]
+AS
+BEGIN
 
-Select * from tbl_Empleado where vrch_Nombre LIKE '%'+@Consulta+'%'
+SELECT * FROM tbl_Empleado
+
+END--Fin sp_ConsultarEmpleado
+GO
+--
+CREATE PROCEDURE [dbo].[sp_ConsultarEmpleadoEspecifico]
+(
+@Consulta VARCHAR(50)
+)
+AS
+BEGIN
+
+SELECT * FROM tbl_Empleado WHERE vrch_Nombre LIKE '%'+@Consulta+'%'
 OR vrch_Apellido1 LIKE '%'+@Consulta+'%' OR vrch_Apellido2 LIKE '%'+@Consulta+'%'
 OR vrch_Cedula LIKE '%'+@Consulta+'%'
 
-end--Fin sp_ConsultarEmpleado
+END--Fin sp_ConsultarEmpleado
 GO
 --
 Create Procedure sp_ConsultarArticulo
