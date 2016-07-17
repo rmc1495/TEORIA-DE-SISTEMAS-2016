@@ -89,6 +89,15 @@ namespace ProyectoProgra3
 
         }
 
+        private void tlsRRHH_Click(object sender, EventArgs e)
+        {
+            Mantenimineto.frm_Puesto puesto = new Mantenimineto.frm_Puesto();
+            puesto.Show();
+
+        }
+
+
+
 
     }
 }

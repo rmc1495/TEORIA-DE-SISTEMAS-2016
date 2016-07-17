@@ -1,6 +1,6 @@
-﻿namespace ProyectoProgra3
+﻿namespace ProyectoProgra3.Mantenimineto
 {
-    partial class frm_Empleados
+    partial class frm_Puesto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Empleados));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Puesto));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.txtCedula = new System.Windows.Forms.TextBox();
@@ -46,6 +46,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tlsBtnRegis_Atras = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cBoxFiltrar = new System.Windows.Forms.ToolStripComboBox();
             this.txtFiltrar = new System.Windows.Forms.ToolStripTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtIdempleado = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.tlsBtnRegis_Guardar.SuspendLayout();
@@ -97,7 +97,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 487);
-            this.panel1.TabIndex = 12;
+            this.panel1.TabIndex = 13;
             // 
             // dgvEmpleados
             // 
@@ -110,7 +110,6 @@
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.Size = new System.Drawing.Size(848, 147);
             this.dgvEmpleados.TabIndex = 44;
-            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
             // txtCedula
             // 
@@ -120,7 +119,6 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(104, 27);
             this.txtCedula.TabIndex = 30;
-            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
             // cBoxEstado
             // 
@@ -130,7 +128,6 @@
             this.cBoxEstado.Name = "cBoxEstado";
             this.cBoxEstado.Size = new System.Drawing.Size(149, 28);
             this.cBoxEstado.TabIndex = 39;
-            this.cBoxEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarComboBox);
             // 
             // label10
             // 
@@ -150,7 +147,6 @@
             this.cBoxDepartamento.Name = "cBoxDepartamento";
             this.cBoxDepartamento.Size = new System.Drawing.Size(149, 28);
             this.cBoxDepartamento.TabIndex = 38;
-            this.cBoxDepartamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarComboBox);
             // 
             // label9
             // 
@@ -170,7 +166,6 @@
             this.cBoxTipoEmpleado.Name = "cBoxTipoEmpleado";
             this.cBoxTipoEmpleado.Size = new System.Drawing.Size(149, 28);
             this.cBoxTipoEmpleado.TabIndex = 37;
-            this.cBoxTipoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarComboBox);
             // 
             // label8
             // 
@@ -216,7 +211,6 @@
             this.btnRegistrarEmp.Name = "btnRegistrarEmp";
             this.btnRegistrarEmp.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarEmp.Text = "Registrar";
-            this.btnRegistrarEmp.Click += new System.EventHandler(this.btnRegistrarEmp_Click);
             // 
             // btnEliminar
             // 
@@ -226,7 +220,6 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(29, 37);
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.tlsBtn_Consul_Eliminar_Click);
             // 
             // btnModificar
             // 
@@ -237,7 +230,6 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 37);
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.Click += new System.EventHandler(this.tlsBtn_Consul_Modificar_Click);
             // 
             // tlsBtnRegis_Limpiar
             // 
@@ -251,7 +243,6 @@
             this.tlsBtnRegis_Limpiar.Name = "tlsBtnRegis_Limpiar";
             this.tlsBtnRegis_Limpiar.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnRegis_Limpiar.Text = "Limpiar";
-            this.tlsBtnRegis_Limpiar.Click += new System.EventHandler(this.tlsBtnRegis_Limpiar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -268,12 +259,18 @@
             this.tlsBtnRegis_Atras.Name = "tlsBtnRegis_Atras";
             this.tlsBtnRegis_Atras.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnRegis_Atras.Text = "Atrás";
-            this.tlsBtnRegis_Atras.Click += new System.EventHandler(this.tlsBtnRegis_Atras_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(61, 37);
+            this.toolStripLabel1.Text = "Buscar:";
             // 
             // cBoxFiltrar
             // 
@@ -291,7 +288,6 @@
             "IdEstado"});
             this.cBoxFiltrar.Name = "cBoxFiltrar";
             this.cBoxFiltrar.Size = new System.Drawing.Size(121, 40);
-            this.cBoxFiltrar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarComboBox);
             // 
             // txtFiltrar
             // 
@@ -299,7 +295,6 @@
             this.txtFiltrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(130, 40);
-            this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
             // 
             // label1
             // 
@@ -339,7 +334,6 @@
             this.txtTele.Name = "txtTele";
             this.txtTele.Size = new System.Drawing.Size(100, 27);
             this.txtTele.TabIndex = 36;
-            this.txtTele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
             // label4
             // 
@@ -377,7 +371,6 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(100, 27);
             this.txtEdad.TabIndex = 31;
-            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
             // label6
             // 
@@ -406,7 +399,6 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(264, 27);
             this.txtApellidos.TabIndex = 26;
-            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidacionCaracteres);
             // 
             // txtIdempleado
             // 
@@ -415,7 +407,6 @@
             this.txtIdempleado.Name = "txtIdempleado";
             this.txtIdempleado.Size = new System.Drawing.Size(100, 27);
             this.txtIdempleado.TabIndex = 27;
-            this.txtIdempleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEspeciales);
             // 
             // txtNombre
             // 
@@ -424,32 +415,16 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 27);
             this.txtNombre.TabIndex = 24;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidacionCaracteres);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(61, 37);
-            this.toolStripLabel1.Text = "Buscar:";
-            // 
-            // frm_Empleados
+            // frm_Puesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(884, 511);
+            this.ClientSize = new System.Drawing.Size(885, 510);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(900, 550);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(900, 550);
-            this.Name = "frm_Empleados";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "REGISTRO DE EMPLEADOS";
-            this.Load += new System.EventHandler(this.frm_Registro_Empleados_Load);
+            this.Name = "frm_Puesto";
+            this.Text = "frm_Puesto";
+            this.Load += new System.EventHandler(this.frm_Puesto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
@@ -477,6 +452,10 @@
         private System.Windows.Forms.ToolStripButton tlsBtnRegis_Limpiar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tlsBtnRegis_Atras;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox cBoxFiltrar;
+        private System.Windows.Forms.ToolStripTextBox txtFiltrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -490,10 +469,6 @@
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtIdempleado;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripComboBox cBoxFiltrar;
-        private System.Windows.Forms.ToolStripTextBox txtFiltrar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
 
     }
 }

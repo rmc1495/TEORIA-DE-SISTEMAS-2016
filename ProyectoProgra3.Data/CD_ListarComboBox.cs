@@ -219,6 +219,29 @@ namespace ProyectoProgra3.ProyectoCD
             return _list;
         }
 
+        /*public List<cd_> ObtenerListaRol()
+        {
+
+            List<CD_Roles> _list = new List<CD_Roles>();
+            ConexionBD con = new ConexionBD();
+
+            SqlConnection conexion = ConexionBD.obtenerconexionListas();
+
+            SqlCommand _comando = new SqlCommand("select Id_Rol, Nombre from T_Roles", conexion);
+            SqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                CD_Roles pRoles = new CD_Roles();
+
+                pRoles.IdRol = _reader.GetInt32(0);
+                pRoles.Nombre = _reader.GetString(1);
+
+                _list.Add(pRoles);
+            }
+            conexion.Close();
+            return _list;
+        }*/
+
 
 
     }

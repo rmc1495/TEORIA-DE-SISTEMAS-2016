@@ -122,10 +122,16 @@
     <Compile Include="frm_Clientes_Mascota.Designer.cs">
       <DependentUpon>frm_Clientes_Mascota.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Empleados.cs">
+    <Compile Include="Mantenimineto\frm_Puesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Empleados.Designer.cs">
+    <Compile Include="Mantenimineto\frm_Puesto.Designer.cs">
+      <DependentUpon>frm_Puesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\frm_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRHH\frm_Empleados.Designer.cs">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Registro_Usuarios.cs">
@@ -196,7 +202,10 @@
     <EmbeddedResource Include="frm_Clientes_Mascota.resx">
       <DependentUpon>frm_Clientes_Mascota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Empleados.resx">
+    <EmbeddedResource Include="Mantenimineto\frm_Puesto.resx">
+      <DependentUpon>frm_Puesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRHH\frm_Empleados.resx">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Proveedores.resx">

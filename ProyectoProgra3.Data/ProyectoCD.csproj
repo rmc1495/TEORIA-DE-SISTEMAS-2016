@@ -51,6 +51,7 @@
     <Compile Include="CD_ObtenerUsuarios.cs" />
     <Compile Include="CD_Productos.cs" />
     <Compile Include="CD_Proveedores.cs" />
+    <Compile Include="Mantenimiento\CD_Puesto.cs" />
     <Compile Include="CD_Roles.cs" />
     <Compile Include="CD_Seguridad.cs" />
     <Compile Include="CD_TipoClientes.cs" />

@@ -44,7 +44,7 @@
             this.tlsGestionProd = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Mantenimientos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tlsOpciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlsRRHH = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hacerloEnTablasCatalogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expedientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +89,7 @@
             this.tlsLogOut.BackColor = System.Drawing.Color.CornflowerBlue;
             this.tlsLogOut.Image = global::ProyectoProgra3.Properties.Resources.candados;
             this.tlsLogOut.Name = "tlsLogOut";
-            this.tlsLogOut.Size = new System.Drawing.Size(152, 24);
+            this.tlsLogOut.Size = new System.Drawing.Size(134, 24);
             this.tlsLogOut.Text = "Log Out";
             this.tlsLogOut.Click += new System.EventHandler(this.tlsLogOut_Click);
             // 
@@ -98,7 +98,7 @@
             this.tlsSalir.BackColor = System.Drawing.Color.CornflowerBlue;
             this.tlsSalir.Image = global::ProyectoProgra3.Properties.Resources.Exit;
             this.tlsSalir.Name = "tlsSalir";
-            this.tlsSalir.Size = new System.Drawing.Size(152, 24);
+            this.tlsSalir.Size = new System.Drawing.Size(134, 24);
             this.tlsSalir.Text = "Salir";
             this.tlsSalir.Click += new System.EventHandler(this.tlsSalir_Click);
             // 
@@ -107,8 +107,8 @@
             this.btn_RRHH.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlsGestionEmp});
             this.btn_RRHH.Name = "btn_RRHH";
-            this.btn_RRHH.Size = new System.Drawing.Size(155, 24);
-            this.btn_RRHH.Text = "Recursos Humanos";
+            this.btn_RRHH.Size = new System.Drawing.Size(63, 24);
+            this.btn_RRHH.Text = "RRHH";
             this.btn_RRHH.Click += new System.EventHandler(this.btn_RRHH_Click);
             // 
             // tlsGestionEmp
@@ -173,20 +173,21 @@
             // btn_Mantenimientos
             // 
             this.btn_Mantenimientos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tlsOpciones,
+            this.tlsRRHH,
             this.seguridadToolStripMenuItem,
             this.hacerloEnTablasCatalogoToolStripMenuItem});
             this.btn_Mantenimientos.Name = "btn_Mantenimientos";
             this.btn_Mantenimientos.Size = new System.Drawing.Size(136, 24);
             this.btn_Mantenimientos.Text = "Mantenimientos";
             // 
-            // tlsOpciones
+            // tlsRRHH
             // 
-            this.tlsOpciones.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.tlsOpciones.Image = ((System.Drawing.Image)(resources.GetObject("tlsOpciones.Image")));
-            this.tlsOpciones.Name = "tlsOpciones";
-            this.tlsOpciones.Size = new System.Drawing.Size(260, 24);
-            this.tlsOpciones.Text = "RRHH";
+            this.tlsRRHH.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.tlsRRHH.Image = ((System.Drawing.Image)(resources.GetObject("tlsRRHH.Image")));
+            this.tlsRRHH.Name = "tlsRRHH";
+            this.tlsRRHH.Size = new System.Drawing.Size(260, 24);
+            this.tlsRRHH.Text = "RRHH";
+            this.tlsRRHH.Click += new System.EventHandler(this.tlsRRHH_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -285,7 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem btn_RRHH;
         private System.Windows.Forms.ToolStripMenuItem tlsGestionEmp;
         private System.Windows.Forms.ToolStripMenuItem btn_Mantenimientos;
-        private System.Windows.Forms.ToolStripMenuItem tlsOpciones;
+        private System.Windows.Forms.ToolStripMenuItem tlsRRHH;
         private System.Windows.Forms.ToolStripMenuItem expedientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeExpedientesToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;

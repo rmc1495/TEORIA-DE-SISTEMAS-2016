@@ -15,8 +15,10 @@ namespace ProyectoProgra3
         public frm_Empleados()
         {
             InitializeComponent();
-            RefrescarGridEmpleados();
+            //RefrescarGridEmpleados();
         }
+
+        #region Empleado
 
         # region Validaciones
 
@@ -71,16 +73,14 @@ namespace ProyectoProgra3
                 Limpiar();
             }
             else
-                this.Close();
+            this.Close();
         }
 
         private void btnRegistrarEmp_Click(object sender, EventArgs e)
         {
             #region Validaciones
 
-            if (txtApellidos.Text == "" || txtCedula.Text == "" || txtDireccion.Text == "" || txtEdad.Text == "" ||
-            txtIdempleado.Text == "" || txtNombre.Text == "" || txtTele.Text == "" || cBoxDepartamento.Text == ""
-             || cBoxEstado.Text == "" || cBoxTipoEmpleado.Text == "")
+            if (txtApellido1.Text == "" || txtCedula.Text == "" || txtDireccion.Text == "" || txtApellido2.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "")
             {
                 MessageBox.Show("Se requieren todos los espacios completos", "Advertencia", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -92,7 +92,7 @@ namespace ProyectoProgra3
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (txtTele.TextLength < 8)
+            else if (txtTelefono.TextLength < 8)
             {
                 MessageBox.Show("Formato de teléfono incorrecto", "Advertencia",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -102,18 +102,18 @@ namespace ProyectoProgra3
             try
             {
                 ProyectoCN.CN_Empleados capaCN = new ProyectoCN.CN_Empleados();
-                capaCN.IdEmpleado = txtIdempleado.Text;
+                capaCN.IdEmpleado = txtApellido2.Text;
                 capaCN.Nombre = txtNombre.Text;
                 capaCN.Cedula = txtCedula.Text;
-                capaCN.Apellidos = txtApellidos.Text;
+                capaCN.Apellidos = txtApellido1.Text;
                 capaCN.Direccion = txtDireccion.Text;
-                capaCN.Telefono = txtTele.Text;
-                capaCN.Edad = Convert.ToInt32(txtEdad.Text);
-                capaCN.IdTipoEmpleado = Convert.ToInt32(cBoxTipoEmpleado.SelectedValue);
-                capaCN.IdDepartamento = Convert.ToInt32(cBoxDepartamento.SelectedValue);
-                capaCN.IdEstado = Convert.ToChar(cBoxEstado.SelectedValue);
+                capaCN.Telefono = txtTelefono.Text;
+                //capaCN.Edad = Convert.ToInt32(txtEdad.Text);
+                //capaCN.IdTipoEmpleado = Convert.ToInt32(cBoxTipoEmpleado.SelectedValue);
+                //capaCN.IdDepartamento = Convert.ToInt32(cBoxDepartamento.SelectedValue);
+                //capaCN.IdEstado = Convert.ToChar(cBoxEstado.SelectedValue);
                 capaCN.GuardarEmpelado(capaCN);
-                RefrescarGridEmpleados();
+               // RefrescarGridEmpleados();
                 Limpiar();
                 MessageBox.Show("Datos registrados correctamente", "Exito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,19 +133,23 @@ namespace ProyectoProgra3
 
         private void frm_Registro_Empleados_Load(object sender, EventArgs e)
         {
-            ProyectoCN.CN_ListarComboBox Lista = new ProyectoCN.CN_ListarComboBox();
 
-            cBoxEstado.DataSource = Lista.Listar_Estados_EnComboBox();
+
+
+
+            //ProyectoCN.CN_ListarComboBox Lista = new ProyectoCN.CN_ListarComboBox();
+
+            /*cBoxEstado.DataSource = Lista.Listar_Estados_EnComboBox();
             cBoxEstado.DisplayMember = "Descripcion";
-            cBoxEstado.ValueMember = "IdEstado";
-
+            cBoxEstado.ValueMember = "IdEstado";*/
+            /*
             cBoxTipoEmpleado.DataSource = Lista.Listar_TipoEmpleados_EnComboBox();
             cBoxTipoEmpleado.DisplayMember = "Tipo";
             cBoxTipoEmpleado.ValueMember = "IdTipoEmpleado";
 
             cBoxDepartamento.DataSource = Lista.Listar_Departamentos_EnComboBox();
             cBoxDepartamento.DisplayMember = "NombreDepartamento";
-            cBoxDepartamento.ValueMember = "IdDepartamento";
+            cBoxDepartamento.ValueMember = "IdDepartamento";*/
 
         }
 
@@ -188,16 +192,16 @@ namespace ProyectoProgra3
         private void tlsBtn_Consul_Modificar_Click(object sender, EventArgs e)
         {
             ProyectoCN.CN_Empleados capaEmpl = new ProyectoCN.CN_Empleados();
-            capaEmpl.IdEmpleado = txtIdempleado.Text;
+            capaEmpl.IdEmpleado = txtApellido2.Text;
             capaEmpl.Nombre = txtNombre.Text;
             capaEmpl.Cedula = txtCedula.Text;
-            capaEmpl.Apellidos = txtApellidos.Text;
+            capaEmpl.Apellidos = txtApellido1.Text;
             capaEmpl.Direccion = txtDireccion.Text;
-            capaEmpl.Edad = Convert.ToInt32(txtEdad.Text);
-            capaEmpl.Telefono = txtTele.Text;
-            capaEmpl.IdTipoEmpleado = Convert.ToInt32(cBoxTipoEmpleado.SelectedValue);
-            capaEmpl.IdDepartamento = Convert.ToInt32(cBoxDepartamento.SelectedValue);
-            capaEmpl.IdEstado = Convert.ToChar(cBoxEstado.SelectedValue);
+            //capaEmpl.Edad = Convert.ToInt32(txtEdad.Text);
+            capaEmpl.Telefono = txtTelefono.Text;
+            //capaEmpl.IdTipoEmpleado = Convert.ToInt32(cBoxTipoEmpleado.SelectedValue);
+            //capaEmpl.IdDepartamento = Convert.ToInt32(cBoxDepartamento.SelectedValue);
+            //capaEmpl.IdEstado = Convert.ToChar(cBoxEstado.SelectedValue);
             capaEmpl.ActualizarEmpleado(capaEmpl);
             RefrescarGridEmpleados();
             Limpiar();
@@ -206,17 +210,17 @@ namespace ProyectoProgra3
 
         private void Limpiar()
         {
-            txtApellidos.Clear();
+            txtApellido1.Clear();
             txtCedula.Clear();
             txtDireccion.Clear();
-            txtEdad.Clear();
-            txtIdempleado.Clear();
-            txtIdempleado.Enabled = true;
+            //txtEdad.Clear();
+            txtApellido2.Clear();
+            txtApellido2.Enabled = true;
             txtNombre.Clear();
-            txtTele.Clear();
-            cBoxDepartamento.Text = "";
-            cBoxEstado.Text = "";
-            cBoxTipoEmpleado.Text = "";
+            txtTelefono.Clear();
+            //cBoxDepartamento.Text = "";
+            //cBoxEstado.Text = "";
+            //cBoxTipoEmpleado.Text = "";
             DesabilitarControles();
             ActivarControles();
 
@@ -231,8 +235,8 @@ namespace ProyectoProgra3
                dgvEmpleados.CurrentRow.Cells[8].Selected == true)
             {
                 DesabilitarControles();
-                btnEliminar.Enabled = true;
-                btnModificar.Enabled = true;
+                btnEliminarEmp.Enabled = true;
+                btnModificarEmp.Enabled = true;
             }
 
             string idEmpleado = dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
@@ -242,41 +246,86 @@ namespace ProyectoProgra3
 
             if (CNEmp != null)
             {
-                txtIdempleado.Text = dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
-                txtIdempleado.Enabled = false;
+                txtApellido2.Text = dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
+                txtApellido2.Enabled = false;
                 txtCedula.Text = dgvEmpleados.CurrentRow.Cells[1].Value.ToString();
                 txtNombre.Text = dgvEmpleados.CurrentRow.Cells[2].Value.ToString();
-                txtApellidos.Text = dgvEmpleados.CurrentRow.Cells[3].Value.ToString();
+                txtApellido1.Text = dgvEmpleados.CurrentRow.Cells[3].Value.ToString();
                 txtDireccion.Text = dgvEmpleados.CurrentRow.Cells[4].Value.ToString();
-                txtEdad.Text = dgvEmpleados.CurrentRow.Cells[5].Value.ToString();
-                txtTele.Text = dgvEmpleados.CurrentRow.Cells[6].Value.ToString();
+                //txtEdad.Text = dgvEmpleados.CurrentRow.Cells[5].Value.ToString();
+                txtTelefono.Text = dgvEmpleados.CurrentRow.Cells[6].Value.ToString();
 
             }
         }
 
         private void ActivarControles()
         {
-            tlsBtnRegis_Limpiar.Enabled = true;
+            btnLimpiarEmp.Enabled = true;
             btnRegistrarEmp.Enabled = true;
         }
 
         private void DesabilitarControles()
         {
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            tlsBtnRegis_Limpiar.Enabled = false;
+            btnModificarEmp.Enabled = false;
+            btnEliminarEmp.Enabled = false;
+            btnLimpiarEmp.Enabled = false;
             btnRegistrarEmp.Enabled = false;
         }
 
-        private void txtFiltrar_TextChanged(object sender, EventArgs e)
+        /* private void txtFiltrar_TextChanged(object sender, EventArgs e)
+         {
+             ProyectoCN.CN_Empleados capaCli = new ProyectoCN.CN_Empleados();
+             string tipo = Convert.ToString(cBoxFiltrar.ComboBox.SelectedItem);
+             string param = txtFiltrar.Text;
+             dgvEmpleados.DataSource = capaCli.FiltEmpleados(tipo, param).Tables[0];
+         }*/
+
+        #endregion
+
+
+        #region Puesto
+
+        //actualizar
+
+
+        #endregion
+
+        private void btnAtrasPue_Click(object sender, EventArgs e)
         {
-            ProyectoCN.CN_Empleados capaCli = new ProyectoCN.CN_Empleados();
-            string tipo = Convert.ToString(cBoxFiltrar.ComboBox.SelectedItem);
-            string param = txtFiltrar.Text;
-            dgvEmpleados.DataSource = capaCli.FiltEmpleados(tipo, param).Tables[0];
+            if (btnRegistrarPues.Enabled == false)
+            {
+                Limpiar();
+            }
+            else
+            this.Close();
         }
 
+        private void btnRegistrarPues_Click(object sender, EventArgs e)
+        {
+            #region Validaciones
 
-
+            if (txtDescripcionPuesto.Text == "")
+            {
+                MessageBox.Show("Se requieren todos los espacios completos", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            #endregion
+            try
+            {
+                ProyectoCN.CN_Puesto capaCN = new ProyectoCN.CN_Puesto();
+                capaCN.Descripcion = txtDescripcionPuesto.Text;
+                capaCN.GuardarPuesto(capaCN);
+                // RefrescarGridEmpleados();
+                Limpiar();
+                MessageBox.Show("Datos registrados correctamente", "Exito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
