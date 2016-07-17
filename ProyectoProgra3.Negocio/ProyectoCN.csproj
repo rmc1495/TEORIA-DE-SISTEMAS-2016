@@ -50,6 +50,7 @@
     <Compile Include="CN_Marcas.cs" />
     <Compile Include="CN_Productos.cs" />
     <Compile Include="CN_Proveedores.cs" />
+    <Compile Include="Mantenimiento\CN_Puesto.cs" />
     <Compile Include="CN_Roles.cs" />
     <Compile Include="CN_Seguridad.cs" />
     <Compile Include="CN_TipoClientes.cs" />

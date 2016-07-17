@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_TSistemasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_TSistemasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Devolucion\frm_Devolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,10 +127,16 @@
     <Compile Include="frm_Clientes_Mascota.Designer.cs">
       <DependentUpon>frm_Clientes_Mascota.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Empleados.cs">
+    <Compile Include="Mantenimineto\frm_Puesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Empleados.Designer.cs">
+    <Compile Include="Mantenimineto\frm_Puesto.Designer.cs">
+      <DependentUpon>frm_Puesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\frm_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRHH\frm_Empleados.Designer.cs">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Registro_Usuarios.cs">
@@ -196,7 +207,10 @@
     <EmbeddedResource Include="frm_Clientes_Mascota.resx">
       <DependentUpon>frm_Clientes_Mascota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Empleados.resx">
+    <EmbeddedResource Include="Mantenimineto\frm_Puesto.resx">
+      <DependentUpon>frm_Puesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRHH\frm_Empleados.resx">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Proveedores.resx">
@@ -235,6 +249,17 @@
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TSistemasDataSet.xsc">
+      <DependentUpon>DB_TSistemasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TSistemasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_TSistemasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TSistemasDataSet.xss">
+      <DependentUpon>DB_TSistemasDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

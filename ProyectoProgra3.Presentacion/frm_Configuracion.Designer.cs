@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Configuracion));
-            this.txtNombreEstado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtIdEstado = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabConfiguraciones = new System.Windows.Forms.TabControl();
             this.tcEstados = new System.Windows.Forms.TabPage();
             this.dgvEstados = new System.Windows.Forms.DataGridView();
@@ -43,6 +39,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnLimpiarEstado = new System.Windows.Forms.ToolStripButton();
             this.btnAtrasEstado = new System.Windows.Forms.ToolStripButton();
+            this.txtIdEstado = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombreEstado = new System.Windows.Forms.TextBox();
             this.tcCategorias = new System.Windows.Forms.TabPage();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.cBoxEstadoCategoria = new System.Windows.Forms.ComboBox();
@@ -149,47 +149,6 @@
             this.toolStrip6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtNombreEstado
-            // 
-            this.txtNombreEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstado.Location = new System.Drawing.Point(200, 87);
-            this.txtNombreEstado.Name = "txtNombreEstado";
-            this.txtNombreEstado.Size = new System.Drawing.Size(156, 29);
-            this.txtNombreEstado.TabIndex = 1;
-            this.txtNombreEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 21);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "ID de Estado:";
-            // 
-            // txtIdEstado
-            // 
-            this.txtIdEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdEstado.Location = new System.Drawing.Point(200, 45);
-            this.txtIdEstado.MaxLength = 1;
-            this.txtIdEstado.Name = "txtIdEstado";
-            this.txtIdEstado.Size = new System.Drawing.Size(42, 29);
-            this.txtIdEstado.TabIndex = 0;
-            this.txtIdEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdEstado_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 90);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 21);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Nombre de estado:";
-            // 
             // tabConfiguraciones
             // 
             this.tabConfiguraciones.Controls.Add(this.tcEstados);
@@ -205,9 +164,7 @@
             this.tabConfiguraciones.Name = "tabConfiguraciones";
             this.tabConfiguraciones.SelectedIndex = 0;
             this.tabConfiguraciones.Size = new System.Drawing.Size(670, 391);
-            this.tabConfiguraciones.TabIndex = 13;
-            this.tabConfiguraciones.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.ActualizarTabMarcas);
-            this.tabConfiguraciones.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabConfiguraciones_Selected);
+            this.tabConfiguraciones.TabIndex = 14;
             // 
             // tcEstados
             // 
@@ -239,7 +196,6 @@
             this.dgvEstados.ReadOnly = true;
             this.dgvEstados.Size = new System.Drawing.Size(654, 146);
             this.dgvEstados.TabIndex = 13;
-            this.dgvEstados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstadosSeleccionarCedas);
             // 
             // tlsEstados
             // 
@@ -271,7 +227,6 @@
             this.btnRegistrarEstado.Name = "btnRegistrarEstado";
             this.btnRegistrarEstado.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarEstado.Text = "Registrar";
-            this.btnRegistrarEstado.Click += new System.EventHandler(this.btnRegistrarEstado_Click);
             // 
             // btnEliminarEstado
             // 
@@ -282,7 +237,6 @@
             this.btnEliminarEstado.Name = "btnEliminarEstado";
             this.btnEliminarEstado.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarEstado.Text = "Eliminar";
-            this.btnEliminarEstado.Click += new System.EventHandler(this.btnEliminarEstado_Click);
             // 
             // btnActualizarEstado
             // 
@@ -294,7 +248,6 @@
             this.btnActualizarEstado.Name = "btnActualizarEstado";
             this.btnActualizarEstado.Size = new System.Drawing.Size(40, 40);
             this.btnActualizarEstado.Text = "Actualizar Datos";
-            this.btnActualizarEstado.Click += new System.EventHandler(this.btnActualizarEstado_Click);
             // 
             // toolStripSeparator1
             // 
@@ -313,7 +266,6 @@
             this.btnLimpiarEstado.Name = "btnLimpiarEstado";
             this.btnLimpiarEstado.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarEstado.Text = "Limpiar";
-            this.btnLimpiarEstado.Click += new System.EventHandler(this.btnLimpiarEstado_Click);
             // 
             // btnAtrasEstado
             // 
@@ -324,7 +276,45 @@
             this.btnAtrasEstado.Name = "btnAtrasEstado";
             this.btnAtrasEstado.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasEstado.Text = "Atrás";
-            this.btnAtrasEstado.Click += new System.EventHandler(this.btnAtrasEstado_Click);
+            // 
+            // txtIdEstado
+            // 
+            this.txtIdEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdEstado.Location = new System.Drawing.Point(200, 45);
+            this.txtIdEstado.MaxLength = 1;
+            this.txtIdEstado.Name = "txtIdEstado";
+            this.txtIdEstado.Size = new System.Drawing.Size(42, 29);
+            this.txtIdEstado.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 21);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "ID de Estado:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 90);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Nombre de estado:";
+            // 
+            // txtNombreEstado
+            // 
+            this.txtNombreEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreEstado.Location = new System.Drawing.Point(200, 87);
+            this.txtNombreEstado.Name = "txtNombreEstado";
+            this.txtNombreEstado.Size = new System.Drawing.Size(156, 29);
+            this.txtNombreEstado.TabIndex = 1;
             // 
             // tcCategorias
             // 
@@ -348,7 +338,6 @@
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(171, 29);
             this.txtCategoria.TabIndex = 0;
-            this.txtCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidartxtCategoria);
             // 
             // cBoxEstadoCategoria
             // 
@@ -358,7 +347,6 @@
             this.cBoxEstadoCategoria.Name = "cBoxEstadoCategoria";
             this.cBoxEstadoCategoria.Size = new System.Drawing.Size(171, 28);
             this.cBoxEstadoCategoria.TabIndex = 1;
-            this.cBoxEstadoCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEstadoCategoria);
             // 
             // label8
             // 
@@ -395,7 +383,6 @@
             this.dgvCategoria.ReadOnly = true;
             this.dgvCategoria.Size = new System.Drawing.Size(654, 146);
             this.dgvCategoria.TabIndex = 15;
-            this.dgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellClick);
             // 
             // toolStrip1
             // 
@@ -427,7 +414,6 @@
             this.btnRegistrarCategoria.Name = "btnRegistrarCategoria";
             this.btnRegistrarCategoria.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarCategoria.Text = "Registrar";
-            this.btnRegistrarCategoria.Click += new System.EventHandler(this.btnRegistrarCategoria_Click);
             // 
             // btnEliminarCategoria
             // 
@@ -438,7 +424,6 @@
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
             this.btnEliminarCategoria.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarCategoria.Text = "Eliminar";
-            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             // 
             // btnModificarCategoria
             // 
@@ -450,7 +435,6 @@
             this.btnModificarCategoria.Name = "btnModificarCategoria";
             this.btnModificarCategoria.Size = new System.Drawing.Size(40, 40);
             this.btnModificarCategoria.Text = "Actualizar Datos";
-            this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
             // 
             // toolStripSeparator2
             // 
@@ -469,7 +453,6 @@
             this.btnLimpiarCategoria.Name = "btnLimpiarCategoria";
             this.btnLimpiarCategoria.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarCategoria.Text = "Limpiar";
-            this.btnLimpiarCategoria.Click += new System.EventHandler(this.btnLimpiarCategoria_Click);
             // 
             // btnAtrasCategoria
             // 
@@ -480,7 +463,6 @@
             this.btnAtrasCategoria.Name = "btnAtrasCategoria";
             this.btnAtrasCategoria.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasCategoria.Text = "Atrás";
-            this.btnAtrasCategoria.Click += new System.EventHandler(this.btnAtrasCategoria_Click);
             // 
             // tcMarcas
             // 
@@ -504,7 +486,6 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(171, 29);
             this.txtMarca.TabIndex = 0;
-            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarMarca);
             // 
             // cBoxEstadoMarca
             // 
@@ -514,7 +495,6 @@
             this.cBoxEstadoMarca.Name = "cBoxEstadoMarca";
             this.cBoxEstadoMarca.Size = new System.Drawing.Size(171, 28);
             this.cBoxEstadoMarca.TabIndex = 1;
-            this.cBoxEstadoMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEstadoMarca);
             // 
             // label4
             // 
@@ -551,7 +531,6 @@
             this.dgvMarca.ReadOnly = true;
             this.dgvMarca.Size = new System.Drawing.Size(654, 146);
             this.dgvMarca.TabIndex = 15;
-            this.dgvMarca.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarca_CellClick);
             // 
             // toolStrip2
             // 
@@ -583,7 +562,6 @@
             this.btnRegistrarMarca.Name = "btnRegistrarMarca";
             this.btnRegistrarMarca.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarMarca.Text = "Registrar";
-            this.btnRegistrarMarca.Click += new System.EventHandler(this.btnRegistrarMarca_Click);
             // 
             // btnEliminarMarca
             // 
@@ -594,7 +572,6 @@
             this.btnEliminarMarca.Name = "btnEliminarMarca";
             this.btnEliminarMarca.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarMarca.Text = "Eliminar";
-            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
             // btnModificarMarca
             // 
@@ -606,7 +583,6 @@
             this.btnModificarMarca.Name = "btnModificarMarca";
             this.btnModificarMarca.Size = new System.Drawing.Size(40, 40);
             this.btnModificarMarca.Text = "Actualizar Datos";
-            this.btnModificarMarca.Click += new System.EventHandler(this.btnModificarMarca_Click);
             // 
             // toolStripSeparator3
             // 
@@ -625,7 +601,6 @@
             this.btnLimpiarMarca.Name = "btnLimpiarMarca";
             this.btnLimpiarMarca.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarMarca.Text = "Limpiar";
-            this.btnLimpiarMarca.Click += new System.EventHandler(this.btnLimpiarMarca_Click);
             // 
             // btnAtrasMarca
             // 
@@ -636,7 +611,6 @@
             this.btnAtrasMarca.Name = "btnAtrasMarca";
             this.btnAtrasMarca.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasMarca.Text = "Atrás";
-            this.btnAtrasMarca.Click += new System.EventHandler(this.btnAtrasMarca_Click);
             // 
             // tcTiposClientes
             // 
@@ -662,7 +636,6 @@
             this.txtDescripcionTCliente.Name = "txtDescripcionTCliente";
             this.txtDescripcionTCliente.Size = new System.Drawing.Size(171, 29);
             this.txtDescripcionTCliente.TabIndex = 1;
-            this.txtDescripcionTCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarTiposClientes);
             // 
             // label5
             // 
@@ -681,7 +654,6 @@
             this.txtTipoCliente.Name = "txtTipoCliente";
             this.txtTipoCliente.Size = new System.Drawing.Size(171, 29);
             this.txtTipoCliente.TabIndex = 0;
-            this.txtTipoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarTiposClientes);
             // 
             // cBoxEstadoTCliente
             // 
@@ -691,7 +663,6 @@
             this.cBoxEstadoTCliente.Name = "cBoxEstadoTCliente";
             this.cBoxEstadoTCliente.Size = new System.Drawing.Size(171, 28);
             this.cBoxEstadoTCliente.TabIndex = 2;
-            this.cBoxEstadoTCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEstadoTCliente);
             // 
             // label13
             // 
@@ -728,7 +699,6 @@
             this.dgvTCliente.ReadOnly = true;
             this.dgvTCliente.Size = new System.Drawing.Size(654, 146);
             this.dgvTCliente.TabIndex = 15;
-            this.dgvTCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTCliente_CellClick);
             // 
             // toolStrip3
             // 
@@ -760,7 +730,6 @@
             this.btnRegistrarTCliente.Name = "btnRegistrarTCliente";
             this.btnRegistrarTCliente.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarTCliente.Text = "Registrar";
-            this.btnRegistrarTCliente.Click += new System.EventHandler(this.btnRegistrarTCliente_Click);
             // 
             // btnEliminarTCliente
             // 
@@ -771,7 +740,6 @@
             this.btnEliminarTCliente.Name = "btnEliminarTCliente";
             this.btnEliminarTCliente.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarTCliente.Text = "Eliminar";
-            this.btnEliminarTCliente.Click += new System.EventHandler(this.btnEliminarTCliente_Click);
             // 
             // btnModificarTCliente
             // 
@@ -783,7 +751,6 @@
             this.btnModificarTCliente.Name = "btnModificarTCliente";
             this.btnModificarTCliente.Size = new System.Drawing.Size(40, 40);
             this.btnModificarTCliente.Text = "Actualizar Datos";
-            this.btnModificarTCliente.Click += new System.EventHandler(this.btnModificarTCliente_Click);
             // 
             // toolStripSeparator4
             // 
@@ -802,7 +769,6 @@
             this.btnLimpiarTCliente.Name = "btnLimpiarTCliente";
             this.btnLimpiarTCliente.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarTCliente.Text = "Limpiar";
-            this.btnLimpiarTCliente.Click += new System.EventHandler(this.btnLimpiarTCliente_Click);
             // 
             // btnAtrasTCliente
             // 
@@ -813,7 +779,6 @@
             this.btnAtrasTCliente.Name = "btnAtrasTCliente";
             this.btnAtrasTCliente.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasTCliente.Text = "Atrás";
-            this.btnAtrasTCliente.Click += new System.EventHandler(this.btnAtrasTCliente_Click);
             // 
             // tcTiposEmpleados
             // 
@@ -846,7 +811,6 @@
             this.cBoxEstadoTEmpleado.Name = "cBoxEstadoTEmpleado";
             this.cBoxEstadoTEmpleado.Size = new System.Drawing.Size(171, 28);
             this.cBoxEstadoTEmpleado.TabIndex = 1;
-            this.cBoxEstadoTEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEstadoTEmpleados);
             // 
             // label6
             // 
@@ -883,7 +847,6 @@
             this.dgvTEmpleados.ReadOnly = true;
             this.dgvTEmpleados.Size = new System.Drawing.Size(654, 146);
             this.dgvTEmpleados.TabIndex = 15;
-            this.dgvTEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTEmpleados_CellClick);
             // 
             // toolStrip4
             // 
@@ -915,7 +878,6 @@
             this.btnRegistrarTEmpleados.Name = "btnRegistrarTEmpleados";
             this.btnRegistrarTEmpleados.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarTEmpleados.Text = "Registrar";
-            this.btnRegistrarTEmpleados.Click += new System.EventHandler(this.btnRegistrarTEmpleados_Click);
             // 
             // btnEliminarTEmpleados
             // 
@@ -926,7 +888,6 @@
             this.btnEliminarTEmpleados.Name = "btnEliminarTEmpleados";
             this.btnEliminarTEmpleados.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarTEmpleados.Text = "Eliminar";
-            this.btnEliminarTEmpleados.Click += new System.EventHandler(this.btnEliminarTEmpleados_Click);
             // 
             // btnModificarTEmpleados
             // 
@@ -938,7 +899,6 @@
             this.btnModificarTEmpleados.Name = "btnModificarTEmpleados";
             this.btnModificarTEmpleados.Size = new System.Drawing.Size(40, 40);
             this.btnModificarTEmpleados.Text = "Actualizar Datos";
-            this.btnModificarTEmpleados.Click += new System.EventHandler(this.btnModificarTEmpleados_Click);
             // 
             // toolStripSeparator5
             // 
@@ -957,7 +917,6 @@
             this.btnLimpiarTEmpleados.Name = "btnLimpiarTEmpleados";
             this.btnLimpiarTEmpleados.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarTEmpleados.Text = "Limpiar";
-            this.btnLimpiarTEmpleados.Click += new System.EventHandler(this.btnLimpiarTEmpleados_Click);
             // 
             // btnAtrasTEmpleados
             // 
@@ -968,7 +927,6 @@
             this.btnAtrasTEmpleados.Name = "btnAtrasTEmpleados";
             this.btnAtrasTEmpleados.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasTEmpleados.Text = "Atrás";
-            this.btnAtrasTEmpleados.Click += new System.EventHandler(this.btnAtrasTEmpleados_Click);
             // 
             // tcRoles
             // 
@@ -994,7 +952,6 @@
             this.txtDescripcionRol.Name = "txtDescripcionRol";
             this.txtDescripcionRol.Size = new System.Drawing.Size(171, 29);
             this.txtDescripcionRol.TabIndex = 1;
-            this.txtDescripcionRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarRoles);
             // 
             // label12
             // 
@@ -1013,7 +970,6 @@
             this.txtNombreRol.Name = "txtNombreRol";
             this.txtNombreRol.Size = new System.Drawing.Size(171, 29);
             this.txtNombreRol.TabIndex = 0;
-            this.txtNombreRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarRoles);
             // 
             // cBoxEstadoRol
             // 
@@ -1023,7 +979,6 @@
             this.cBoxEstadoRol.Name = "cBoxEstadoRol";
             this.cBoxEstadoRol.Size = new System.Drawing.Size(171, 28);
             this.cBoxEstadoRol.TabIndex = 2;
-            this.cBoxEstadoRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEstadoRoles);
             // 
             // label7
             // 
@@ -1060,7 +1015,6 @@
             this.dgvRoles.ReadOnly = true;
             this.dgvRoles.Size = new System.Drawing.Size(654, 146);
             this.dgvRoles.TabIndex = 15;
-            this.dgvRoles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellClick);
             // 
             // toolStrip5
             // 
@@ -1092,7 +1046,6 @@
             this.btnRegistrarRoles.Name = "btnRegistrarRoles";
             this.btnRegistrarRoles.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarRoles.Text = "Registrar";
-            this.btnRegistrarRoles.Click += new System.EventHandler(this.btnRegistrarRoles_Click);
             // 
             // btnEliminarRoles
             // 
@@ -1103,7 +1056,6 @@
             this.btnEliminarRoles.Name = "btnEliminarRoles";
             this.btnEliminarRoles.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarRoles.Text = "Eliminar";
-            this.btnEliminarRoles.Click += new System.EventHandler(this.btnEliminarRoles_Click);
             // 
             // btnModificarRoles
             // 
@@ -1115,7 +1067,6 @@
             this.btnModificarRoles.Name = "btnModificarRoles";
             this.btnModificarRoles.Size = new System.Drawing.Size(40, 40);
             this.btnModificarRoles.Text = "Actualizar Datos";
-            this.btnModificarRoles.Click += new System.EventHandler(this.btnModificarRoles_Click);
             // 
             // toolStripSeparator6
             // 
@@ -1134,7 +1085,6 @@
             this.btnLimpiarRoles.Name = "btnLimpiarRoles";
             this.btnLimpiarRoles.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarRoles.Text = "Limpiar";
-            this.btnLimpiarRoles.Click += new System.EventHandler(this.btnLimpiarRoles_Click);
             // 
             // btnAtrasRoles
             // 
@@ -1145,7 +1095,6 @@
             this.btnAtrasRoles.Name = "btnAtrasRoles";
             this.btnAtrasRoles.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasRoles.Text = "Atrás";
-            this.btnAtrasRoles.Click += new System.EventHandler(this.btnAtrasRoles_Click);
             // 
             // TabDepartamentos
             // 
@@ -1169,7 +1118,6 @@
             this.txtNombreDepartamento.Name = "txtNombreDepartamento";
             this.txtNombreDepartamento.Size = new System.Drawing.Size(171, 29);
             this.txtNombreDepartamento.TabIndex = 33;
-            this.txtNombreDepartamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNombreDepart);
             // 
             // CBoxEstadoDepartamento
             // 
@@ -1179,7 +1127,6 @@
             this.CBoxEstadoDepartamento.Name = "CBoxEstadoDepartamento";
             this.CBoxEstadoDepartamento.Size = new System.Drawing.Size(171, 28);
             this.CBoxEstadoDepartamento.TabIndex = 35;
-            this.CBoxEstadoDepartamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarEstadoDepart);
             // 
             // label16
             // 
@@ -1216,7 +1163,6 @@
             this.dgvDepartamentos.ReadOnly = true;
             this.dgvDepartamentos.Size = new System.Drawing.Size(654, 146);
             this.dgvDepartamentos.TabIndex = 37;
-            this.dgvDepartamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartamentos_CellClick);
             // 
             // toolStrip6
             // 
@@ -1248,7 +1194,6 @@
             this.btnRegistrarDepart.Name = "btnRegistrarDepart";
             this.btnRegistrarDepart.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarDepart.Text = "Registrar";
-            this.btnRegistrarDepart.Click += new System.EventHandler(this.btnRegistrarDepart_Click);
             // 
             // btnEliminarDepart
             // 
@@ -1259,7 +1204,6 @@
             this.btnEliminarDepart.Name = "btnEliminarDepart";
             this.btnEliminarDepart.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarDepart.Text = "Eliminar";
-            this.btnEliminarDepart.Click += new System.EventHandler(this.btnEliminarDepart_Click);
             // 
             // btnModificarDepart
             // 
@@ -1271,7 +1215,6 @@
             this.btnModificarDepart.Name = "btnModificarDepart";
             this.btnModificarDepart.Size = new System.Drawing.Size(40, 40);
             this.btnModificarDepart.Text = "Actualizar Datos";
-            this.btnModificarDepart.Click += new System.EventHandler(this.btnModificarDepart_Click);
             // 
             // toolStripSeparator7
             // 
@@ -1290,7 +1233,6 @@
             this.btnLimpiarDepart.Name = "btnLimpiarDepart";
             this.btnLimpiarDepart.Size = new System.Drawing.Size(40, 40);
             this.btnLimpiarDepart.Text = "Limpiar";
-            this.btnLimpiarDepart.Click += new System.EventHandler(this.btnLimpiarDepart_Click);
             // 
             // btnAtrasDepart
             // 
@@ -1301,7 +1243,6 @@
             this.btnAtrasDepart.Name = "btnAtrasDepart";
             this.btnAtrasDepart.Size = new System.Drawing.Size(40, 40);
             this.btnAtrasDepart.Text = "Atrás";
-            this.btnAtrasDepart.Click += new System.EventHandler(this.btnAtrasDepart_Click);
             // 
             // frm_Configuracion
             // 
@@ -1359,26 +1300,38 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNombreEstado;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdEstado;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabConfiguraciones;
         private System.Windows.Forms.TabPage tcEstados;
+        private System.Windows.Forms.DataGridView dgvEstados;
         private System.Windows.Forms.ToolStrip tlsEstados;
         private System.Windows.Forms.ToolStripButton btnRegistrarEstado;
-        private System.Windows.Forms.ToolStripButton btnLimpiarEstado;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btnAtrasEstado;
-        private System.Windows.Forms.TabPage tcCategorias;
-        private System.Windows.Forms.TabPage tcMarcas;
-        private System.Windows.Forms.TabPage tcTiposClientes;
-        private System.Windows.Forms.TabPage tcTiposEmpleados;
-        private System.Windows.Forms.TabPage tcRoles;
         private System.Windows.Forms.ToolStripButton btnEliminarEstado;
-        private System.Windows.Forms.DataGridView dgvEstados;
         private System.Windows.Forms.ToolStripButton btnActualizarEstado;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnLimpiarEstado;
+        private System.Windows.Forms.ToolStripButton btnAtrasEstado;
+        private System.Windows.Forms.TextBox txtIdEstado;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombreEstado;
+        private System.Windows.Forms.TabPage tcCategorias;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.ComboBox cBoxEstadoCategoria;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvCategoria;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnRegistrarCategoria;
+        private System.Windows.Forms.ToolStripButton btnEliminarCategoria;
+        private System.Windows.Forms.ToolStripButton btnModificarCategoria;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnLimpiarCategoria;
+        private System.Windows.Forms.ToolStripButton btnAtrasCategoria;
+        private System.Windows.Forms.TabPage tcMarcas;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.ComboBox cBoxEstadoMarca;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvMarca;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton btnRegistrarMarca;
@@ -1387,7 +1340,26 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnLimpiarMarca;
         private System.Windows.Forms.ToolStripButton btnAtrasMarca;
+        private System.Windows.Forms.TabPage tcTiposClientes;
+        private System.Windows.Forms.TextBox txtDescripcionTCliente;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTipoCliente;
+        private System.Windows.Forms.ComboBox cBoxEstadoTCliente;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dgvTCliente;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripButton btnRegistrarTCliente;
+        private System.Windows.Forms.ToolStripButton btnEliminarTCliente;
+        private System.Windows.Forms.ToolStripButton btnModificarTCliente;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton btnLimpiarTCliente;
+        private System.Windows.Forms.ToolStripButton btnAtrasTCliente;
+        private System.Windows.Forms.TabPage tcTiposEmpleados;
+        private System.Windows.Forms.TextBox txtTEmpleado;
+        private System.Windows.Forms.ComboBox cBoxEstadoTEmpleado;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvTEmpleados;
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.ToolStripButton btnRegistrarTEmpleados;
@@ -1396,31 +1368,21 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnLimpiarTEmpleados;
         private System.Windows.Forms.ToolStripButton btnAtrasTEmpleados;
-        private System.Windows.Forms.DataGridView dgvRoles;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCategoria;
-        private System.Windows.Forms.ComboBox cBoxEstadoCategoria;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.ComboBox cBoxEstadoMarca;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtDescripcionTCliente;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTipoCliente;
-        private System.Windows.Forms.ComboBox cBoxEstadoTCliente;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cBoxEstadoTEmpleado;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tcRoles;
         private System.Windows.Forms.TextBox txtDescripcionRol;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtNombreRol;
         private System.Windows.Forms.ComboBox cBoxEstadoRol;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTEmpleado;
+        private System.Windows.Forms.DataGridView dgvRoles;
+        private System.Windows.Forms.ToolStrip toolStrip5;
+        private System.Windows.Forms.ToolStripButton btnRegistrarRoles;
+        private System.Windows.Forms.ToolStripButton btnEliminarRoles;
+        private System.Windows.Forms.ToolStripButton btnModificarRoles;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton btnLimpiarRoles;
+        private System.Windows.Forms.ToolStripButton btnAtrasRoles;
         private System.Windows.Forms.TabPage TabDepartamentos;
         private System.Windows.Forms.TextBox txtNombreDepartamento;
         private System.Windows.Forms.ComboBox CBoxEstadoDepartamento;
@@ -1434,26 +1396,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton btnLimpiarDepart;
         private System.Windows.Forms.ToolStripButton btnAtrasDepart;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnRegistrarCategoria;
-        private System.Windows.Forms.ToolStripButton btnEliminarCategoria;
-        private System.Windows.Forms.ToolStripButton btnModificarCategoria;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btnLimpiarCategoria;
-        private System.Windows.Forms.ToolStripButton btnAtrasCategoria;
-        private System.Windows.Forms.ToolStrip toolStrip3;
-        private System.Windows.Forms.ToolStripButton btnRegistrarTCliente;
-        private System.Windows.Forms.ToolStripButton btnEliminarTCliente;
-        private System.Windows.Forms.ToolStripButton btnModificarTCliente;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton btnLimpiarTCliente;
-        private System.Windows.Forms.ToolStripButton btnAtrasTCliente;
-        private System.Windows.Forms.ToolStrip toolStrip5;
-        private System.Windows.Forms.ToolStripButton btnRegistrarRoles;
-        private System.Windows.Forms.ToolStripButton btnEliminarRoles;
-        private System.Windows.Forms.ToolStripButton btnModificarRoles;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton btnLimpiarRoles;
-        private System.Windows.Forms.ToolStripButton btnAtrasRoles;
+
     }
 }

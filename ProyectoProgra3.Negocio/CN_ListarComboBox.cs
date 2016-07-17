@@ -57,11 +57,11 @@ namespace ProyectoProgra3.ProyectoCN
         }
 
 
-        public List<ProyectoCD.CD_Empleados> Listar_IDEmpleados_EnComboBox()
+        /*public List<ProyectoCD.CD_Empleados> Listar_IDEmpleados_EnComboBox()
         {
             ProyectoCD.CD_ListarComboBox capa = new ProyectoCD.CD_ListarComboBox();
             return capa.ObtenerListaIDEmpleados();
-        }
+        }*/
 
 
 
