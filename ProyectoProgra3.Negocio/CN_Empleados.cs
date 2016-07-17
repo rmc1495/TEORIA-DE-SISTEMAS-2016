@@ -11,92 +11,106 @@ namespace ProyectoProgra3.ProyectoCN
 
         #region Variables
 
-        private string idEmpleado;
-        private string cedula;
-        private string nombre;
-        private string apellidos;
-        private string direccion;
-        private int edad;
-        private string telefono;
-        private int idTipoEmpleado;
-        private int idDepartamento;
-        private char idEstado;
+        private int idEmpleado;
 
-        #endregion
-
-        #region Propiedades
-
-        public string IdEmpleado
+        public int IdEmpleado
         {
             get { return idEmpleado; }
             set { idEmpleado = value; }
         }
-        public string Cedula
-        {
-            get { return cedula; }
-            set { cedula = value; }
-        }
+        private string nombre;
+
         public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
-        public string Apellidos
+        private string apellido1;
+
+        public string Apellido1
         {
-            get { return apellidos; }
-            set { apellidos = value; }
+            get { return apellido1; }
+            set { apellido1 = value; }
         }
+        private string apellido2;
+
+        public string Apellido2
+        {
+            get { return apellido2; }
+            set { apellido2 = value; }
+        }
+        private string cedula;
+
+        public string Cedula
+        {
+            get { return cedula; }
+            set { cedula = value; }
+        }
+        private int idPuesto;
+
+        public int IdPuesto
+        {
+            get { return idPuesto; }
+            set { idPuesto = value; }
+        }
+        private string direccion;
+
         public string Direccion
         {
             get { return direccion; }
             set { direccion = value; }
         }
-        public int Edad
-        {
-            get { return edad; }
-            set { edad = value; }
-        }
+        private string telefono;
+
         public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
-        public int IdTipoEmpleado
+        private string correo;
+
+        public string Correo
         {
-            get { return idTipoEmpleado; }
-            set { idTipoEmpleado = value; }
+            get { return correo; }
+            set { correo = value; }
         }
-        public int IdDepartamento
+        private DateTime fechaNacimiento;
+
+        public DateTime FechaNacimiento
         {
-            get { return idDepartamento; }
-            set { idDepartamento = value; }
+            get { return fechaNacimiento; }
+            set { fechaNacimiento = value; }
         }
-        public char IdEstado
+        private DateTime fechaIngreso;
+
+        public DateTime FechaIngreso
         {
-            get { return idEstado; }
-            set { idEstado = value; }
+            get { return fechaIngreso; }
+            set { fechaIngreso = value; }
         }
+
         #endregion
+
 
         #region Metodos
 
         public void GuardarEmpelado(CN_Empleados emp)
         {
             ProyectoCD.CD_Empleados capa = new ProyectoCD.CD_Empleados();
-            capa.IdEmpleado = emp.IdEmpleado;
-            capa.Cedula = emp.Cedula;
             capa.Nombre = emp.Nombre;
-            capa.Apellidos = emp.Apellidos;
+            capa.Apellido1= emp.Apellido1;
+            capa.Apellido2 = emp.Apellido2;
+            capa.Cedula = emp.Cedula;
+            capa.IdPuesto = emp.IdPuesto;
             capa.Direccion = emp.Direccion;
-            capa.Edad = emp.Edad;
             capa.Telefono = emp.Telefono;
-            capa.IdTipoEmpleado = emp.IdTipoEmpleado;
-            capa.IdDepartamento = emp.IdDepartamento;
-            capa.IdEstado = emp.IdEstado;
+            capa.Correo = emp.Correo;
+            capa.FechaNacimiento = emp.FechaNacimiento;
+            capa.FechaIngreso = emp.FechaIngreso;
             capa.InsertarEmpleado(capa);
         }
 
-        public void ActualizarEmpleado(CN_Empleados emp)
+       /* public void ActualizarEmpleado(CN_Empleados emp)
         {
             ProyectoCD.CD_Empleados capa = new ProyectoCD.CD_Empleados();
             capa.IdEmpleado = emp.IdEmpleado;
@@ -110,7 +124,7 @@ namespace ProyectoProgra3.ProyectoCN
             capa.IdDepartamento = emp.IdDepartamento;
             capa.IdEstado = emp.IdEstado;
             capa.ActualizarEmpleado(capa);
-        }
+        }*/
 
         public DataSet ListarEmpleados()
         {
@@ -118,23 +132,23 @@ namespace ProyectoProgra3.ProyectoCN
             return capa.ListarEmpleados();
         }
 
-        public DataSet BuscarEmpelados(ref CN_Empleados emp)
+        /*public DataSet BuscarEmpelados(ref CN_Empleados emp)
         {
             ProyectoCD.CD_Empleados capa = new ProyectoCD.CD_Empleados();
-            DataSet obtenerDts = capa.ObtenerEmpelado(emp.IdEmpleado);
+            DataSet obtenerDts = capa.ObtenerEmpelado(emp.Id);
             return obtenerDts;
-        }
+        }*/
 
-        public void EliminarEmpleado(ref CN_Empleados emp)
+       /* public void EliminarEmpleado(ref CN_Empleados emp)
         {
             ProyectoCD.CD_Empleados capa = new ProyectoCD.CD_Empleados();
             capa.EliminarEmpleado(capa.IdEmpleado = emp.IdEmpleado);
-        }
+        }*/
 
-        public DataSet FiltEmpleados(string tipo, string param)
+        public DataSet FiltEmpleados(string consulta)
         {
             ProyectoCD.CD_Empleados capa = new ProyectoCD.CD_Empleados();
-            DataSet obtenerDts = capa.FiltrarEmpleados(tipo, param);
+            DataSet obtenerDts = capa.FiltrarEmpleados(consulta);
             return obtenerDts;
         }
         #endregion

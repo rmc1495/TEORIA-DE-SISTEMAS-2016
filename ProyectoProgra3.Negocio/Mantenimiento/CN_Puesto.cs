@@ -65,13 +65,17 @@ namespace ProyectoProgra3.ProyectoCN
             DataSet obtenerDts = capa.ObtenerPuesto(pues.IdPuesto);
             return obtenerDts;
         }
-        /*
-        public void EliminarCliente(ref CN_Clientes cliente)
-        {
-            ProyectoCD.CD_Clientes capa = new ProyectoCD.CD_Clientes();
-            capa.EliminarCliente(capa.IdCliente = cliente.IdCliente);
-        }
+        
 
+        //Listo
+        /*public void EliminarCliente(ref CN_Puesto cliente)
+        {
+            ProyectoCD.CD_Puesto capa = new ProyectoCD.CD_Puesto();
+            capa.EliminarPuesto(capa.IdPuesto = cliente.IdPuesto);
+        }*/
+
+
+        /*
         public DataSet FiltrarClientes(string tipo, string param)
         {
             ProyectoCD.CD_Clientes capa = new ProyectoCD.CD_Clientes();

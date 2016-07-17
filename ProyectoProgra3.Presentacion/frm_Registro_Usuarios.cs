@@ -18,7 +18,7 @@ namespace ProyectoProgra3
 
         private void frm_Registro_Usuarios_Load(object sender, EventArgs e)
         {
-            ProyectoCN.CN_ListarComboBox Lista = new ProyectoCN.CN_ListarComboBox();
+            /*ProyectoCN.CN_ListarComboBox Lista = new ProyectoCN.CN_ListarComboBox();
 
             cBoxIdEstado.DataSource = Lista.Listar_Estados_EnComboBox();
             cBoxIdEstado.DisplayMember = "Descripcion";
@@ -31,7 +31,7 @@ namespace ProyectoProgra3
              cBoxIdEmpleado.DataSource = Lista.Listar_IDEmpleados_EnComboBox();
              cBoxIdEmpleado.DisplayMember = "IdEmpleado";
              cBoxIdEmpleado.ValueMember = "IdEmpleado";
-
+            */
              Limpiar();
 
 

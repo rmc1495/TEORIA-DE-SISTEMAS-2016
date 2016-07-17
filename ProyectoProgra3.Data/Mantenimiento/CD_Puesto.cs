@@ -57,12 +57,12 @@ namespace ProyectoProgra3.ProyectoCD
 
             Ejecutar(resuelva);
         }
-        /*
-        public void EliminarCategoria(int ID)
+        
+        /*public void EliminarPuesto(int ID)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = ELIMINAR_CATEGORIA;
-            resuelva.Parameters.Add(new SqlParameter("@IdCategoria", ID));
+            resuelva.CommandText = ELIMINAR_PUESTO;
+            resuelva.Parameters.Add(new SqlParameter("@IdPuesto", ID));
             Ejecutar(resuelva);
         }*/
 

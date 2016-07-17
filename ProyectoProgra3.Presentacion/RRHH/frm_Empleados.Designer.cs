@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Empleados));
             this.tbc_Empleados = new System.Windows.Forms.TabControl();
             this.tb_Empleado = new System.Windows.Forms.TabPage();
+            this.cbxPuesto = new System.Windows.Forms.ComboBox();
+            this.tblPuestoBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_TSistemasDataSet4 = new ProyectoProgra3.DB_TSistemasDataSet();
+            this.spConsultarPuestoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.dtp_FechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaNacimineto = new System.Windows.Forms.DateTimePicker();
-            this.CbxPuesto = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,7 +68,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.tb_Mant_Empleados = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPuestos = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRegistrarPues = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarPues = new System.Windows.Forms.ToolStripButton();
@@ -77,13 +81,45 @@
             this.txtFiltrarPuesto = new System.Windows.Forms.ToolStripTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtDescripcionPuesto = new System.Windows.Forms.TextBox();
+            this.tblPuestoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.tblPuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spConsultarPuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblPuestoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBTSistemasDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.spConsultarPuestoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tblPuestoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBTSistemasDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBTSistemasDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spConsultarPuestoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBTSistemasDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_PuestoTableAdapter2 = new ProyectoProgra3.DB_TSistemasDataSetTableAdapters.tbl_PuestoTableAdapter();
+            this.dBTSistemasDataSet4BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_ConsultarPuestoTableAdapter = new ProyectoProgra3.DB_TSistemasDataSetTableAdapters.sp_ConsultarPuestoTableAdapter();
+            this.tblPuestoBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.tbc_Empleados.SuspendLayout();
             this.tb_Empleado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TSistemasDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.tlsBtnRegis_Guardar.SuspendLayout();
             this.tb_Mant_Empleados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuestos)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet4BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // tbc_Empleados
@@ -100,10 +136,11 @@
             // 
             // tb_Empleado
             // 
+            this.tb_Empleado.AutoScroll = true;
             this.tb_Empleado.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.tb_Empleado.Controls.Add(this.cbxPuesto);
             this.tb_Empleado.Controls.Add(this.dtp_FechaIngreso);
             this.tb_Empleado.Controls.Add(this.dtp_FechaNacimineto);
-            this.tb_Empleado.Controls.Add(this.CbxPuesto);
             this.tb_Empleado.Controls.Add(this.label10);
             this.tb_Empleado.Controls.Add(this.label9);
             this.tb_Empleado.Controls.Add(this.label6);
@@ -130,38 +167,56 @@
             this.tb_Empleado.TabIndex = 0;
             this.tb_Empleado.Text = "Empleados";
             // 
+            // cbxPuesto
+            // 
+            this.cbxPuesto.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tblPuestoBindingSource5, "int_IdPuesto", true));
+            this.cbxPuesto.DataSource = this.spConsultarPuestoBindingSource3;
+            this.cbxPuesto.DisplayMember = "vrch_Descripcion";
+            this.cbxPuesto.FormattingEnabled = true;
+            this.cbxPuesto.Location = new System.Drawing.Point(550, 117);
+            this.cbxPuesto.Name = "cbxPuesto";
+            this.cbxPuesto.Size = new System.Drawing.Size(147, 29);
+            this.cbxPuesto.TabIndex = 86;
+            this.cbxPuesto.ValueMember = "int_IdPuesto";
+            // 
+            // tblPuestoBindingSource5
+            // 
+            this.tblPuestoBindingSource5.DataMember = "tbl_Puesto";
+            this.tblPuestoBindingSource5.DataSource = this.dB_TSistemasDataSet4;
+            // 
+            // dB_TSistemasDataSet4
+            // 
+            this.dB_TSistemasDataSet4.DataSetName = "DB_TSistemasDataSet";
+            this.dB_TSistemasDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spConsultarPuestoBindingSource3
+            // 
+            this.spConsultarPuestoBindingSource3.DataMember = "sp_ConsultarPuesto";
+            this.spConsultarPuestoBindingSource3.DataSource = this.dB_TSistemasDataSet4;
+            // 
             // dtp_FechaIngreso
             // 
             this.dtp_FechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_FechaIngreso.Location = new System.Drawing.Point(169, 204);
+            this.dtp_FechaIngreso.Location = new System.Drawing.Point(173, 152);
             this.dtp_FechaIngreso.Name = "dtp_FechaIngreso";
             this.dtp_FechaIngreso.Size = new System.Drawing.Size(156, 29);
-            this.dtp_FechaIngreso.TabIndex = 88;
+            this.dtp_FechaIngreso.TabIndex = 9;
             this.dtp_FechaIngreso.Value = new System.DateTime(2016, 7, 10, 0, 0, 0, 0);
             // 
             // dtp_FechaNacimineto
             // 
             this.dtp_FechaNacimineto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_FechaNacimineto.Location = new System.Drawing.Point(546, 204);
+            this.dtp_FechaNacimineto.Location = new System.Drawing.Point(550, 152);
             this.dtp_FechaNacimineto.Name = "dtp_FechaNacimineto";
             this.dtp_FechaNacimineto.Size = new System.Drawing.Size(147, 29);
-            this.dtp_FechaNacimineto.TabIndex = 86;
+            this.dtp_FechaNacimineto.TabIndex = 10;
             this.dtp_FechaNacimineto.Value = new System.DateTime(2016, 7, 10, 17, 37, 21, 0);
-            // 
-            // CbxPuesto
-            // 
-            this.CbxPuesto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxPuesto.FormattingEnabled = true;
-            this.CbxPuesto.Location = new System.Drawing.Point(555, 159);
-            this.CbxPuesto.Name = "CbxPuesto";
-            this.CbxPuesto.Size = new System.Drawing.Size(138, 28);
-            this.CbxPuesto.TabIndex = 84;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(471, 161);
+            this.label10.Location = new System.Drawing.Point(475, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 21);
             this.label10.TabIndex = 85;
@@ -171,7 +226,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(353, 210);
+            this.label9.Location = new System.Drawing.Point(357, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(175, 21);
             this.label9.TabIndex = 69;
@@ -181,7 +236,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 210);
+            this.label6.Location = new System.Drawing.Point(25, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 21);
             this.label6.TabIndex = 67;
@@ -190,10 +245,10 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(144, 159);
+            this.txtCorreo.Location = new System.Drawing.Point(147, 119);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(265, 27);
-            this.txtCorreo.TabIndex = 66;
+            this.txtCorreo.Size = new System.Drawing.Size(264, 27);
+            this.txtCorreo.TabIndex = 7;
             // 
             // dgvEmpleados
             // 
@@ -201,10 +256,10 @@
             this.dgvEmpleados.AllowUserToDeleteRows = false;
             this.dgvEmpleados.AllowUserToOrderColumns = true;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(2, 308);
+            this.dgvEmpleados.Location = new System.Drawing.Point(2, 249);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(848, 62);
+            this.dgvEmpleados.Size = new System.Drawing.Size(848, 121);
             this.dgvEmpleados.TabIndex = 65;
             // 
             // tlsBtnRegis_Guardar
@@ -225,10 +280,10 @@
             this.toolStripSeparator2,
             this.toolStripLabel1,
             this.txtFiltrarEmpleado});
-            this.tlsBtnRegis_Guardar.Location = new System.Drawing.Point(2, 265);
+            this.tlsBtnRegis_Guardar.Location = new System.Drawing.Point(2, 206);
             this.tlsBtnRegis_Guardar.Name = "tlsBtnRegis_Guardar";
             this.tlsBtnRegis_Guardar.Size = new System.Drawing.Size(848, 40);
-            this.tlsBtnRegis_Guardar.TabIndex = 64;
+            this.tlsBtnRegis_Guardar.TabIndex = 10;
             this.tlsBtnRegis_Guardar.Text = "Registrar Empleado";
             // 
             // btnRegistrarEmp
@@ -240,6 +295,7 @@
             this.btnRegistrarEmp.Name = "btnRegistrarEmp";
             this.btnRegistrarEmp.Size = new System.Drawing.Size(40, 40);
             this.btnRegistrarEmp.Text = "Registrar";
+            this.btnRegistrarEmp.Click += new System.EventHandler(this.btnRegistrarEmp_Click);
             // 
             // btnEliminarEmp
             // 
@@ -307,21 +363,22 @@
             this.txtFiltrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltrarEmpleado.Name = "txtFiltrarEmpleado";
             this.txtFiltrarEmpleado.Size = new System.Drawing.Size(130, 40);
+            this.txtFiltrarEmpleado.TextChanged += new System.EventHandler(this.txtFiltrarEmpleado_TextChanged);
             // 
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(391, 31);
+            this.txtCedula.Location = new System.Drawing.Point(393, 22);
             this.txtCedula.MaxLength = 9;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(137, 27);
-            this.txtCedula.TabIndex = 51;
+            this.txtCedula.TabIndex = 2;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 161);
+            this.label8.Location = new System.Drawing.Point(25, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 21);
             this.label8.TabIndex = 61;
@@ -331,7 +388,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 74);
+            this.label1.Location = new System.Drawing.Point(441, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 21);
             this.label1.TabIndex = 44;
@@ -341,7 +398,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 33);
+            this.label2.Location = new System.Drawing.Point(25, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 21);
             this.label2.TabIndex = 46;
@@ -351,7 +408,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(318, 33);
+            this.label3.Location = new System.Drawing.Point(320, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 49;
@@ -360,17 +417,17 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(640, 31);
+            this.txtTelefono.Location = new System.Drawing.Point(642, 22);
             this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(191, 27);
-            this.txtTelefono.TabIndex = 57;
+            this.txtTelefono.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 74);
+            this.label4.Location = new System.Drawing.Point(25, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 21);
             this.label4.TabIndex = 50;
@@ -379,16 +436,16 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(144, 115);
+            this.txtDireccion.Location = new System.Drawing.Point(147, 87);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(687, 27);
-            this.txtDireccion.TabIndex = 55;
+            this.txtDireccion.Size = new System.Drawing.Size(686, 27);
+            this.txtDireccion.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 117);
+            this.label5.Location = new System.Drawing.Point(25, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 21);
             this.label5.TabIndex = 53;
@@ -398,7 +455,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(541, 33);
+            this.label7.Location = new System.Drawing.Point(543, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 21);
             this.label7.TabIndex = 56;
@@ -407,33 +464,33 @@
             // txtApellido1
             // 
             this.txtApellido1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido1.Location = new System.Drawing.Point(145, 72);
+            this.txtApellido1.Location = new System.Drawing.Point(147, 54);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(264, 27);
-            this.txtApellido1.TabIndex = 47;
+            this.txtApellido1.TabIndex = 4;
             // 
             // txtApellido2
             // 
             this.txtApellido2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido2.Location = new System.Drawing.Point(555, 72);
+            this.txtApellido2.Location = new System.Drawing.Point(559, 54);
             this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.Size = new System.Drawing.Size(276, 27);
-            this.txtApellido2.TabIndex = 48;
+            this.txtApellido2.Size = new System.Drawing.Size(274, 27);
+            this.txtApellido2.TabIndex = 5;
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(145, 31);
+            this.txtNombre.Location = new System.Drawing.Point(147, 22);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(153, 27);
-            this.txtNombre.TabIndex = 45;
+            this.txtNombre.TabIndex = 1;
             // 
             // tb_Mant_Empleados
             // 
             this.tb_Mant_Empleados.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.tb_Mant_Empleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_Mant_Empleados.Controls.Add(this.label12);
-            this.tb_Mant_Empleados.Controls.Add(this.dataGridView1);
+            this.tb_Mant_Empleados.Controls.Add(this.dgvPuestos);
             this.tb_Mant_Empleados.Controls.Add(this.toolStrip1);
             this.tb_Mant_Empleados.Controls.Add(this.label16);
             this.tb_Mant_Empleados.Controls.Add(this.txtDescripcionPuesto);
@@ -454,17 +511,19 @@
             this.label12.TabIndex = 106;
             this.label12.Text = "Mantenimineto de Puestos";
             // 
-            // dataGridView1
+            // dgvPuestos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 307);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(848, 62);
-            this.dataGridView1.TabIndex = 103;
+            this.dgvPuestos.AllowUserToAddRows = false;
+            this.dgvPuestos.AllowUserToDeleteRows = false;
+            this.dgvPuestos.AllowUserToOrderColumns = true;
+            this.dgvPuestos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPuestos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPuestos.Location = new System.Drawing.Point(1, 254);
+            this.dgvPuestos.Name = "dgvPuestos";
+            this.dgvPuestos.ReadOnly = true;
+            this.dgvPuestos.Size = new System.Drawing.Size(848, 115);
+            this.dgvPuestos.TabIndex = 103;
             // 
             // toolStrip1
             // 
@@ -484,7 +543,7 @@
             this.toolStripSeparator4,
             this.toolStripLabel2,
             this.txtFiltrarPuesto});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 264);
+            this.toolStrip1.Location = new System.Drawing.Point(1, 211);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(848, 40);
             this.toolStrip1.TabIndex = 102;
@@ -587,6 +646,39 @@
             this.txtDescripcionPuesto.Size = new System.Drawing.Size(153, 27);
             this.txtDescripcionPuesto.TabIndex = 90;
             // 
+            // tblPuestoBindingSource3
+            // 
+            this.tblPuestoBindingSource3.DataMember = "tbl_Puesto";
+            this.tblPuestoBindingSource3.DataSource = this.dB_TSistemasDataSet4;
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(23, 23);
+            // 
+            // dBTSistemasDataSet4BindingSource
+            // 
+            this.dBTSistemasDataSet4BindingSource.DataSource = this.dB_TSistemasDataSet4;
+            this.dBTSistemasDataSet4BindingSource.Position = 0;
+            // 
+            // tbl_PuestoTableAdapter2
+            // 
+            this.tbl_PuestoTableAdapter2.ClearBeforeFill = true;
+            // 
+            // dBTSistemasDataSet4BindingSource1
+            // 
+            this.dBTSistemasDataSet4BindingSource1.DataSource = this.dB_TSistemasDataSet4;
+            this.dBTSistemasDataSet4BindingSource1.Position = 0;
+            // 
+            // sp_ConsultarPuestoTableAdapter
+            // 
+            this.sp_ConsultarPuestoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblPuestoBindingSource4
+            // 
+            this.tblPuestoBindingSource4.DataMember = "tbl_Puesto";
+            this.tblPuestoBindingSource4.DataSource = this.dB_TSistemasDataSet4;
+            // 
             // frm_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,14 +696,30 @@
             this.tbc_Empleados.ResumeLayout(false);
             this.tb_Empleado.ResumeLayout(false);
             this.tb_Empleado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_TSistemasDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.tlsBtnRegis_Guardar.ResumeLayout(false);
             this.tlsBtnRegis_Guardar.PerformLayout();
             this.tb_Mant_Empleados.ResumeLayout(false);
             this.tb_Mant_Empleados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuestos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spConsultarPuestoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBTSistemasDataSet4BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPuestoBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,12 +755,11 @@
         private System.Windows.Forms.ToolStripTextBox txtFiltrarEmpleado;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.DateTimePicker dtp_FechaNacimineto;
-        private System.Windows.Forms.ComboBox CbxPuesto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtp_FechaIngreso;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPuestos;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnRegistrarPues;
         private System.Windows.Forms.ToolStripButton btnEliminarPues;
@@ -666,6 +773,30 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtDescripcionPuesto;
         private System.Windows.Forms.Label label12;
+        private DB_TSistemasDataSet dB_TSistemasDataSet;
+        private System.Windows.Forms.BindingSource tblPuestoBindingSource;
+        private DB_TSistemasDataSetTableAdapters.tbl_PuestoTableAdapter tbl_PuestoTableAdapter;
+        private System.Windows.Forms.BindingSource tblPuestoBindingSource1;
+        private System.Windows.Forms.BindingSource spConsultarPuestoBindingSource;
+        private System.Windows.Forms.BindingSource dBTSistemasDataSetBindingSource;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.BindingSource spConsultarPuestoBindingSource1;
+        private System.Windows.Forms.BindingSource tblPuestoBindingSource2;
+
+        private System.Windows.Forms.BindingSource spConsultarPuestoBindingSource2;
+        private System.Windows.Forms.BindingSource dBTSistemasDataSet2BindingSource;
+        private DB_TSistemasDataSet dB_TSistemasDataSet3;
+        private System.Windows.Forms.BindingSource dBTSistemasDataSet3BindingSource;
+        private System.Windows.Forms.ComboBox cbxPuesto;
+        private System.Windows.Forms.BindingSource dBTSistemasDataSet4BindingSource;
+        private DB_TSistemasDataSet dB_TSistemasDataSet4;
+        private System.Windows.Forms.BindingSource tblPuestoBindingSource3;
+        private DB_TSistemasDataSetTableAdapters.tbl_PuestoTableAdapter tbl_PuestoTableAdapter2;
+        private System.Windows.Forms.BindingSource dBTSistemasDataSet4BindingSource1;
+        private System.Windows.Forms.BindingSource spConsultarPuestoBindingSource3;
+        private DB_TSistemasDataSetTableAdapters.sp_ConsultarPuestoTableAdapter sp_ConsultarPuestoTableAdapter;
+        private System.Windows.Forms.BindingSource tblPuestoBindingSource4;
+        private System.Windows.Forms.BindingSource tblPuestoBindingSource5;
 
 
     }

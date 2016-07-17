@@ -15,8 +15,11 @@ namespace ProyectoProgra3
         public frm_Empleados()
         {
             InitializeComponent();
-            //RefrescarGridEmpleados();
+            RefrescarGridEmpleados();
+            RefrescarGridPuestos();
         }
+
+        public static string consulta;
 
         #region Empleado
 
@@ -102,18 +105,18 @@ namespace ProyectoProgra3
             try
             {
                 ProyectoCN.CN_Empleados capaCN = new ProyectoCN.CN_Empleados();
-                capaCN.IdEmpleado = txtApellido2.Text;
                 capaCN.Nombre = txtNombre.Text;
+                capaCN.Apellido1 = txtApellido1.Text;
+                capaCN.Apellido2 = txtApellido2.Text;
                 capaCN.Cedula = txtCedula.Text;
-                capaCN.Apellidos = txtApellido1.Text;
+                capaCN.IdPuesto = Convert.ToInt32(cbxPuesto.SelectedValue);
                 capaCN.Direccion = txtDireccion.Text;
                 capaCN.Telefono = txtTelefono.Text;
-                //capaCN.Edad = Convert.ToInt32(txtEdad.Text);
-                //capaCN.IdTipoEmpleado = Convert.ToInt32(cBoxTipoEmpleado.SelectedValue);
-                //capaCN.IdDepartamento = Convert.ToInt32(cBoxDepartamento.SelectedValue);
-                //capaCN.IdEstado = Convert.ToChar(cBoxEstado.SelectedValue);
+                capaCN.Correo = txtCorreo.Text;
+                capaCN.FechaNacimiento = Convert.ToDateTime(dtp_FechaNacimineto.Text);
+                capaCN.FechaIngreso = Convert.ToDateTime(dtp_FechaIngreso.Text);
                 capaCN.GuardarEmpelado(capaCN);
-               // RefrescarGridEmpleados();
+                RefrescarGridEmpleados();
                 Limpiar();
                 MessageBox.Show("Datos registrados correctamente", "Exito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,23 +136,8 @@ namespace ProyectoProgra3
 
         private void frm_Registro_Empleados_Load(object sender, EventArgs e)
         {
-
-
-
-
-            //ProyectoCN.CN_ListarComboBox Lista = new ProyectoCN.CN_ListarComboBox();
-
-            /*cBoxEstado.DataSource = Lista.Listar_Estados_EnComboBox();
-            cBoxEstado.DisplayMember = "Descripcion";
-            cBoxEstado.ValueMember = "IdEstado";*/
-            /*
-            cBoxTipoEmpleado.DataSource = Lista.Listar_TipoEmpleados_EnComboBox();
-            cBoxTipoEmpleado.DisplayMember = "Tipo";
-            cBoxTipoEmpleado.ValueMember = "IdTipoEmpleado";
-
-            cBoxDepartamento.DataSource = Lista.Listar_Departamentos_EnComboBox();
-            cBoxDepartamento.DisplayMember = "NombreDepartamento";
-            cBoxDepartamento.ValueMember = "IdDepartamento";*/
+            // TODO: This line of code loads data into the 'dB_TSistemasDataSet4.sp_ConsultarPuesto' table. You can move, or remove it, as needed.
+            this.sp_ConsultarPuestoTableAdapter.Fill(this.dB_TSistemasDataSet4.sp_ConsultarPuesto);
 
         }
 
@@ -157,21 +145,22 @@ namespace ProyectoProgra3
         {
             ProyectoCN.CN_Empleados capaEmp = new ProyectoCN.CN_Empleados();
             dgvEmpleados.DataSource = capaEmp.ListarEmpleados().Tables[0];
-            dgvEmpleados.Columns["IdEmpleado"].HeaderText = "ID de Empleado";
-            dgvEmpleados.Columns["Cedula"].HeaderText = "Cedula";
-            dgvEmpleados.Columns["Nombre"].HeaderText = "Nombre";
-            dgvEmpleados.Columns["Apellidos"].HeaderText = "Apellidos";
-            dgvEmpleados.Columns["Direccion"].HeaderText = "Direccion";
-            dgvEmpleados.Columns["Edad"].HeaderText = "Edad";
-            dgvEmpleados.Columns["Telefono1"].HeaderText = "Telefono";
-            dgvEmpleados.Columns["Tipo de Empleado"].HeaderText = "Tipo Empleado";
-            dgvEmpleados.Columns["Departamento"].HeaderText = "Departamento";
-            dgvEmpleados.Columns["Estado"].HeaderText = "Estado";
+            dgvEmpleados.Columns["int_IdEmpleado"].HeaderText = "ID de Empleado";
+            dgvEmpleados.Columns["vrch_Cedula"].HeaderText = "Cedula";
+            dgvEmpleados.Columns["vrch_Nombre"].HeaderText = "Nombre";
+            dgvEmpleados.Columns["vrch_Apellido1"].HeaderText = "Apellidos";
+            dgvEmpleados.Columns["vrch_Apellido2"].HeaderText = "Apellidos";
+            dgvEmpleados.Columns["vrch_Direccion"].HeaderText = "Direccion";
+            dgvEmpleados.Columns["vrch_Telefono"].HeaderText = "Telefono";
+            dgvEmpleados.Columns["int_IdPuesto"].HeaderText = "Id de Puesto ";
+            dgvEmpleados.Columns["vrch_Correo"].HeaderText = "Correo";
+            dgvEmpleados.Columns["dtm_FechaNacimiento"].HeaderText = "Fecha Nacimiento";
+            dgvEmpleados.Columns["dtm_FechaIngreso"].HeaderText = "Fecha Ingreso";
             DesabilitarControles();
             ActivarControles();
         }
 
-        private void tlsBtn_Consul_Eliminar_Click(object sender, EventArgs e)
+       /* private void tlsBtn_Consul_Eliminar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -187,9 +176,9 @@ namespace ProyectoProgra3
                 MessageBox.Show(ex.Message, "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
 
-        private void tlsBtn_Consul_Modificar_Click(object sender, EventArgs e)
+       /* private void tlsBtn_Consul_Modificar_Click(object sender, EventArgs e)
         {
             ProyectoCN.CN_Empleados capaEmpl = new ProyectoCN.CN_Empleados();
             capaEmpl.IdEmpleado = txtApellido2.Text;
@@ -206,8 +195,9 @@ namespace ProyectoProgra3
             RefrescarGridEmpleados();
             Limpiar();
             ActivarControles();
-        }
+        }*/
 
+        //arreglar
         private void Limpiar()
         {
             txtApellido1.Clear();
@@ -225,8 +215,8 @@ namespace ProyectoProgra3
             ActivarControles();
 
         }
-
-        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        //arreglar
+       /* private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvEmpleados.CurrentRow.Cells[0].Selected == true || dgvEmpleados.CurrentRow.Cells[1].Selected == true ||
                dgvEmpleados.CurrentRow.Cells[2].Selected == true || dgvEmpleados.CurrentRow.Cells[3].Selected == true ||
@@ -256,7 +246,7 @@ namespace ProyectoProgra3
                 txtTelefono.Text = dgvEmpleados.CurrentRow.Cells[6].Value.ToString();
 
             }
-        }
+        }*/
 
         private void ActivarControles()
         {
@@ -272,33 +262,17 @@ namespace ProyectoProgra3
             btnRegistrarEmp.Enabled = false;
         }
 
-        /* private void txtFiltrar_TextChanged(object sender, EventArgs e)
+         private void txtFiltrarEmpleado_TextChanged(object sender, EventArgs e)
          {
              ProyectoCN.CN_Empleados capaCli = new ProyectoCN.CN_Empleados();
-             string tipo = Convert.ToString(cBoxFiltrar.ComboBox.SelectedItem);
-             string param = txtFiltrar.Text;
-             dgvEmpleados.DataSource = capaCli.FiltEmpleados(tipo, param).Tables[0];
-         }*/
+             consulta = txtFiltrarEmpleado.Text;
+             dgvEmpleados.DataSource = capaCli.FiltEmpleados(consulta).Tables[0];
+         }
 
         #endregion
 
 
         #region Puesto
-
-        //actualizar
-
-
-        #endregion
-
-        private void btnAtrasPue_Click(object sender, EventArgs e)
-        {
-            if (btnRegistrarPues.Enabled == false)
-            {
-                Limpiar();
-            }
-            else
-            this.Close();
-        }
 
         private void btnRegistrarPues_Click(object sender, EventArgs e)
         {
@@ -311,12 +285,13 @@ namespace ProyectoProgra3
                 return;
             }
             #endregion
+            
             try
             {
                 ProyectoCN.CN_Puesto capaCN = new ProyectoCN.CN_Puesto();
                 capaCN.Descripcion = txtDescripcionPuesto.Text;
                 capaCN.GuardarPuesto(capaCN);
-                // RefrescarGridEmpleados();
+                RefrescarGridPuestos();
                 Limpiar();
                 MessageBox.Show("Datos registrados correctamente", "Exito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -327,5 +302,57 @@ namespace ProyectoProgra3
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnAtrasPue_Click(object sender, EventArgs e)
+        {
+            if (btnRegistrarPues.Enabled == false)
+            {
+                Limpiar();
+            }
+            else
+                this.Close();
+        }
+
+        private void RefrescarGridPuestos()
+        {
+            ProyectoCN.CN_Puesto capaPues = new ProyectoCN.CN_Puesto();
+            dgvPuestos.DataSource = capaPues.ListarPuestos().Tables[0];
+            dgvPuestos.Columns["int_IdPuesto"].HeaderText = "ID de Puesto";
+            dgvPuestos.Columns["vrch_Descripcion"].HeaderText = "Descripcion";
+            //DesabilitarControles();
+            //ActivarControles();
+        }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+        //Agregar Procedure de eliminar
+       /* private void btnEliminarPues_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProyectoCN.CN_Puesto CNpues = new ProyectoCN.CN_Puesto();
+                CNpues.IdPuesto = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells[0].Value);
+                CNpues.Eliminar(ref CNpues);
+                RefrescarGridPuestos();
+                //Limpiar();
+                //ActivarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }*/
+
     }
 }

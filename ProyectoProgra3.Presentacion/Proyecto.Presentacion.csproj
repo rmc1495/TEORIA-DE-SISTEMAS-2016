@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_TSistemasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_TSistemasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Devolucion\frm_Devolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +249,17 @@
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TSistemasDataSet.xsc">
+      <DependentUpon>DB_TSistemasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_TSistemasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_TSistemasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_TSistemasDataSet.xss">
+      <DependentUpon>DB_TSistemasDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

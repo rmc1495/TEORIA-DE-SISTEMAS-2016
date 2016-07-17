@@ -14,81 +14,94 @@ namespace ProyectoProgra3.ProyectoCD
 
         #region StoredProcedures
 
-        string INSERTAR_EMPLEADO = "sp_insertar_empleado";
-        string ELIMINAR_EMPLEADO = "sp_eliminar_empleado";
-        string OBTENER_EMPLEADO = "sp_lista_empleado";
-        string ACTUALIZAR_EMPLEADO = "sp_actualizar_empleado";
-        string LISTA_EMPLEADO = "sp_listaTodo_empleado";
+        string INSERTAR_EMPLEADO = "sp_AgregarEmpleado";
+        //string ELIMINAR_EMPLEADO = "sp_eliminar_empleado";
+        string OBTENER_EMPLEADO = "sp_ConsultarEmpleadoEspecifico";
+        //string ACTUALIZAR_EMPLEADO = "sp_actualizar_empleado";
+        string LISTA_EMPLEADO = "sp_ConsultarEmpleado";
 
         #endregion
 
         #region Variables
 
-        private string idEmpleado;
-        private string cedula;
-        private string nombre;
-        private string apellidos;
-        private string direccion;
-        private int edad;
-        private string telefono;
-        private int idTipoEmpleado;
-        private int idDepartamento;
-        private char idEstado;
+        private int idEmpleado;
 
-        #endregion
-
-        #region Propiedades
-
-        public string IdEmpleado
+        public int IdEmpleado
         {
             get { return idEmpleado; }
-            set { idEmpleado = value;}
+            set { idEmpleado = value; }
         }
-        public string Cedula
-        {
-            get { return cedula; }
-            set { cedula = value; }
-        }
+        private string nombre;
+
         public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
-        public string Apellidos
+        private string apellido1;
+
+        public string Apellido1
         {
-            get { return apellidos; }
-            set { apellidos = value; }
+            get { return apellido1; }
+            set { apellido1 = value; }
         }
+        private string apellido2;
+
+        public string Apellido2
+        {
+            get { return apellido2; }
+            set { apellido2 = value; }
+        }
+        private string cedula;
+
+        public string Cedula
+        {
+            get { return cedula; }
+            set { cedula = value; }
+        }
+        private int idPuesto;
+
+        public int IdPuesto
+        {
+            get { return idPuesto; }
+            set { idPuesto = value; }
+        }
+        private string direccion;
+
         public string Direccion
         {
             get { return direccion; }
             set { direccion = value; }
         }
-        public int Edad
-        {
-            get { return edad; }
-            set { edad = value; }
-        }
+        private string telefono;
+
         public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
-        public int IdTipoEmpleado
+        private string correo;
+
+        public string Correo
         {
-            get { return idTipoEmpleado; }
-            set { idTipoEmpleado = value; }
+            get { return correo; }
+            set { correo = value; }
         }
-        public int IdDepartamento
+        private DateTime fechaNacimiento;
+
+        public DateTime FechaNacimiento
         {
-            get { return idDepartamento; }
-            set { idDepartamento = value; }
+            get { return fechaNacimiento; }
+            set { fechaNacimiento = value; }
         }
-        public char IdEstado
+        private DateTime fechaIngreso;
+
+        public DateTime FechaIngreso
         {
-            get { return idEstado; }
-            set { idEstado = value; }
+            get { return fechaIngreso; }
+            set { fechaIngreso = value; }
         }
+
         #endregion
 
          #region Metodos
@@ -100,36 +113,36 @@ namespace ProyectoProgra3.ProyectoCD
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = INSERTAR_EMPLEADO;
-            resuelva.Parameters.Add(new SqlParameter("@IdEmpleado", objeto.IdEmpleado));
-            resuelva.Parameters.Add(new SqlParameter("@Cedula", objeto.Cedula));
             resuelva.Parameters.Add(new SqlParameter("@Nombre", objeto.Nombre));
-            resuelva.Parameters.Add(new SqlParameter("@Apellidos", objeto.Apellidos));
+            resuelva.Parameters.Add(new SqlParameter("@Apellido1", objeto.Apellido1));
+            resuelva.Parameters.Add(new SqlParameter("@Apellido2", objeto.Apellido2));
+            resuelva.Parameters.Add(new SqlParameter("@Cedula", objeto.Cedula));
+            resuelva.Parameters.Add(new SqlParameter("@IdPuesto", objeto.IdPuesto));
             resuelva.Parameters.Add(new SqlParameter("@Direccion", objeto.Direccion));
-            resuelva.Parameters.Add(new SqlParameter("@Edad", objeto.Edad));
-            resuelva.Parameters.Add(new SqlParameter("@Telefono1", objeto.Telefono));
-            resuelva.Parameters.Add(new SqlParameter("@IdTipoEmpleado", objeto.IdTipoEmpleado));
-            resuelva.Parameters.Add(new SqlParameter("@IdDepartamento", objeto.IdDepartamento));
-            resuelva.Parameters.Add(new SqlParameter("@IdEstado", objeto.IdEstado));
+            resuelva.Parameters.Add(new SqlParameter("@Telefono", objeto.Telefono));
+            resuelva.Parameters.Add(new SqlParameter("@Correo", objeto.Correo));
+            resuelva.Parameters.Add(new SqlParameter("@Nacimiento", objeto.FechaNacimiento));
+            resuelva.Parameters.Add(new SqlParameter("@Ingreso", objeto.FechaIngreso));
             Ejecutar(resuelva);
         }
 
-        public void EliminarEmpleado(string ID)
+       /* public void EliminarEmpleado(string ID)
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = ELIMINAR_EMPLEADO;
             resuelva.Parameters.Add(new SqlParameter("@IdEmpleado", ID));
             Ejecutar(resuelva);
-        }
+        }*/
 
-        public DataSet ObtenerEmpelado(string ID)
+        public DataSet FiltrarEmpleados(string consulta)
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = OBTENER_EMPLEADO;
-            resuelva.Parameters.Add(new SqlParameter("@IdEmpleado", ID));
+            resuelva.Parameters.Add(new SqlParameter("@Consulta", consulta));
             return Consultar(resuelva, "UnicoEmpleado");
         }
 
-        public void ActualizarEmpleado(CD_Empleados objeto)
+        /*public void ActualizarEmpleado(CD_Empleados objeto)
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = ACTUALIZAR_EMPLEADO;
@@ -144,7 +157,7 @@ namespace ProyectoProgra3.ProyectoCD
             resuelva.Parameters.Add(new SqlParameter("@IdDepartamento", objeto.IdDepartamento));
             resuelva.Parameters.Add(new SqlParameter("@IdEstado", objeto.IdEstado));
             Ejecutar(resuelva);
-        }
+        }*/
 
         public DataSet ListarEmpleados()
         {
@@ -153,12 +166,12 @@ namespace ProyectoProgra3.ProyectoCD
             return Consultar(resuelva, "TblEmpleados");
         }
 
-        public DataSet FiltrarEmpleados(string tipo, string param)
+        /*public DataSet FiltrarEmpleados(string tipo, string param)
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = String.Format("select * from T_Empleados where {0} like '{1}%' ", tipo, param);
             return ConsultarFiltros(resuelva, "filtrarEmpleado");
-        }
+        }*/
 
         #endregion
 

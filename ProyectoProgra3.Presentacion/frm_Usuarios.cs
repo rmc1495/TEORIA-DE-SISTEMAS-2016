@@ -91,9 +91,9 @@ namespace ProyectoProgra3
             cBoxRol.DisplayMember = "Nombre";
             cBoxRol.ValueMember = "IdRol";
 
-            cBoxIdEmpleado.DataSource = Lista.Listar_IDEmpleados_EnComboBox();
+           /* cBoxIdEmpleado.DataSource = Lista.Listar_IDEmpleados_EnComboBox();
             cBoxIdEmpleado.DisplayMember = "IdEmpleado";
-            cBoxIdEmpleado.ValueMember = "IdEmpleado";
+            cBoxIdEmpleado.ValueMember = "IdEmpleado";*/
 
             Limpiar();
 

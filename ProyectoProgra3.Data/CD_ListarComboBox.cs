@@ -173,7 +173,7 @@ namespace ProyectoProgra3.ProyectoCD
             return _lista;
         }
 
-        public List<CD_Empleados> ObtenerListaIDEmpleados()
+        /*public List<CD_Empleados> ObtenerListaIDEmpleados()
         {
 
             List<CD_Empleados> _lista = new List<CD_Empleados>();
@@ -194,7 +194,7 @@ namespace ProyectoProgra3.ProyectoCD
             }
             conexion.Close();
             return _lista;
-        }
+        }*/
 
         public List<CD_Roles> ObtenerListaRol()
         {
