@@ -1,0 +1,6 @@
+{
+  "name": "Teoria-de-sistemas-2016",
+  "tagline": "PROYECTO PROGRAMADO",
+  "body": "## Synopsis\r\n\r\nProyecto Programado Teoria de Sistemas 2016\r\n\r\n## Si estan lactando con el git\r\n\r\nPregunten porque es un dolor de huevos estar haciendo reverts o resets. Yo tambien lacte en su momento.\r\n\r\n## Motivation\r\n\r\nPasar este curso y no toparse a Nicolas\r\n\r\n## Uso\r\n\r\nClonen el proyecto, trabajan sobre la carpeta clonada. Si quierene descargan el git scm y bretean con el bash, bajan el github y bretean con el shell o la desktop app o bajan el plugin de github para visual studio\r\n\r\n## Commits\r\n\r\nHacerlos cuando esten seguros de que las cosas funcionan\r\n\r\n## Si hacen commits\r\n\r\nDescriban los cambios que le hicieron.\r\n\r\n## License\r\n\r\nEsta vara es publico, asi que cualquiera puede verlo.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
