@@ -11,9 +11,11 @@ namespace ProyectoProgra3.ProyectoCD
     public class CD_Login
     {
 
-            private static string connStr = ConfigurationSettings.AppSettings["connectionString"];
+#pragma warning disable CS0618 // Type or member is obsolete
+        private static string connStr = ConfigurationSettings.AppSettings["connectionString"];
+#pragma warning restore CS0618 // Type or member is obsolete
 
-            public CD_Login()
+        public CD_Login()
             { }
 
             #region
@@ -53,10 +55,36 @@ namespace ProyectoProgra3.ProyectoCD
 
             private int _intId_RolPermiso;
             public int IntId_RolPermiso { get; set; }
-            #endregion
 
-            //este metodo aumenta el numero de intentos fallidos de un usuario
-            public static int AumentaIntentos(string strNombre)
+        public int IntIdUsuario
+        {
+            get
+            {
+                return _intIdUsuario;
+            }
+
+            set
+            {
+                _intIdUsuario = value;
+            }
+        }
+
+        public int IntIdUsuario1
+        {
+            get
+            {
+                return _intIdUsuario;
+            }
+
+            set
+            {
+                _intIdUsuario = value;
+            }
+        }
+        #endregion
+
+        //este metodo aumenta el numero de intentos fallidos de un usuario
+        public static int AumentaIntentos(string strNombre)
             {
                 int retorno = 0;
                 using (SqlConnection _cnx = new SqlConnection(connStr))

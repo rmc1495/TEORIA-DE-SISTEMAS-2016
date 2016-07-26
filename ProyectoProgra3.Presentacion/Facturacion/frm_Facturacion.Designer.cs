@@ -1,4 +1,6 @@
-﻿namespace ProyectoProgra3.Facturacion
+﻿using System.Windows.Forms;
+
+namespace ProyectoProgra3.Facturacion
 {
     partial class frm_Facturacion
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Facturacion));
-            this.gvFactura = new System.Windows.Forms.DataGridView();
+            this.GvFactura = new System.Windows.Forms.DataGridView();
             this.gvDetalleFactura = new System.Windows.Forms.DataGridView();
             this.IdDetalleFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,26 +63,26 @@
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gvFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleFactura)).BeginInit();
             this.tlsBtnRegis_Guardar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvFactura
             // 
-            this.gvFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GvFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdFactura,
             this.IdEmpleado,
             this.IdCliente,
             this.Fecha,
             this.Total1});
-            this.gvFactura.Location = new System.Drawing.Point(12, 56);
-            this.gvFactura.Name = "gvFactura";
-            this.gvFactura.RowHeadersVisible = false;
-            this.gvFactura.Size = new System.Drawing.Size(528, 231);
-            this.gvFactura.TabIndex = 5;
+            this.GvFactura.Location = new System.Drawing.Point(12, 56);
+            this.GvFactura.Name = "gvFactura";
+            this.GvFactura.RowHeadersVisible = false;
+            this.GvFactura.Size = new System.Drawing.Size(528, 231);
+            this.GvFactura.TabIndex = 5;
             // 
             // gvDetalleFactura
             // 
@@ -355,10 +357,10 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.tlsBtnRegis_Guardar);
             this.Controls.Add(this.gvDetalleFactura);
-            this.Controls.Add(this.gvFactura);
+            this.Controls.Add(this.GvFactura);
             this.Name = "frm_Facturacion";
             this.Text = "frm_Facturacion";
-            ((System.ComponentModel.ISupportInitialize)(this.gvFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleFactura)).EndInit();
             this.tlsBtnRegis_Guardar.ResumeLayout(false);
             this.tlsBtnRegis_Guardar.PerformLayout();
@@ -402,5 +404,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total1;
+
+        public DataGridView GvFactura
+        {
+            get
+            {
+                return gvFactura;
+            }
+
+            set
+            {
+                gvFactura = value;
+            }
+        }
     }
 }

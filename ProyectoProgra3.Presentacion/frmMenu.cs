@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using ProyectoProgra3.ProyectoCN;
+
 
 namespace ProyectoProgra3
 {
@@ -96,8 +92,24 @@ namespace ProyectoProgra3
 
         }
 
+        private void tlsGestionProd_Click(object sender, EventArgs e)
+        {
+            Inventario_y_Proveedor.frm_Producto producto = new Inventario_y_Proveedor.frm_Producto();
+            producto.Show();
+        }
 
+        private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
 
+            Inventario_y_Proveedor.frm_Proveedor proveedor = new Inventario_y_Proveedor.frm_Proveedor();
+            proveedor.Show();
 
+        }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimineto.Inventario_y_Proveedores.frm_Marcas marcas = new Mantenimineto.Inventario_y_Proveedores.frm_Marcas();
+            marcas.Show();
+        }
     }
 }

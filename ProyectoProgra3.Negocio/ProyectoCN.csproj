@@ -48,8 +48,8 @@
     <Compile Include="CN_ListarComboBox.cs" />
     <Compile Include="CN_Login.cs" />
     <Compile Include="CN_Marcas.cs" />
-    <Compile Include="CN_Productos.cs" />
-    <Compile Include="CN_Proveedores.cs" />
+    <Compile Include="Inventario_y_Proveedores\CN_Productos.cs" />
+    <Compile Include="Inventario_y_Proveedores\CN_Proveedores.cs" />
     <Compile Include="Mantenimiento\CN_Puesto.cs" />
     <Compile Include="CN_Roles.cs" />
     <Compile Include="CN_Seguridad.cs" />
@@ -58,6 +58,7 @@
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="Devolucion\CN_Devolucion.cs" />
     <Compile Include="Facturacion\CN_Facturacion.cs" />
+    <Compile Include="Mantenimiento\Inventario_y_Proveedor\CN_Marca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\CN_Ventas.cs" />
   </ItemGroup>

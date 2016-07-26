@@ -103,17 +103,17 @@
     <Compile Include="frm_Configuracion.Designer.cs">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Proveedores.cs">
+    <Compile Include="Inventario_y_Proveedor\frm_Producto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Proveedores.Designer.cs">
-      <DependentUpon>frm_Proveedores.cs</DependentUpon>
+    <Compile Include="Inventario_y_Proveedor\frm_Producto.Designer.cs">
+      <DependentUpon>frm_Producto.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Productos.cs">
+    <Compile Include="Inventario_y_Proveedor\frm_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Productos.Designer.cs">
-      <DependentUpon>frm_Productos.cs</DependentUpon>
+    <Compile Include="Inventario_y_Proveedor\frm_Proveedor.Designer.cs">
+      <DependentUpon>frm_Proveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
@@ -132,6 +132,12 @@
     </Compile>
     <Compile Include="Mantenimineto\frm_Puesto.Designer.cs">
       <DependentUpon>frm_Puesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimineto\Inventario_y_Proveedores\frm_Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimineto\Inventario_y_Proveedores\frm_Marcas.Designer.cs">
+      <DependentUpon>frm_Marcas.cs</DependentUpon>
     </Compile>
     <Compile Include="RRHH\frm_Empleados.cs">
       <SubType>Form</SubType>
@@ -198,8 +204,8 @@
     <EmbeddedResource Include="frm_Expediente.resx">
       <DependentUpon>frm_Expediente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Productos.resx">
-      <DependentUpon>frm_Productos.cs</DependentUpon>
+    <EmbeddedResource Include="Inventario_y_Proveedor\frm_Producto.resx">
+      <DependentUpon>frm_Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
@@ -207,14 +213,17 @@
     <EmbeddedResource Include="frm_Clientes_Mascota.resx">
       <DependentUpon>frm_Clientes_Mascota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventario_y_Proveedor\frm_Proveedor.resx">
+      <DependentUpon>frm_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimineto\frm_Puesto.resx">
       <DependentUpon>frm_Puesto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimineto\Inventario_y_Proveedores\frm_Marcas.resx">
+      <DependentUpon>frm_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RRHH\frm_Empleados.resx">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Proveedores.resx">
-      <DependentUpon>frm_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Registro_Usuarios.resx">
       <DependentUpon>frm_Registro_Usuarios.cs</DependentUpon>
@@ -330,7 +339,9 @@
   <ItemGroup>
     <None Include="Resources\Compras.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -14,7 +14,9 @@ namespace ProyectoProgra3.ProyectoCD
         public CD_Seguridad()
         { }
 
+#pragma warning disable CS0618 // Type or member is obsolete
         private static string connStr = ConfigurationSettings.AppSettings["connectionString"];
+#pragma warning restore CS0618 // Type or member is obsolete
 
         //este metodo trae los datos de seguridad para mostar el menu
         public static DataTable SeguridadMenu(int iduser)

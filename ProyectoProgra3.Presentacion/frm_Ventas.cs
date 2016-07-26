@@ -33,7 +33,7 @@ namespace ProyectoProgra3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frm_Productos p = new frm_Productos();
+            Inventario_y_Proveedor.frm_Producto p = new Inventario_y_Proveedor.frm_Producto();
             this.Close();
             p.ShowDialog();
         }

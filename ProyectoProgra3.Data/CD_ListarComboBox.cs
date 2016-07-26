@@ -127,51 +127,51 @@ namespace ProyectoProgra3.ProyectoCD
             return _lista;
         }
 
-        public List<CD_Marcas> ObtenerListaMarcas()
-        {
+        //public List<CD_Marcas> ObtenerListaMarcas()
+        //{
 
-            List<CD_Marcas> _lista = new List<CD_Marcas>();
-            ConexionBD con = new ConexionBD();
+        //    List<CD_Marcas> _lista = new List<CD_Marcas>();
+        //    ConexionBD con = new ConexionBD();
 
-            SqlConnection conexion = ConexionBD.obtenerconexionListas();
+        //    SqlConnection conexion = ConexionBD.obtenerconexionListas();
 
-            SqlCommand _comando = new SqlCommand("select IdMarca, Marca from T_Marcas", conexion);
-            SqlDataReader _reader = _comando.ExecuteReader();
-            while (_reader.Read())
-            {
-                CD_Marcas pmarcas = new CD_Marcas();
+        //    SqlCommand _comando = new SqlCommand("select IdMarca, Marca from T_Marcas", conexion);
+        //    SqlDataReader _reader = _comando.ExecuteReader();
+        //    while (_reader.Read())
+        //    {
+        //        CD_Marcas pmarcas = new CD_Marcas();
 
-                pmarcas.IdMarca = _reader.GetInt32(0);
-                pmarcas.Marca = _reader.GetString(1);
+        //        pmarcas.IdMarca = _reader.GetInt32(0);
+        //        pmarcas.Marca = _reader.GetString(1);
 
-                _lista.Add(pmarcas);
-            }
-            conexion.Close();
-            return _lista;
-        }
+        //        _lista.Add(pmarcas);
+        //    }
+        //    conexion.Close();
+        //    return _lista;
+        //}
 
-        public List<CD_Proveedores> ObtenerListaProveedores()
-        {
+        //public List<CD_Proveedores> ObtenerListaProveedores()
+        //{
 
-            List<CD_Proveedores> _lista = new List<CD_Proveedores>();
-            ConexionBD con = new ConexionBD();
+        //    List<CD_Proveedores> _lista = new List<CD_Proveedores>();
+        //    ConexionBD con = new ConexionBD();
 
-            SqlConnection conexion = ConexionBD.obtenerconexionListas();
+        //    SqlConnection conexion = ConexionBD.obtenerconexionListas();
 
-            SqlCommand _comando = new SqlCommand("select IdProveedor, Nombre from T_Proveedores", conexion);
-            SqlDataReader _reader = _comando.ExecuteReader();
-            while (_reader.Read())
-            {
-                CD_Proveedores pProve = new CD_Proveedores();
+        //    SqlCommand _comando = new SqlCommand("select IdProveedor, Nombre from T_Proveedores", conexion);
+        //    SqlDataReader _reader = _comando.ExecuteReader();
+        //    while (_reader.Read())
+        //    {
+        //        CD_Proveedores pProve = new CD_Proveedores();
 
-                pProve.IdProveedor = _reader.GetString(0);
-                pProve.Nombre= _reader.GetString(1);
+        //        pProve.IdProveedor = _reader.GetString(0);
+        //        pProve.Nombre= _reader.GetString(1);
 
-                _lista.Add(pProve);
-            }
-            conexion.Close();
-            return _lista;
-        }
+        //        _lista.Add(pProve);
+        //    }
+        //    conexion.Close();
+        //    return _lista;
+        //}
 
         /*public List<CD_Empleados> ObtenerListaIDEmpleados()
         {

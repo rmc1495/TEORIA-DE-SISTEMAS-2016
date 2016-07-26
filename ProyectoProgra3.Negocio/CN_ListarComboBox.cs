@@ -32,11 +32,11 @@ namespace ProyectoProgra3.ProyectoCN
             return capa.ObtenerListaTipoClientes();
         }
 
-        public List<ProyectoCD.CD_Marcas> Listar_Marcas_EnComboBox()
-        {
-            ProyectoCD.CD_ListarComboBox capa = new ProyectoCD.CD_ListarComboBox();
-            return capa.ObtenerListaMarcas();
-        }
+        //public List<ProyectoCD.CD_Marcas> Listar_Marcas_EnComboBox()
+        //{
+        //    ProyectoCD.CD_ListarComboBox capa = new ProyectoCD.CD_ListarComboBox();
+        //    return capa.ObtenerListaMarcas();
+        //}
 
         public List<ProyectoCD.CD_Categorias> Listar_Categorias_EnComboBox()
         {
@@ -44,11 +44,11 @@ namespace ProyectoProgra3.ProyectoCN
             return capa.ObtenerListaCategorias();
         }
 
-        public List<ProyectoCD.CD_Proveedores> Listar_Proveedores_EnComboBox()
-        {
-            ProyectoCD.CD_ListarComboBox capa = new ProyectoCD.CD_ListarComboBox();
-            return capa.ObtenerListaProveedores();
-        }
+        //public List<ProyectoCD.CD_Proveedores> Listar_Proveedores_EnComboBox()
+        //{
+        //    ProyectoCD.CD_ListarComboBox capa = new ProyectoCD.CD_ListarComboBox();
+        //    return capa.ObtenerListaProveedores();
+        //}
 
         public List<ProyectoCD.CD_Roles> Listar_Roles_EnComboBox()
         {
