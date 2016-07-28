@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtFechaTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCodigoTarjeta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbEmisor = new System.Windows.Forms.ComboBox();
+            this.cmbEmisorTarjeta = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNumeroTarjeta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtVueltoEfectivo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPagaEfectivo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTotalEfectivo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -60,9 +60,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNumeroFactura);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtNombreCliente);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(125, 12);
             this.groupBox1.Name = "groupBox1";
@@ -71,13 +71,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
             // 
-            // textBox1
+            // txtNumeroFactura
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(106, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtNumeroFactura.Enabled = false;
+            this.txtNumeroFactura.Location = new System.Drawing.Point(106, 13);
+            this.txtNumeroFactura.Name = "txtNumeroFactura";
+            this.txtNumeroFactura.Size = new System.Drawing.Size(147, 20);
+            this.txtNumeroFactura.TabIndex = 10;
             // 
             // label1
             // 
@@ -88,13 +88,13 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Nº Factura";
             // 
-            // textBox3
+            // txtNombreCliente
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(106, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtNombreCliente.Enabled = false;
+            this.txtNombreCliente.Location = new System.Drawing.Point(106, 38);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(147, 20);
+            this.txtNombreCliente.TabIndex = 8;
             // 
             // label3
             // 
@@ -109,11 +109,11 @@
             // 
             this.groupBox2.Controls.Add(this.txtFechaTarjeta);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtCodigoTarjeta);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.cmbEmisor);
+            this.groupBox2.Controls.Add(this.cmbEmisorTarjeta);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtNumeroTarjeta);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 84);
             this.groupBox2.Name = "groupBox2";
@@ -140,12 +140,12 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Fecha Expiración";
             // 
-            // textBox4
+            // txtCodigoTarjeta
             // 
-            this.textBox4.Location = new System.Drawing.Point(102, 78);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtCodigoTarjeta.Location = new System.Drawing.Point(102, 78);
+            this.txtCodigoTarjeta.Name = "txtCodigoTarjeta";
+            this.txtCodigoTarjeta.Size = new System.Drawing.Size(138, 20);
+            this.txtCodigoTarjeta.TabIndex = 16;
             // 
             // label5
             // 
@@ -156,20 +156,20 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Codigo Tarjeta";
             // 
-            // cmbEmisor
+            // cmbEmisorTarjeta
             // 
-            this.cmbEmisor.FormattingEnabled = true;
-            this.cmbEmisor.Items.AddRange(new object[] {
+            this.cmbEmisorTarjeta.FormattingEnabled = true;
+            this.cmbEmisorTarjeta.Items.AddRange(new object[] {
             "Visa",
             "MasterCard",
             "AmericanExpress",
             "Discover",
             "JCB",
             "Otros"});
-            this.cmbEmisor.Location = new System.Drawing.Point(103, 46);
-            this.cmbEmisor.Name = "cmbEmisor";
-            this.cmbEmisor.Size = new System.Drawing.Size(137, 21);
-            this.cmbEmisor.TabIndex = 14;
+            this.cmbEmisorTarjeta.Location = new System.Drawing.Point(103, 46);
+            this.cmbEmisorTarjeta.Name = "cmbEmisorTarjeta";
+            this.cmbEmisorTarjeta.Size = new System.Drawing.Size(137, 21);
+            this.cmbEmisorTarjeta.TabIndex = 14;
             // 
             // label4
             // 
@@ -180,12 +180,12 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Emisor";
             // 
-            // textBox2
+            // txtNumeroTarjeta
             // 
-            this.textBox2.Location = new System.Drawing.Point(102, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtNumeroTarjeta.Location = new System.Drawing.Point(102, 13);
+            this.txtNumeroTarjeta.Name = "txtNumeroTarjeta";
+            this.txtNumeroTarjeta.Size = new System.Drawing.Size(138, 20);
+            this.txtNumeroTarjeta.TabIndex = 12;
             // 
             // label2
             // 
@@ -198,11 +198,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.txtVueltoEfectivo);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.txtPagaEfectivo);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.txtTotalEfectivo);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.shapeContainer1);
             this.groupBox3.Location = new System.Drawing.Point(264, 84);
@@ -212,13 +212,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Efectivo";
             // 
-            // textBox7
+            // txtVueltoEfectivo
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(101, 78);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(147, 20);
-            this.textBox7.TabIndex = 19;
+            this.txtVueltoEfectivo.Enabled = false;
+            this.txtVueltoEfectivo.Location = new System.Drawing.Point(101, 78);
+            this.txtVueltoEfectivo.Name = "txtVueltoEfectivo";
+            this.txtVueltoEfectivo.Size = new System.Drawing.Size(147, 20);
+            this.txtVueltoEfectivo.TabIndex = 19;
             // 
             // label9
             // 
@@ -229,12 +229,12 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Vuelto";
             // 
-            // textBox5
+            // txtPagaEfectivo
             // 
-            this.textBox5.Location = new System.Drawing.Point(101, 13);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtPagaEfectivo.Location = new System.Drawing.Point(101, 13);
+            this.txtPagaEfectivo.Name = "txtPagaEfectivo";
+            this.txtPagaEfectivo.Size = new System.Drawing.Size(147, 20);
+            this.txtPagaEfectivo.TabIndex = 14;
             // 
             // label7
             // 
@@ -245,13 +245,13 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Paga con";
             // 
-            // textBox6
+            // txtTotalEfectivo
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(101, 38);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(147, 20);
-            this.textBox6.TabIndex = 12;
+            this.txtTotalEfectivo.Enabled = false;
+            this.txtTotalEfectivo.Location = new System.Drawing.Point(101, 38);
+            this.txtTotalEfectivo.Name = "txtTotalEfectivo";
+            this.txtTotalEfectivo.Size = new System.Drawing.Size(147, 20);
+            this.txtTotalEfectivo.TabIndex = 12;
             // 
             // label8
             // 
@@ -260,7 +260,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 11;
-            this.label8.Text = "Total1";
+            this.label8.Text = "Total";
             // 
             // shapeContainer1
             // 
@@ -298,6 +298,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Efectuar Pago";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Ventas_Pago
             // 
@@ -330,9 +331,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumeroFactura;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -340,17 +341,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox txtFechaTarjeta;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCodigoTarjeta;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbEmisor;
+        private System.Windows.Forms.ComboBox cmbEmisorTarjeta;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNumeroTarjeta;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtVueltoEfectivo;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPagaEfectivo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtTotalEfectivo;
         private System.Windows.Forms.Label label8;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;

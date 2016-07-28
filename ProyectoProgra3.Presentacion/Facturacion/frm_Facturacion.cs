@@ -11,26 +11,102 @@ namespace ProyectoProgra3.Facturacion
 {
     public partial class frm_Facturacion : Form
     {
+
         public frm_Facturacion()
         {
             InitializeComponent();
             ActualizarFacturacion();
-
         }
         void ActualizarFacturacion()
         {
             Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
-            GvFactura.DataSource = CN.ListarFactura().Tables[0];
-            GvFactura.Columns["int_IdFactura"].HeaderText = "ID Factura";
-            GvFactura.Columns["int_IdEmpleado"].HeaderText = "Empleado";
-            GvFactura.Columns["int_IdCliente"].HeaderText = "Cliente";
-            GvFactura.Columns["mny_Total"].HeaderText = "Total";
-            GvFactura.Columns["dtm_Fecha"].HeaderText = "Fecha";
+
+
+            string tabla = "tbl_Factura";
+            cBoxFiltrar.DataSource = CN.ComboBoxNombreColumna(tabla).Tables[0];
+            cBoxFiltrar.DisplayMember = "name";
+            cBoxFiltrar.ValueMember = "name";
+
+            gvFactura.DataSource = CN.ListarFactura().Tables[0];
+            gvFactura.Columns["int_IdFactura"].HeaderText = "ID Factura";
+            gvFactura.Columns["int_IdEmpleado"].HeaderText = "Empleado";
+            gvFactura.Columns["int_IdCliente"].HeaderText = "Cliente";
+            gvFactura.Columns["mny_Total"].HeaderText = "Total";
+            gvFactura.Columns["dtm_Fecha"].HeaderText = "Fecha";
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ActualizarFacturacion();
         }
+
+        private void gvFactura_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+                try 
+	            {
+                int ColumnaSeleccionada  = gvFactura.CurrentCell.RowIndex;
+
+                Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
+
+                CN.Dato = gvFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim();
+                txtNombreEmpleado.Text = CN.ObtenerNombreEmpleado(CN.Dato);
+                CN.Dato=  gvFactura.Rows[ColumnaSeleccionada].Cells[3].FormattedValue.ToString().Trim();
+                txtNombreCliente.Text = CN.ObtenerNombreCliente(CN.Dato);
+                
+                CN.V_id = gvFactura.Rows[ColumnaSeleccionada].Cells[1].FormattedValue.ToString().Trim();
+                
+                
+                gvDetalleFactura.DataSource = CN.FiltrarDetalleFactura(CN.V_id).Tables[0];
+                
+                gvDetalleFactura.Columns["int_IdDetalleFactura"].HeaderText = "ID";
+                gvDetalleFactura.Columns["int_Linea"].HeaderText = "Linea";
+                gvDetalleFactura.Columns["int_IdArticulo"].HeaderText = "IdArticulo";
+                gvDetalleFactura.Columns["int_IdServicio"].HeaderText = "IdServicio";
+                gvDetalleFactura.Columns["int_Cantidad"].HeaderText = "Cantidad";
+                gvDetalleFactura.Columns["mny_monto"].HeaderText = "Precio";
+                gvDetalleFactura.Columns["mny_Impuesto"].HeaderText = "Impuesto";
+                gvDetalleFactura.Columns["int_Descuento"].HeaderText = "Descuento";
+
+	            }
+	            catch (Exception)
+	            {
+                   // ColumnaSeleccionada = 0;
+		        //throw;
+	            }
+            
+                }
+
+        private void gvDetalleFactura_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ColumnaSeleccionada = gvFactura.CurrentCell.RowIndex;
+            Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
+
+            CN.Dato = gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim();
+            txtNombreArticulo .Text = CN.ObtenerNombreArticulo(CN.Dato);
+            CN.Dato = gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].FormattedValue.ToString().Trim();
+            txtNombreServicio.Text = CN.ObtenerNombreServicio(CN.Dato);
+
+        }
+
+        private void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFiltrar.Text.Trim() == "")
+            {
+                ActualizarFacturacion();
+            }
+            else 
+            {
+                Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
+
+                gvFactura.DataSource = CN.FiltrarFactura(txtFiltrar.Text.Trim(), cBoxFiltrar.SelectedValue.ToString().Trim()).Tables[0];
+                gvFactura.Columns["int_IdFactura"].HeaderText = "ID Factura";
+                gvFactura.Columns["int_IdEmpleado"].HeaderText = "Empleado";
+                gvFactura.Columns["int_IdCliente"].HeaderText = "Cliente";
+                gvFactura.Columns["mny_Total"].HeaderText = "Total";
+                gvFactura.Columns["dtm_Fecha"].HeaderText = "Fecha";
+            }
+        }
+
+        
     }
 }

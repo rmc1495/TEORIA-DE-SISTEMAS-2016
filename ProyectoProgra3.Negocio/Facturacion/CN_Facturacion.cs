@@ -13,7 +13,7 @@ namespace ProyectoProgra3.Facturacion
         #region Variables
 
         private string v_id;
-
+        private string dato;
 
         #endregion
 
@@ -24,6 +24,13 @@ namespace ProyectoProgra3.Facturacion
             get { return v_id; }
             set { v_id = value; }
         }
+
+        public string Dato
+        {
+            get { return dato; }
+            set { dato = value; }
+        }
+
         
         #endregion
 
@@ -42,10 +49,10 @@ namespace ProyectoProgra3.Facturacion
             return obtenerDts;
         }
 
-        public DataSet FiltrarDetalleFactura(string tipo, string param)
+        public DataSet FiltrarDetalleFactura(string id)
         {
             Facturacion.CD_Facturacion capa = new Facturacion.CD_Facturacion();
-            DataSet obtenerDts = capa.FiltrarDetalleFactura(tipo, param);
+            DataSet obtenerDts = capa.FiltrarDetalleFactura(id);
             return obtenerDts;
         }
 

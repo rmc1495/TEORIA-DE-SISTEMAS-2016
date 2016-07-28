@@ -30,6 +30,7 @@ namespace ProyectoProgra3.Facturacion
         #region Variables
         
         private string v_id;
+        private string dato;
 
         //private int idFactura;
         //private int idDetalleFactura;
@@ -51,7 +52,11 @@ namespace ProyectoProgra3.Facturacion
             get { return v_id; }
             set { v_id = value; }
         }
-       
+        public string Dato
+        {
+            get { return dato; }
+            set { dato = value; }
+        }
         //public int IdFactura
         //{
         //    get { return idFactura; }
@@ -106,10 +111,10 @@ namespace ProyectoProgra3.Facturacion
             return ConsultarFiltros(resuelva, "dbo.tbl_Factura");
         }
 
-         public DataSet FiltrarDetalleFactura(string tipo, string param)
+         public DataSet FiltrarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where {0} like '{1}%' ", tipo, param);
+            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [int_IdFactura]= {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 
@@ -117,7 +122,7 @@ namespace ProyectoProgra3.Facturacion
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = String.Format("SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('{0}')", NombreTabla);
-            return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
+            return ConsultarFiltros(resuelva, NombreTabla);
         }
 
         public String ObtenerNombreEmpleado(string id)

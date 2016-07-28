@@ -31,10 +31,10 @@ namespace ProyectoProgra3.ProyectoCD
 
         public string ObtenerConexion()
         {
-#pragma warning disable CS0618 // Type or member is obsolete
+// Type or member is obsolete
                               // _cadenaConexion = ConfigurationManager.ConnectionStrings["cadenadeconexion"].ConnectionString; //ese llamado una conectionstring no app setting por lo que no funciona si se usa en el app config actual
             _cadenaConexion = ConfigurationSettings.AppSettings["connectionString"];
-#pragma warning restore CS0618 // Type or member is obsolete
+ // Type or member is obsolete
             return _cadenaConexion;
         }
 
@@ -96,7 +96,7 @@ namespace ProyectoProgra3.ProyectoCD
 
         public static SqlConnection obtenerconexionListas()
         {
-            SqlConnection conexion = new SqlConnection("Data source = DESKTOP-ROBERTO; Initial Catalog = DB_TSistemas;"
+            SqlConnection conexion = new SqlConnection("Data source = localhost; Initial Catalog = DB_TSistemas;"
                 + "Integrated Security = True");
             conexion.Open();
             return conexion;

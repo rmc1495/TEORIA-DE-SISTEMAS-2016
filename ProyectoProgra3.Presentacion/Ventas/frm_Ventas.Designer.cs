@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMetodoPago = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvVentas = new System.Windows.Forms.DataGridView();
+            this.int_Linea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.int_IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrch_Descripion_Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.int_IdServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrch_Descripion_Servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.int_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mny_Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mny_Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.int_Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -74,116 +74,95 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvVentas)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 545);
-            this.panel1.TabIndex = 0;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1010, 539);
+            this.tabControl1.Size = new System.Drawing.Size(1041, 570);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.textBox11);
-            this.tabPage1.Controls.Add(this.textBox12);
+            this.tabPage1.Controls.Add(this.txtTotal);
             this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.textBox13);
+            this.tabPage1.Controls.Add(this.txtSubTotal);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.lblHora);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.cbMetodoPago);
             this.tabPage1.Controls.Add(this.txtUsuario);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.gvVentas);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtCodigo);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1002, 513);
+            this.tabPage1.Size = new System.Drawing.Size(1033, 544);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cajero";
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(795, 487);
+            this.label14.Location = new System.Drawing.Point(827, 490);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 20);
             this.label14.TabIndex = 13;
             this.label14.Text = "Total:";
             // 
-            // label15
+            // txtTotal
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(795, 452);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 20);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "IVA:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(878, 480);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(113, 27);
-            this.textBox11.TabIndex = 15;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(878, 449);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(113, 27);
-            this.textBox12.TabIndex = 18;
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(910, 483);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(113, 27);
+            this.txtTotal.TabIndex = 15;
+            this.txtTotal.Text = "0";
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(795, 422);
+            this.label16.Location = new System.Drawing.Point(827, 425);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(72, 20);
             this.label16.TabIndex = 14;
             this.label16.Text = "Subtotal:";
             // 
-            // textBox13
+            // txtSubTotal
             // 
-            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(878, 419);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(113, 27);
-            this.textBox13.TabIndex = 16;
+            this.txtSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSubTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubTotal.Location = new System.Drawing.Point(910, 422);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(113, 27);
+            this.txtSubTotal.TabIndex = 16;
+            this.txtSubTotal.Text = "0";
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.Location = new System.Drawing.Point(534, 466);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -193,46 +172,52 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.Location = new System.Drawing.Point(376, 466);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "Proceder Pago";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label5
+            // lblHora
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(466, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Fecha";
+            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(466, 21);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(30, 13);
+            this.lblHora.TabIndex = 9;
+            this.lblHora.Text = "Hora";
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(567, 429);
+            this.label4.Location = new System.Drawing.Point(595, 429);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Metodo de Pago";
             // 
-            // comboBox1
+            // cbMetodoPago
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbMetodoPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMetodoPago.FormattingEnabled = true;
+            this.cbMetodoPago.Items.AddRange(new object[] {
             "Efectivo",
             "Tarjeta Credito",
             "Tarjeta Debito"});
-            this.comboBox1.Location = new System.Drawing.Point(659, 424);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "Efectivo";
+            this.cbMetodoPago.Location = new System.Drawing.Point(687, 426);
+            this.cbMetodoPago.Name = "cbMetodoPago";
+            this.cbMetodoPago.Size = new System.Drawing.Size(121, 21);
+            this.cbMetodoPago.TabIndex = 1;
+            this.cbMetodoPago.Text = "Efectivo";
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtUsuario.Location = new System.Drawing.Point(109, 419);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(126, 20);
@@ -240,6 +225,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 422);
             this.label3.Name = "label3";
@@ -247,82 +233,120 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Nombre del Cliente";
             // 
-            // dataGridView1
+            // gvVentas
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column5,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column6,
-            this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(1, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 368);
-            this.dataGridView1.TabIndex = 4;
+            this.gvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.gvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.int_Linea,
+            this.int_IdArticulo,
+            this.vrch_Descripion_Articulo,
+            this.int_IdServicio,
+            this.vrch_Descripion_Servicio,
+            this.int_Cantidad,
+            this.mny_Monto,
+            this.mny_Impuesto,
+            this.int_Descuento});
+            this.gvVentas.Location = new System.Drawing.Point(1, 47);
+            this.gvVentas.Name = "gvVentas";
+            this.gvVentas.RowHeadersVisible = false;
+            this.gvVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.gvVentas.Size = new System.Drawing.Size(1030, 368);
+            this.gvVentas.TabIndex = 4;
             // 
-            // Column1
+            // int_Linea
             // 
-            this.Column1.HeaderText = "Codigo(IdArticulo)";
-            this.Column1.Name = "Column1";
+            this.int_Linea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.int_Linea.HeaderText = "int_Linea";
+            this.int_Linea.Name = "int_Linea";
+            this.int_Linea.ReadOnly = true;
             // 
-            // Column5
+            // int_IdArticulo
             // 
-            this.Column5.HeaderText = "IdServicio";
-            this.Column5.Name = "Column5";
+            this.int_IdArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.int_IdArticulo.HeaderText = "int_IdArticulo";
+            this.int_IdArticulo.Name = "int_IdArticulo";
+            this.int_IdArticulo.ReadOnly = true;
+            this.int_IdArticulo.Visible = false;
             // 
-            // Column2
+            // vrch_Descripion_Articulo
             // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
+            this.vrch_Descripion_Articulo.HeaderText = "vrch_Descripion_Articulo";
+            this.vrch_Descripion_Articulo.Name = "vrch_Descripion_Articulo";
+            this.vrch_Descripion_Articulo.ReadOnly = true;
             // 
-            // Column3
+            // int_IdServicio
             // 
-            this.Column3.HeaderText = "Precio";
-            this.Column3.Name = "Column3";
+            this.int_IdServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.int_IdServicio.HeaderText = "int_IdServicio";
+            this.int_IdServicio.Name = "int_IdServicio";
+            this.int_IdServicio.ReadOnly = true;
+            this.int_IdServicio.Visible = false;
             // 
-            // Column4
+            // vrch_Descripion_Servicio
             // 
-            this.Column4.HeaderText = "Descripcion";
-            this.Column4.Name = "Column4";
+            this.vrch_Descripion_Servicio.HeaderText = "vrch_Descripion_Servicio";
+            this.vrch_Descripion_Servicio.Name = "vrch_Descripion_Servicio";
+            this.vrch_Descripion_Servicio.ReadOnly = true;
             // 
-            // Column6
+            // int_Cantidad
             // 
-            this.Column6.HeaderText = "Cantidad";
-            this.Column6.Name = "Column6";
+            this.int_Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.int_Cantidad.HeaderText = "int_Cantidad";
+            this.int_Cantidad.Name = "int_Cantidad";
+            this.int_Cantidad.ReadOnly = true;
             // 
-            // Column7
+            // mny_Monto
             // 
-            this.Column7.HeaderText = "Descuento";
-            this.Column7.Name = "Column7";
+            this.mny_Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.mny_Monto.HeaderText = "mny_Monto";
+            this.mny_Monto.Name = "mny_Monto";
+            this.mny_Monto.ReadOnly = true;
+            // 
+            // mny_Impuesto
+            // 
+            this.mny_Impuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.mny_Impuesto.HeaderText = "mny_Impuesto";
+            this.mny_Impuesto.Name = "mny_Impuesto";
+            this.mny_Impuesto.ReadOnly = true;
+            // 
+            // int_Descuento
+            // 
+            this.int_Descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.int_Descuento.HeaderText = "int_Descuento";
+            this.int_Descuento.Name = "int_Descuento";
+            this.int_Descuento.ReadOnly = true;
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(889, 21);
+            this.textBox2.Location = new System.Drawing.Point(925, 18);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 3;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(783, 24);
+            this.label2.Location = new System.Drawing.Point(819, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre del Usuario";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(53, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(53, 21);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // label1
             // 
@@ -356,7 +380,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1002, 513);
+            this.tabPage2.Size = new System.Drawing.Size(1033, 544);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Devolucion";
             // 
@@ -504,20 +528,23 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 0;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frm_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(1041, 570);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
             this.Name = "frm_Ventas";
             this.Text = "Ventas";
-            this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvVentas)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -526,27 +553,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMetodoPago;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridView gvVentas;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox textBox10;
@@ -567,10 +586,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn int_Linea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn int_IdArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrch_Descripion_Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn int_IdServicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrch_Descripion_Servicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn int_Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mny_Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mny_Impuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn int_Descuento;
     }
 }
