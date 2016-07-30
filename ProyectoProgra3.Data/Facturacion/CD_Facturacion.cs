@@ -100,7 +100,7 @@ namespace ProyectoProgra3.Facturacion
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = ELIMINAR_FACTURAS;
-            resuelva.Parameters.Add(new SqlParameter("@int_IdFactura", id));
+            resuelva.Parameters.Add(new SqlParameter("@Int_IdFactura", id));
             Ejecutar(resuelva);
         }
 
@@ -114,7 +114,7 @@ namespace ProyectoProgra3.Facturacion
          public DataSet FiltrarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [int_IdFactura]= {0}", id);
+            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [Int_IdFactura]= {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 
@@ -142,13 +142,13 @@ namespace ProyectoProgra3.Facturacion
         public String ObtenerNombreArticulo(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Descripion from [dbo].[tbl_Articulo] where [int_IdArticulo] = {0}", id);
+            resuelva.CommandText = String.Format("Select vrch_Descripion from [dbo].[tbl_Articulo] where [Int_IdArticulo] = {0}", id);
             return id;
         }
         public String ObtenerNombreServicio(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Descripcion from [dbo].[tbl_Servicio] where [int_IdServicio] = {0}", id);
+            resuelva.CommandText = String.Format("Select vrch_Descripcion from [dbo].[tbl_Servicio] where [Int_IdServicio] = {0}", id);
             return id;
         }
         
@@ -162,7 +162,7 @@ namespace ProyectoProgra3.Facturacion
         public DataSet ListarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [int_IdFactura] = {0}", id);
+            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [Int_IdFactura] = {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 

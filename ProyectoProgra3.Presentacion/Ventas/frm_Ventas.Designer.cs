@@ -75,6 +75,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtIDUsuario = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvVentas)).BeginInit();
@@ -95,6 +97,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.tabPage1.Controls.Add(this.txtIDUsuario);
+            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.txtTotal);
             this.tabPage1.Controls.Add(this.label16);
@@ -218,7 +222,8 @@
             // txtUsuario
             // 
             this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtUsuario.Location = new System.Drawing.Point(109, 419);
+            this.txtUsuario.Enabled = false;
+            this.txtUsuario.Location = new System.Drawing.Point(109, 468);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(126, 20);
             this.txtUsuario.TabIndex = 6;
@@ -227,7 +232,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 422);
+            this.label3.Location = new System.Drawing.Point(7, 471);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 5;
@@ -261,15 +266,15 @@
             // int_Linea
             // 
             this.int_Linea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_Linea.HeaderText = "int_Linea";
-            this.int_Linea.Name = "int_Linea";
+            this.int_Linea.HeaderText = "Int_Linea";
+            this.int_Linea.Name = "Int_Linea";
             this.int_Linea.ReadOnly = true;
             // 
             // int_IdArticulo
             // 
             this.int_IdArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_IdArticulo.HeaderText = "int_IdArticulo";
-            this.int_IdArticulo.Name = "int_IdArticulo";
+            this.int_IdArticulo.HeaderText = "Int_IdArticulo";
+            this.int_IdArticulo.Name = "Int_IdArticulo";
             this.int_IdArticulo.ReadOnly = true;
             this.int_IdArticulo.Visible = false;
             // 
@@ -282,8 +287,8 @@
             // int_IdServicio
             // 
             this.int_IdServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_IdServicio.HeaderText = "int_IdServicio";
-            this.int_IdServicio.Name = "int_IdServicio";
+            this.int_IdServicio.HeaderText = "Int_IdServicio";
+            this.int_IdServicio.Name = "Int_IdServicio";
             this.int_IdServicio.ReadOnly = true;
             this.int_IdServicio.Visible = false;
             // 
@@ -296,22 +301,22 @@
             // int_Cantidad
             // 
             this.int_Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_Cantidad.HeaderText = "int_Cantidad";
-            this.int_Cantidad.Name = "int_Cantidad";
+            this.int_Cantidad.HeaderText = "Int_Cantidad";
+            this.int_Cantidad.Name = "Int_Cantidad";
             this.int_Cantidad.ReadOnly = true;
             // 
             // mny_Monto
             // 
             this.mny_Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.mny_Monto.HeaderText = "mny_Monto";
-            this.mny_Monto.Name = "mny_Monto";
+            this.mny_Monto.HeaderText = "Mny_Monto";
+            this.mny_Monto.Name = "Mny_Monto";
             this.mny_Monto.ReadOnly = true;
             // 
             // mny_Impuesto
             // 
             this.mny_Impuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.mny_Impuesto.HeaderText = "mny_Impuesto";
-            this.mny_Impuesto.Name = "mny_Impuesto";
+            this.mny_Impuesto.HeaderText = "Mny_Impuesto";
+            this.mny_Impuesto.Name = "Mny_Impuesto";
             this.mny_Impuesto.ReadOnly = true;
             // 
             // int_Descuento
@@ -532,6 +537,25 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // txtIDUsuario
+            // 
+            this.txtIDUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtIDUsuario.Location = new System.Drawing.Point(109, 431);
+            this.txtIDUsuario.Name = "txtIDUsuario";
+            this.txtIDUsuario.Size = new System.Drawing.Size(126, 20);
+            this.txtIDUsuario.TabIndex = 18;
+            this.txtIDUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp_1);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 434);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Codigo del Cliente";
+            // 
             // frm_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,5 +623,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mny_Monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn mny_Impuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn int_Descuento;
+        private System.Windows.Forms.TextBox txtIDUsuario;
+        private System.Windows.Forms.Label label5;
     }
 }

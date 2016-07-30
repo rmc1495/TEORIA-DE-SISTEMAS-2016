@@ -28,11 +28,11 @@ namespace ProyectoProgra3.Facturacion
             cBoxFiltrar.ValueMember = "name";
 
             gvFactura.DataSource = CN.ListarFactura().Tables[0];
-            gvFactura.Columns["int_IdFactura"].HeaderText = "ID Factura";
-            gvFactura.Columns["int_IdEmpleado"].HeaderText = "Empleado";
-            gvFactura.Columns["int_IdCliente"].HeaderText = "Cliente";
-            gvFactura.Columns["mny_Total"].HeaderText = "Total";
-            gvFactura.Columns["dtm_Fecha"].HeaderText = "Fecha";
+            gvFactura.Columns["Int_IdFactura"].HeaderText = "ID Factura";
+            gvFactura.Columns["Int_IdEmpleado"].HeaderText = "Empleado";
+            gvFactura.Columns["Int_IdCliente"].HeaderText = "Cliente";
+            gvFactura.Columns["Mny_Total"].HeaderText = "Total";
+            gvFactura.Columns["Dtm_Fecha"].HeaderText = "Fecha";
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -59,12 +59,12 @@ namespace ProyectoProgra3.Facturacion
                 gvDetalleFactura.DataSource = CN.FiltrarDetalleFactura(CN.V_id).Tables[0];
                 
                 gvDetalleFactura.Columns["int_IdDetalleFactura"].HeaderText = "ID";
-                gvDetalleFactura.Columns["int_Linea"].HeaderText = "Linea";
-                gvDetalleFactura.Columns["int_IdArticulo"].HeaderText = "IdArticulo";
-                gvDetalleFactura.Columns["int_IdServicio"].HeaderText = "IdServicio";
-                gvDetalleFactura.Columns["int_Cantidad"].HeaderText = "Cantidad";
+                gvDetalleFactura.Columns["Int_Linea"].HeaderText = "Linea";
+                gvDetalleFactura.Columns["Int_IdArticulo"].HeaderText = "IdArticulo";
+                gvDetalleFactura.Columns["Int_IdServicio"].HeaderText = "IdServicio";
+                gvDetalleFactura.Columns["Int_Cantidad"].HeaderText = "Cantidad";
                 gvDetalleFactura.Columns["mny_monto"].HeaderText = "Precio";
-                gvDetalleFactura.Columns["mny_Impuesto"].HeaderText = "Impuesto";
+                gvDetalleFactura.Columns["Mny_Impuesto"].HeaderText = "Impuesto";
                 gvDetalleFactura.Columns["int_Descuento"].HeaderText = "Descuento";
 
 	            }
@@ -99,11 +99,11 @@ namespace ProyectoProgra3.Facturacion
                 Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
 
                 gvFactura.DataSource = CN.FiltrarFactura(txtFiltrar.Text.Trim(), cBoxFiltrar.SelectedValue.ToString().Trim()).Tables[0];
-                gvFactura.Columns["int_IdFactura"].HeaderText = "ID Factura";
-                gvFactura.Columns["int_IdEmpleado"].HeaderText = "Empleado";
-                gvFactura.Columns["int_IdCliente"].HeaderText = "Cliente";
-                gvFactura.Columns["mny_Total"].HeaderText = "Total";
-                gvFactura.Columns["dtm_Fecha"].HeaderText = "Fecha";
+                gvFactura.Columns["Int_IdFactura"].HeaderText = "ID Factura";
+                gvFactura.Columns["Int_IdEmpleado"].HeaderText = "Empleado";
+                gvFactura.Columns["Int_IdCliente"].HeaderText = "Cliente";
+                gvFactura.Columns["Mny_Total"].HeaderText = "Total";
+                gvFactura.Columns["Dtm_Fecha"].HeaderText = "Fecha";
             }
         }
 

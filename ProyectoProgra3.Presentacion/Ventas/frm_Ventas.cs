@@ -15,30 +15,27 @@ namespace ProyectoProgra3.Ventas
         Ventas.CN_Ventas CN = new Ventas.CN_Ventas();
         int Linea=0;
         //DataTable DetalleFactura = new System.Data.DataTable();
-        //int IdDetalleFactura = 0;
+        //int IdDetalleFactura = 0
         public frm_Ventas()
         {
             InitializeComponent();
             timer1.Start();
 
             limpiartabla();
-            
-
-
-
+       
         }
         public void limpiartabla ()
         {
             CN.DetalleFactura.Clear();
             CN.DetalleFactura.Columns.Add("int_IdDetalleFactura", typeof(int));
-            CN.DetalleFactura.Columns.Add("int_IdFactura", typeof(int));
-            CN.DetalleFactura.Columns.Add("int_Linea", typeof(int));
-            CN.DetalleFactura.Columns.Add("int_IdArticulo", typeof(int));
-            CN.DetalleFactura.Columns.Add("int_IdServicio", typeof(int));
-            CN.DetalleFactura.Columns.Add("int_Cantidad", typeof(int));
-            CN.DetalleFactura.Columns.Add("mny_Monto", typeof(double));
-            CN.DetalleFactura.Columns.Add("mny_Impuesto", typeof(double));
-            CN.DetalleFactura.Columns.Add("mny_Descuento", typeof(double));
+            CN.DetalleFactura.Columns.Add("Int_IdFactura", typeof(int));
+            CN.DetalleFactura.Columns.Add("Int_Linea", typeof(int));
+            CN.DetalleFactura.Columns.Add("Int_IdArticulo", typeof(int));
+            CN.DetalleFactura.Columns.Add("Int_IdServicio", typeof(int));
+            CN.DetalleFactura.Columns.Add("Int_Cantidad", typeof(int));
+            CN.DetalleFactura.Columns.Add("Mny_Monto", typeof(double));
+            CN.DetalleFactura.Columns.Add("Mny_Impuesto", typeof(double));
+            CN.DetalleFactura.Columns.Add("Mny_Descuento", typeof(double));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -130,7 +127,7 @@ namespace ProyectoProgra3.Ventas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             int i = 1;
             while (i < gvVentas.Rows.Count) //pasa los datos del datagridview al datatable
             {
@@ -154,6 +151,24 @@ namespace ProyectoProgra3.Ventas
             
             frmHijo.WindowState = FormWindowState.Normal;
             frmHijo.Show();
+        }
+
+        private void textBox1_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DataTable Consulta = CN.ConsultarCliente(txtIDUsuario.Text.Trim()).Tables[0];
+
+                if (Consulta.Rows.Count <= 0)
+                {
+                    CN.Int_IdCliente = 1;  // cliente default
+                }
+                else
+                {
+                    CN.Int_IdCliente = Convert.ToInt32(Consulta.Rows[0][0].ToString().Trim());
+                    txtUsuario.Text = Consulta.Rows[0][1].ToString().Trim();
+                }
+            }
         }
     }
 }
