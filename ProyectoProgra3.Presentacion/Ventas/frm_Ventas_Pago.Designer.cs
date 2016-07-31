@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -60,8 +58,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNumeroFactura);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNombreCliente);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(125, 12);
@@ -71,27 +67,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
             // 
-            // txtNumeroFactura
-            // 
-            this.txtNumeroFactura.Enabled = false;
-            this.txtNumeroFactura.Location = new System.Drawing.Point(106, 13);
-            this.txtNumeroFactura.Name = "txtNumeroFactura";
-            this.txtNumeroFactura.Size = new System.Drawing.Size(147, 20);
-            this.txtNumeroFactura.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nº Factura";
-            // 
             // txtNombreCliente
             // 
             this.txtNombreCliente.Enabled = false;
-            this.txtNombreCliente.Location = new System.Drawing.Point(106, 38);
+            this.txtNombreCliente.Location = new System.Drawing.Point(106, 23);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(147, 20);
             this.txtNombreCliente.TabIndex = 8;
@@ -99,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 41);
+            this.label3.Location = new System.Drawing.Point(6, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 7;
@@ -333,8 +312,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNumeroFactura;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button2;

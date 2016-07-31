@@ -26,6 +26,9 @@ namespace ProyectoProgra3.Ventas
        private string mny_Impuesto;
        private string mny_Descuento;
 
+       private string empleadoNombre;
+       private double total;
+
         #endregion
 
         #region Propiedades
@@ -99,6 +102,16 @@ namespace ProyectoProgra3.Ventas
             {
                 get { return mny_Descuento; }
                 set { mny_Descuento = value; }
+            }
+            public string EmpleadoNombre
+            {
+                get { return empleadoNombre; }
+                set { empleadoNombre = value; }
+            }
+            public double Total
+            {
+                get { return total; }
+                set { total = value; }
             }
         #endregion
 

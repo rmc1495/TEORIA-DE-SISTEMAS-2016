@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtIDUsuario = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -43,16 +45,16 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gvVentas = new System.Windows.Forms.DataGridView();
-            this.int_Linea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.int_IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Int_Linea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Int_IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrch_Descripion_Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.int_IdServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Int_IdServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrch_Descripion_Servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.int_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mny_Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mny_Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Int_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mny_Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mny_Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.int_Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtIDUsuario = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvVentas)).BeginInit();
@@ -111,7 +111,7 @@
             this.tabPage1.Controls.Add(this.txtUsuario);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.gvVentas);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.txtEmpleado);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.txtCodigo);
             this.tabPage1.Controls.Add(this.label1);
@@ -121,6 +121,25 @@
             this.tabPage1.Size = new System.Drawing.Size(1033, 544);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cajero";
+            // 
+            // txtIDUsuario
+            // 
+            this.txtIDUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtIDUsuario.Location = new System.Drawing.Point(109, 431);
+            this.txtIDUsuario.Name = "txtIDUsuario";
+            this.txtIDUsuario.Size = new System.Drawing.Size(126, 20);
+            this.txtIDUsuario.TabIndex = 18;
+            this.txtIDUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp_1);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 434);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Codigo del Cliente";
             // 
             // label14
             // 
@@ -247,14 +266,14 @@
             this.gvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.gvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.int_Linea,
-            this.int_IdArticulo,
+            this.Int_Linea,
+            this.Int_IdArticulo,
             this.vrch_Descripion_Articulo,
-            this.int_IdServicio,
+            this.Int_IdServicio,
             this.vrch_Descripion_Servicio,
-            this.int_Cantidad,
-            this.mny_Monto,
-            this.mny_Impuesto,
+            this.Int_Cantidad,
+            this.Mny_Monto,
+            this.Mny_Impuesto,
             this.int_Descuento});
             this.gvVentas.Location = new System.Drawing.Point(1, 47);
             this.gvVentas.Name = "gvVentas";
@@ -263,20 +282,20 @@
             this.gvVentas.Size = new System.Drawing.Size(1030, 368);
             this.gvVentas.TabIndex = 4;
             // 
-            // int_Linea
+            // Int_Linea
             // 
-            this.int_Linea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_Linea.HeaderText = "Int_Linea";
-            this.int_Linea.Name = "Int_Linea";
-            this.int_Linea.ReadOnly = true;
+            this.Int_Linea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Int_Linea.HeaderText = "Int_Linea";
+            this.Int_Linea.Name = "Int_Linea";
+            this.Int_Linea.ReadOnly = true;
             // 
-            // int_IdArticulo
+            // Int_IdArticulo
             // 
-            this.int_IdArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_IdArticulo.HeaderText = "Int_IdArticulo";
-            this.int_IdArticulo.Name = "Int_IdArticulo";
-            this.int_IdArticulo.ReadOnly = true;
-            this.int_IdArticulo.Visible = false;
+            this.Int_IdArticulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Int_IdArticulo.HeaderText = "Int_IdArticulo";
+            this.Int_IdArticulo.Name = "Int_IdArticulo";
+            this.Int_IdArticulo.ReadOnly = true;
+            this.Int_IdArticulo.Visible = false;
             // 
             // vrch_Descripion_Articulo
             // 
@@ -284,13 +303,13 @@
             this.vrch_Descripion_Articulo.Name = "vrch_Descripion_Articulo";
             this.vrch_Descripion_Articulo.ReadOnly = true;
             // 
-            // int_IdServicio
+            // Int_IdServicio
             // 
-            this.int_IdServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_IdServicio.HeaderText = "Int_IdServicio";
-            this.int_IdServicio.Name = "Int_IdServicio";
-            this.int_IdServicio.ReadOnly = true;
-            this.int_IdServicio.Visible = false;
+            this.Int_IdServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Int_IdServicio.HeaderText = "Int_IdServicio";
+            this.Int_IdServicio.Name = "Int_IdServicio";
+            this.Int_IdServicio.ReadOnly = true;
+            this.Int_IdServicio.Visible = false;
             // 
             // vrch_Descripion_Servicio
             // 
@@ -298,26 +317,26 @@
             this.vrch_Descripion_Servicio.Name = "vrch_Descripion_Servicio";
             this.vrch_Descripion_Servicio.ReadOnly = true;
             // 
-            // int_Cantidad
+            // Int_Cantidad
             // 
-            this.int_Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.int_Cantidad.HeaderText = "Int_Cantidad";
-            this.int_Cantidad.Name = "Int_Cantidad";
-            this.int_Cantidad.ReadOnly = true;
+            this.Int_Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Int_Cantidad.HeaderText = "Int_Cantidad";
+            this.Int_Cantidad.Name = "Int_Cantidad";
+            this.Int_Cantidad.ReadOnly = true;
             // 
-            // mny_Monto
+            // Mny_Monto
             // 
-            this.mny_Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.mny_Monto.HeaderText = "Mny_Monto";
-            this.mny_Monto.Name = "Mny_Monto";
-            this.mny_Monto.ReadOnly = true;
+            this.Mny_Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Mny_Monto.HeaderText = "Mny_Monto";
+            this.Mny_Monto.Name = "Mny_Monto";
+            this.Mny_Monto.ReadOnly = true;
             // 
-            // mny_Impuesto
+            // Mny_Impuesto
             // 
-            this.mny_Impuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.mny_Impuesto.HeaderText = "Mny_Impuesto";
-            this.mny_Impuesto.Name = "Mny_Impuesto";
-            this.mny_Impuesto.ReadOnly = true;
+            this.Mny_Impuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Mny_Impuesto.HeaderText = "Mny_Impuesto";
+            this.Mny_Impuesto.Name = "Mny_Impuesto";
+            this.Mny_Impuesto.ReadOnly = true;
             // 
             // int_Descuento
             // 
@@ -326,14 +345,14 @@
             this.int_Descuento.Name = "int_Descuento";
             this.int_Descuento.ReadOnly = true;
             // 
-            // textBox2
+            // txtEmpleado
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(925, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmpleado.Enabled = false;
+            this.txtEmpleado.Location = new System.Drawing.Point(925, 18);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpleado.TabIndex = 3;
             // 
             // label2
             // 
@@ -537,25 +556,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txtIDUsuario
-            // 
-            this.txtIDUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtIDUsuario.Location = new System.Drawing.Point(109, 431);
-            this.txtIDUsuario.Name = "txtIDUsuario";
-            this.txtIDUsuario.Size = new System.Drawing.Size(126, 20);
-            this.txtIDUsuario.TabIndex = 18;
-            this.txtIDUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp_1);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 434);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Codigo del Cliente";
-            // 
             // frm_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,7 +587,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gvVentas;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
@@ -625,5 +625,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn int_Descuento;
         private System.Windows.Forms.TextBox txtIDUsuario;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Int_Linea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Int_IdArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Int_IdServicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Int_Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mny_Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mny_Impuesto;
     }
 }

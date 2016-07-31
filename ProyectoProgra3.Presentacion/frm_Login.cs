@@ -104,6 +104,11 @@ namespace ProyectoProgra3
                             int intentos = Convert.ToInt16(InfoUser.Rows[0].ItemArray[4].ToString());
                             string user = InfoUser.Rows[0].ItemArray[2].ToString();
                             string pass = InfoUser.Rows[0].ItemArray[3].ToString();
+                            
+                            Ventas.CN_Ventas CN = new Ventas.CN_Ventas(); //ocupo nombre de usuario y id para el uso en el Cajero
+                            CN.Int_IdEmpleado = idempleado;
+                            CN.EmpleadoNombre = user;
+                            
                             //este if verifica los intentos fallidos de ingreso de un usuario
                             if (intentos >= 3 && iduser != 1)
                             {

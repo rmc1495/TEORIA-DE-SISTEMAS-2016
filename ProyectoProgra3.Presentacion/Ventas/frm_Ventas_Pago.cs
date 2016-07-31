@@ -16,6 +16,10 @@ namespace ProyectoProgra3.Ventas
         public frm_Ventas_Pago()
         {
             InitializeComponent();
+            
+            txtNombreCliente.Text = CN.EmpleadoNombre;
+            txtTotalEfectivo.Text = Convert.ToString(CN.Total);
+
             if (CN.Metodo_de_Pago.Trim() == "Efectivo")
             {
                 txtNumeroTarjeta.Enabled = false;
@@ -46,12 +50,8 @@ namespace ProyectoProgra3.Ventas
 
             
 
-            //Aqui Agregar inseert a la base de datos
-
             Ventas.CN_Ventas CN = new Ventas.CN_Ventas();
-            RRHH.CN_Empleado CNE = new RRHH.CN_Empleado(); //Empleado esperando Capa de Negocios
-
-            CN.Int_IdEmpleado = CNE.IdEmpleado;         
+         
             CN.Mny_Total = CN.Int_IdCliente;
             CN.Dtm_Fecha = DateTime.Now;
             CN.Int_IdFactura = (CN.AgregarFacturayDevolverValor(CN).Tables[0]).ToString().Trim(); // Revisar si me retorna un valor y enviar el insert
@@ -86,6 +86,8 @@ namespace ProyectoProgra3.Ventas
             CN.Mny_Monto = "";
             CN.Mny_Impuesto = "";
             CN.Mny_Descuento = "";
+            CN.EmpleadoNombre = "";
+            CN.Total = 0;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ProyectoProgra3.Ventas
         {
             InitializeComponent();
             timer1.Start();
-
+            txtEmpleado.Text = CN.EmpleadoNombre;
             limpiartabla();
        
         }
@@ -145,6 +145,8 @@ namespace ProyectoProgra3.Ventas
             
 
             CN.Metodo_de_Pago = cbMetodoPago.SelectedItem.ToString().Trim();
+            CN.EmpleadoNombre = txtUsuario.Text;
+            CN.Total = Convert.ToDouble(txtTotal.Text);
 
             frm_Ventas_Pago frmHijo = new frm_Ventas_Pago();
             frmHijo.Owner = this;
