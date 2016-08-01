@@ -18,7 +18,7 @@ namespace ProyectoProgra3.Ventas
             InitializeComponent();
             
             txtNombreCliente.Text = CN.EmpleadoNombre;
-            txtTotalEfectivo.Text = Convert.ToString(CN.Total);
+            txtTotalEfectivo.Text = Convert.ToString(CN.Mny_Total);
 
             if (CN.Metodo_de_Pago.Trim() == "Efectivo")
             {
@@ -52,23 +52,23 @@ namespace ProyectoProgra3.Ventas
 
             Ventas.CN_Ventas CN = new Ventas.CN_Ventas();
          
-            CN.Mny_Total = CN.Int_IdCliente;
+            //CN.Mny_Total = CN.Int_IdCliente;
             CN.Dtm_Fecha = DateTime.Now;
             CN.Int_IdFactura = (CN.AgregarFacturayDevolverValor(CN).Tables[0]).ToString().Trim(); // Revisar si me retorna un valor y enviar el insert
 
             int i = 1;
-            while (i < CN.DetalleFactura.Rows.Count) //pasa los datos del datagridview al datatable
+            while (i <= CN.DetalleFactura.Rows.Count) //pasa los datos del datagridview al datatable
             {
-                CN.DetalleFactura.Rows[1][i - 1] = CN.Int_IdFactura;
+                CN.DetalleFactura.Rows[i - 1][1] = CN.Int_IdFactura;
 
-                CN.Int_IdFactura = CN.DetalleFactura.Rows[1][i - 1].ToString().Trim();
-                CN.Int_Linea = CN.DetalleFactura.Rows[2][i - 1].ToString().Trim();
-                CN.Int_IdArticulo = CN.DetalleFactura.Rows[3][i - 1].ToString().Trim();
-                CN.Int_IdServicio = CN.DetalleFactura.Rows[4][i - 1].ToString().Trim();
-                CN.Int_Cantidad = CN.DetalleFactura.Rows[5][i - 1].ToString().Trim();
-                CN.Mny_Monto = CN.DetalleFactura.Rows[6][i - 1].ToString().Trim();
-                CN.Mny_Impuesto = CN.DetalleFactura.Rows[7][i - 1].ToString().Trim();
-                CN.Mny_Descuento = CN.DetalleFactura.Rows[8][i - 1].ToString().Trim();
+                CN.Int_IdFactura = CN.DetalleFactura.Rows[i - 1][1].ToString().Trim();
+                CN.Int_Linea = CN.DetalleFactura.Rows[i - 1][2].ToString().Trim();
+                CN.Int_IdArticulo = CN.DetalleFactura.Rows[i - 1][3].ToString().Trim();
+                CN.Int_IdServicio = CN.DetalleFactura.Rows[i - 1][4].ToString().Trim();
+                CN.Int_Cantidad = CN.DetalleFactura.Rows[i - 1][5].ToString().Trim();
+                CN.Mny_Monto = CN.DetalleFactura.Rows[i - 1][6].ToString().Trim();
+                CN.Mny_Impuesto = CN.DetalleFactura.Rows[i - 1][7].ToString().Trim();
+                CN.Mny_Descuento = CN.DetalleFactura.Rows[i - 1][8].ToString().Trim();
 
                 CN.AgregarDetallesFactura(CN);
             }

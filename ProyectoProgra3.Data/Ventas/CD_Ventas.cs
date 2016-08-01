@@ -131,14 +131,14 @@ namespace ProyectoProgra3.Ventas
         public DataSet InsertarFacturayDevolverValor(CD_Ventas objeto)
         { 
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("INSERT INTO tbl_Factura (int_IdEmpleado,int_IdCliente,mny_Total,dtm_Fecha) VALUES ({0},{1},{2},'{3}') SELECT SCOPE_IDENTITY()", objeto.int_IdEmpleado, objeto.int_IdCliente, objeto.mny_Total, objeto.dtm_Fecha);
+            resuelva.CommandText = String.Format("INSERT INTO tbl_Factura (int_IdEmpleado,int_IdCliente,mny_Total,dtm_Fecha) VALUES ({0},{1},{2},'{3}') SELECT SCOPE_IDENTITY(tbl_Factura)", objeto.int_IdEmpleado, objeto.int_IdCliente, objeto.mny_Total, objeto.dtm_Fecha);
             //Ejecutar(resuelva);
             return ConsultarFiltros(resuelva, "dbo.tbl_Factura");
         }
         public DataSet ConsultarCliente(string param)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select int_IdCliente,vrch_Nombre From tbl_Cliente where int_IdCliente = {0}", param);
+            resuelva.CommandText = String.Format("Select int_IdCliente,vrch_Nombre From tbl_Cliente where vrch_NumCedula = {0}", param);
             return ConsultarFiltros(resuelva, "dbo.tbl_Cliente");
         }
         public void AgregarDetallesFactura(CD_Ventas objeto)

@@ -13,7 +13,6 @@ namespace ProyectoProgra3.Ventas
     {
        // DataTable Facturacion = new System.Data.DataTable();  //Crear en un boton para añadir datos a la Factura
         Ventas.CN_Ventas CN = new Ventas.CN_Ventas();
-        int Linea=0;
         //DataTable DetalleFactura = new System.Data.DataTable();
         //int IdDetalleFactura = 0
         public frm_Ventas()
@@ -76,8 +75,6 @@ namespace ProyectoProgra3.Ventas
                 }
                 else
                 {
-                    Linea = Linea + 1;
-
                     gvVentas.Rows.Insert(gvVentas.Rows.Count, 1);
                     if (BuscarServicio == true)
                     {
@@ -105,19 +102,19 @@ namespace ProyectoProgra3.Ventas
             int i = 1;
             double subtotal = 0;
             double total = 0;
-            while (i < gvVentas.Rows.Count)
+            while (i < gvVentas.Rows.Count+1)
             {
-                gvVentas.Rows[i - 1].Cells[2].Value = i;
-                
-                if(Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[8]) <= 0 ) //hay un problema si en la formula el descuento es de 0% se traga toda la formula y resultado seria 0 (Tomar en cuenta)
+                gvVentas.Rows[i - 1].Cells[0].Value = i;
+
+                if (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[8].Value.ToString()) <= 0) //hay un problema si en la formula el descuento es de 0% se traga toda la formula y resultado seria 0 (Tomar en cuenta)
                 {
-                    subtotal = subtotal + (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6])*Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5]));
-                    total = total + ((Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6])*(Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[7])/100)) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5]));//total = con impuesto
+                    subtotal = subtotal + (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString()) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5].Value.ToString()));
+                    total = total + ((Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString()) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[7].Value.ToString()) / 100) + Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString())) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5].Value.ToString()));//total = con impuesto
                 }
                 else
                 {
-                    subtotal = subtotal + ((Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6]) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[8])/100)) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5]));
-                    total = total + ((((Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6]) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[8]) / 100)) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[7]) / 100)) + Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6])) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5])); //((precio+Descuento+impuesto)*cantidad)
+                    subtotal = subtotal + ((Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString()) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[8].Value.ToString()) / 100) + Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString())) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5].Value.ToString()));
+                    total = total + ((((Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString()) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[8].Value.ToString()) / 100)) * (Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[7].Value.ToString()) / 100)) + Convert.ToDouble(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[6].Value.ToString())) * Convert.ToInt32(gvVentas.Rows[gvVentas.Rows.Count - 1].Cells[5].Value.ToString())); //((precio+Descuento+impuesto)*cantidad)
                 }
                 i++;
             }
@@ -127,26 +124,32 @@ namespace ProyectoProgra3.Ventas
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CN.DetalleFactura.Clear();
 
             int i = 1;
-            while (i < gvVentas.Rows.Count) //pasa los datos del datagridview al datatable
+            while (i <= gvVentas.Rows.Count) //pasa los datos del datagridview al datatable
             {
             DataRow dr = CN.DetalleFactura.NewRow();
-            dr[2] = gvVentas.Rows[0].Cells[i-1].FormattedValue.ToString().Trim();
-            dr[3] = gvVentas.Rows[1].Cells[i - 1].FormattedValue.ToString().Trim();
-            dr[4] = gvVentas.Rows[3].Cells[i - 1].FormattedValue.ToString().Trim();
-            dr[5] = gvVentas.Rows[5].Cells[i - 1].FormattedValue.ToString().Trim();
-            dr[6] = gvVentas.Rows[6].Cells[i - 1].FormattedValue.ToString().Trim();
-            dr[7] = gvVentas.Rows[7].Cells[i - 1].FormattedValue.ToString().Trim();
-            dr[8] = gvVentas.Rows[8].Cells[i - 1].FormattedValue.ToString().Trim();
+            dr[2] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[0].Value.ToString().Trim());
+            if (String.IsNullOrEmpty(gvVentas.Rows[i - 1].Cells[1].Value as String))
+            { }
+            else { dr[3] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[1].Value.ToString().Trim()); }
+            if (String.IsNullOrEmpty(gvVentas.Rows[i - 1].Cells[3].Value as String))
+            { }
+            else { dr[4] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[3].Value.ToString().Trim()); }
+            dr[5] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[5].Value.ToString().Trim()); 
+            dr[6] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[6].Value.ToString().Trim());
+            dr[7] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[7].Value.ToString().Trim());
+            dr[8] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[8].Value.ToString().Trim());
 
             CN.DetalleFactura.Rows.Add(dr);
+            i = i + 1;
             }
             
 
             CN.Metodo_de_Pago = cbMetodoPago.SelectedItem.ToString().Trim();
             CN.EmpleadoNombre = txtUsuario.Text;
-            CN.Total = Convert.ToDouble(txtTotal.Text);
+            CN.Mny_Total = Convert.ToDouble(txtTotal.Text);
 
             frm_Ventas_Pago frmHijo = new frm_Ventas_Pago();
             frmHijo.Owner = this;

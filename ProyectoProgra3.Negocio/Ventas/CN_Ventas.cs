@@ -9,12 +9,12 @@ namespace ProyectoProgra3.Ventas
    public class CN_Ventas
     {
         #region Variable
-       private DataTable detalleFactura = new System.Data.DataTable();
-       private string metodo_de_Pago;
+       private static DataTable detalleFactura = new System.Data.DataTable();
+       private static string metodo_de_Pago;
 
-       private int int_IdEmpleado;
-       private int int_IdCliente;
-       private double mny_Total;
+       private static int int_IdEmpleado;
+       private static int int_IdCliente;
+       private static double mny_Total;
        private DateTime dtm_Fecha;
 
        private string int_IdFactura;
@@ -22,12 +22,12 @@ namespace ProyectoProgra3.Ventas
        private string int_IdArticulo; 
        private string int_IdServicio;
        private string int_Cantidad;
-       private string mny_Monto;
+       private static string mny_Monto;
        private string mny_Impuesto;
        private string mny_Descuento;
 
-       private string empleadoNombre;
-       private double total;
+       private static string empleadoNombre;
+       private static double total;
 
         #endregion
 

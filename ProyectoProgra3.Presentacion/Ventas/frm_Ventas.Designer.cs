@@ -259,6 +259,7 @@
             // 
             // gvVentas
             // 
+            this.gvVentas.AllowUserToAddRows = false;
             this.gvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -322,7 +323,6 @@
             this.Int_Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Int_Cantidad.HeaderText = "Int_Cantidad";
             this.Int_Cantidad.Name = "Int_Cantidad";
-            this.Int_Cantidad.ReadOnly = true;
             // 
             // Mny_Monto
             // 
@@ -336,14 +336,12 @@
             this.Mny_Impuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Mny_Impuesto.HeaderText = "Mny_Impuesto";
             this.Mny_Impuesto.Name = "Mny_Impuesto";
-            this.Mny_Impuesto.ReadOnly = true;
             // 
             // int_Descuento
             // 
             this.int_Descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.int_Descuento.HeaderText = "int_Descuento";
             this.int_Descuento.Name = "int_Descuento";
-            this.int_Descuento.ReadOnly = true;
             // 
             // txtEmpleado
             // 
