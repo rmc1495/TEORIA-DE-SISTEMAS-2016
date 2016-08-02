@@ -63,28 +63,32 @@ namespace ProyectoProgra3.Facturacion
             return obtenerDts;
         }
 
-        public String ObtenerNombreEmpleado(string id)
+        public DataSet ObtenerNombreEmpleado(string id)
         {
            Facturacion.CD_Facturacion capa = new Facturacion.CD_Facturacion();
-           return capa.ObtenerNombreEmpleado(id);
+           DataSet obtenerDts = capa.ObtenerNombreEmpleado(id);
+           return obtenerDts;
         }
 
-        public String ObtenerNombreCliente(string id)
+        public DataSet ObtenerNombreCliente(string id)
         {
             Facturacion.CD_Facturacion capa = new Facturacion.CD_Facturacion();
-            return capa.ObtenerNombreCliente(id);
+            DataSet obtenerDts = capa.ObtenerNombreCliente(id);
+            return obtenerDts;
         }
 
-        public String ObtenerNombreArticulo(string id)
+        public DataSet ObtenerNombreArticulo(string id)
         {
             Facturacion.CD_Facturacion capa = new Facturacion.CD_Facturacion();
-            return capa.ObtenerNombreArticulo(id);
+            DataSet obtenerDts = capa.ObtenerNombreArticulo(id);
+            return obtenerDts;
         }
 
-        public String ObtenerNombreServicio(string id)
+        public DataSet ObtenerNombreServicio(string id)
         {
             Facturacion.CD_Facturacion capa = new Facturacion.CD_Facturacion();
-            return capa.ObtenerNombreServicio(id);
+            DataSet obtenerDts = capa.ObtenerNombreServicio(id);
+            return obtenerDts;
         }
 
         public DataSet ListarFactura()

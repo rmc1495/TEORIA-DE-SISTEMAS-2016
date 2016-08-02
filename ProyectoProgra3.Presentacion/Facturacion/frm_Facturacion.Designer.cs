@@ -30,20 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Facturacion));
             this.gvFactura = new System.Windows.Forms.DataGridView();
-            this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gvDetalleFactura = new System.Windows.Forms.DataGridView();
-            this.IdDetalleFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Linea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlsBtnRegis_Guardar = new System.Windows.Forms.ToolStrip();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
@@ -71,12 +58,6 @@
             this.gvFactura.AllowUserToDeleteRows = false;
             this.gvFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdFactura,
-            this.IdEmpleado,
-            this.IdCliente,
-            this.Fecha,
-            this.Total1});
             this.gvFactura.Location = new System.Drawing.Point(12, 56);
             this.gvFactura.Name = "gvFactura";
             this.gvFactura.ReadOnly = true;
@@ -85,51 +66,12 @@
             this.gvFactura.TabIndex = 5;
             this.gvFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvFactura_CellClick);
             // 
-            // IdFactura
-            // 
-            this.IdFactura.HeaderText = "Factura";
-            this.IdFactura.Name = "IdFactura";
-            this.IdFactura.ReadOnly = true;
-            // 
-            // IdEmpleado
-            // 
-            this.IdEmpleado.HeaderText = "Empleado";
-            this.IdEmpleado.Name = "IdEmpleado";
-            this.IdEmpleado.ReadOnly = true;
-            // 
-            // IdCliente
-            // 
-            this.IdCliente.HeaderText = "Cliente";
-            this.IdCliente.Name = "IdCliente";
-            this.IdCliente.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Total1
-            // 
-            this.Total1.HeaderText = "Total";
-            this.Total1.Name = "Total1";
-            this.Total1.ReadOnly = true;
-            // 
             // gvDetalleFactura
             // 
             this.gvDetalleFactura.AllowUserToAddRows = false;
             this.gvDetalleFactura.AllowUserToDeleteRows = false;
             this.gvDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDetalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdDetalleFactura,
-            this.Linea,
-            this.IdArticulo,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn4,
-            this.Impuesto,
-            this.dataGridViewTextBoxColumn7});
             this.gvDetalleFactura.Location = new System.Drawing.Point(539, 286);
             this.gvDetalleFactura.Name = "gvDetalleFactura";
             this.gvDetalleFactura.ReadOnly = true;
@@ -137,54 +79,6 @@
             this.gvDetalleFactura.Size = new System.Drawing.Size(583, 277);
             this.gvDetalleFactura.TabIndex = 6;
             this.gvDetalleFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDetalleFactura_CellClick);
-            // 
-            // IdDetalleFactura
-            // 
-            this.IdDetalleFactura.HeaderText = "ID";
-            this.IdDetalleFactura.Name = "IdDetalleFactura";
-            this.IdDetalleFactura.ReadOnly = true;
-            // 
-            // Linea
-            // 
-            this.Linea.HeaderText = "Linea";
-            this.Linea.Name = "Linea";
-            this.Linea.ReadOnly = true;
-            // 
-            // IdArticulo
-            // 
-            this.IdArticulo.HeaderText = "IdArticulo";
-            this.IdArticulo.Name = "IdArticulo";
-            this.IdArticulo.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "IdServicio";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Impuesto
-            // 
-            this.Impuesto.HeaderText = "Impuesto";
-            this.Impuesto.Name = "Impuesto";
-            this.Impuesto.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Descuento";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // tlsBtnRegis_Guardar
             // 
@@ -215,6 +109,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(29, 37);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -239,6 +134,7 @@
             this.tlsBtnRegis_Limpiar.Name = "tlsBtnRegis_Limpiar";
             this.tlsBtnRegis_Limpiar.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnRegis_Limpiar.Text = "Limpiar";
+            this.tlsBtnRegis_Limpiar.Click += new System.EventHandler(this.tlsBtnRegis_Limpiar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -312,11 +208,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 308);
+            this.label4.Location = new System.Drawing.Point(61, 308);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 21);
+            this.label4.Size = new System.Drawing.Size(166, 21);
             this.label4.TabIndex = 48;
-            this.label4.Text = "Nombre del Articulo(Codigo)";
+            this.label4.Text = "Nombre del Articulo";
             // 
             // txtNombreServicio
             // 
@@ -338,12 +234,14 @@
             // 
             // cBoxFiltrar
             // 
+            this.cBoxFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxFiltrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBoxFiltrar.FormattingEnabled = true;
             this.cBoxFiltrar.Location = new System.Drawing.Point(319, 18);
             this.cBoxFiltrar.Name = "cBoxFiltrar";
             this.cBoxFiltrar.Size = new System.Drawing.Size(149, 28);
             this.cBoxFiltrar.TabIndex = 50;
+            this.cBoxFiltrar.SelectedValueChanged += new System.EventHandler(this.cBoxFiltrar_SelectedValueChanged);
             // 
             // frm_Facturacion
             // 
@@ -394,19 +292,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombreServicio;
         private System.Windows.Forms.TextBox txtNombreArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Linea;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.ComboBox cBoxFiltrar;
     }
 }

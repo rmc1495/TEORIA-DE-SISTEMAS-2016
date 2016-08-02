@@ -17,6 +17,8 @@ namespace ProyectoProgra3.Facturacion
             InitializeComponent();
             ActualizarFacturacion();
         }
+
+       
         void ActualizarFacturacion()
         {
             Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
@@ -28,11 +30,8 @@ namespace ProyectoProgra3.Facturacion
             cBoxFiltrar.ValueMember = "name";
 
             gvFactura.DataSource = CN.ListarFactura().Tables[0];
-            gvFactura.Columns["Int_IdFactura"].HeaderText = "ID Factura";
-            gvFactura.Columns["Int_IdEmpleado"].HeaderText = "Empleado";
-            gvFactura.Columns["Int_IdCliente"].HeaderText = "Cliente";
-            gvFactura.Columns["Mny_Total"].HeaderText = "Total";
-            gvFactura.Columns["Dtm_Fecha"].HeaderText = "Fecha";
+
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -47,25 +46,16 @@ namespace ProyectoProgra3.Facturacion
                 int ColumnaSeleccionada  = gvFactura.CurrentCell.RowIndex;
 
                 Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
-
-                CN.Dato = gvFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim();
-                txtNombreEmpleado.Text = CN.ObtenerNombreEmpleado(CN.Dato);
-                CN.Dato=  gvFactura.Rows[ColumnaSeleccionada].Cells[3].FormattedValue.ToString().Trim();
-                txtNombreCliente.Text = CN.ObtenerNombreCliente(CN.Dato);
+                DataTable ConsultaNombre = CN.ObtenerNombreEmpleado(gvFactura.Rows[ColumnaSeleccionada].Cells[1].FormattedValue.ToString().Trim()).Tables[0];
+                txtNombreEmpleado.Text = ConsultaNombre.Rows[0][0].ToString().Trim();
+                DataTable ConsultaNombreCliente = CN.ObtenerNombreCliente(gvFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim()).Tables[0];
+                txtNombreCliente.Text = ConsultaNombreCliente.Rows[0][0].ToString().Trim();
                 
-                CN.V_id = gvFactura.Rows[ColumnaSeleccionada].Cells[1].FormattedValue.ToString().Trim();
+                CN.V_id = gvFactura.Rows[ColumnaSeleccionada].Cells[0].FormattedValue.ToString().Trim();
                 
                 
                 gvDetalleFactura.DataSource = CN.FiltrarDetalleFactura(CN.V_id).Tables[0];
                 
-                gvDetalleFactura.Columns["int_IdDetalleFactura"].HeaderText = "ID";
-                gvDetalleFactura.Columns["Int_Linea"].HeaderText = "Linea";
-                gvDetalleFactura.Columns["Int_IdArticulo"].HeaderText = "IdArticulo";
-                gvDetalleFactura.Columns["Int_IdServicio"].HeaderText = "IdServicio";
-                gvDetalleFactura.Columns["Int_Cantidad"].HeaderText = "Cantidad";
-                gvDetalleFactura.Columns["mny_monto"].HeaderText = "Precio";
-                gvDetalleFactura.Columns["Mny_Impuesto"].HeaderText = "Impuesto";
-                gvDetalleFactura.Columns["int_Descuento"].HeaderText = "Descuento";
 
 	            }
 	            catch (Exception)
@@ -80,31 +70,41 @@ namespace ProyectoProgra3.Facturacion
         {
             int ColumnaSeleccionada = gvFactura.CurrentCell.RowIndex;
             Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
-
-            CN.Dato = gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim();
-            txtNombreArticulo .Text = CN.ObtenerNombreArticulo(CN.Dato);
-            CN.Dato = gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].FormattedValue.ToString().Trim();
-            txtNombreServicio.Text = CN.ObtenerNombreServicio(CN.Dato);
+            DataTable ConsultaNombreArticulo = CN.ObtenerNombreArticulo(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim()).Tables[0];
+            txtNombreArticulo.Text = ConsultaNombreArticulo.Rows[0][0].ToString().Trim();
+            DataTable ConsultaNombreServicio = CN.ObtenerNombreServicio(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].FormattedValue.ToString().Trim()).Tables[0];
+            txtNombreServicio.Text = ConsultaNombreServicio.Rows[0][0].ToString().Trim();
 
         }
 
         private void txtFiltrar_TextChanged(object sender, EventArgs e)
         {
-            if (txtFiltrar.Text.Trim() == "")
-            {
-                ActualizarFacturacion();
-            }
-            else 
-            {
-                Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
+            Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
+            gvFactura.DataSource = CN.FiltrarFactura(cBoxFiltrar.SelectedValue.ToString(),txtFiltrar.Text).Tables[0];
+        }
 
-                gvFactura.DataSource = CN.FiltrarFactura(txtFiltrar.Text.Trim(), cBoxFiltrar.SelectedValue.ToString().Trim()).Tables[0];
-                gvFactura.Columns["Int_IdFactura"].HeaderText = "ID Factura";
-                gvFactura.Columns["Int_IdEmpleado"].HeaderText = "Empleado";
-                gvFactura.Columns["Int_IdCliente"].HeaderText = "Cliente";
-                gvFactura.Columns["Mny_Total"].HeaderText = "Total";
-                gvFactura.Columns["Dtm_Fecha"].HeaderText = "Fecha";
+        private void cBoxFiltrar_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cBoxFiltrar.SelectedValue.ToString().Trim() == "" || txtFiltrar.Text.Trim()=="")
+            {}
+            else{
+            txtFiltrar_TextChanged(sender, e);
             }
+        }
+
+        private void tlsBtnRegis_Limpiar_Click(object sender, EventArgs e)
+        {
+            txtFiltrar.Text = "";
+            txtNombreEmpleado.Text = "";
+            txtNombreCliente.Text = "";
+            txtNombreArticulo.Text = "";
+            txtNombreServicio.Text = "";
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
 
         

@@ -69,7 +69,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -392,7 +391,6 @@
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.textBox7);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.textBox5);
@@ -491,15 +489,6 @@
             this.label10.Size = new System.Drawing.Size(102, 13);
             this.label10.TabIndex = 11;
             this.label10.Text = "Fecha de la Factura";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(385, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Fecha";
             // 
             // textBox6
             // 
@@ -600,7 +589,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox5;

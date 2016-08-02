@@ -99,22 +99,22 @@ namespace ProyectoProgra3.Facturacion
          public void EliminarFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = ELIMINAR_FACTURAS;
-            resuelva.Parameters.Add(new SqlParameter("@Int_IdFactura", id));
-            Ejecutar(resuelva);
+            //resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_Devolucion] WHERE int_IdFactura = {0}", id);
+            resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_DetalleFactura] WHERE int_IdFactura = {0}", id);
+            resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_Factura] WHERE int_IdFactura = {0}", id);        
         }
 
          public DataSet FiltrarFactura(string tipo, string param)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select * from [dbo].[tbl_Factura] where {0} like '{1}%' ", tipo, param);
+            resuelva.CommandText = String.Format("select int_IdFactura'ID',int_IdEmpleado'Empleado',int_IdCliente'Cliente',mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Factura] where {0} like '{1}%' ", tipo, param);
             return ConsultarFiltros(resuelva, "dbo.tbl_Factura");
         }
 
          public DataSet FiltrarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [Int_IdFactura]= {0}", id);
+            resuelva.CommandText = String.Format("select int_IdDetalleFactura'ID',int_Linea'Linea',int_IdArticulo'Articulo',int_IdServicio'Servicio',int_Cantidad'Cantidad',mny_Monto'Monto',mny_Impuesto'Impuesto',int_Descuento'Descuento' from [dbo].[tbl_DetalleFactura] where [Int_IdFactura]= {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 
@@ -125,44 +125,44 @@ namespace ProyectoProgra3.Facturacion
             return ConsultarFiltros(resuelva, NombreTabla);
         }
 
-        public String ObtenerNombreEmpleado(string id)
+        public DataSet ObtenerNombreEmpleado(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Empleado] where [int_IdEmpleado] = {0}", id);
-            return id;
+            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Empleado] where int_IdEmpleado = {0}", id);
+            return ConsultarFiltros(resuelva, "dbo.tbl_Empleado");
         }
 
-        public String ObtenerNombreCliente(string id)
+        public DataSet ObtenerNombreCliente(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Cliente] where [int_IdCliente] = {0}", id);
-            return id;
+            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Cliente] where int_IdCliente = {0}", id);
+            return ConsultarFiltros(resuelva, "dbo.tbl_Cliente");
         }
 
-        public String ObtenerNombreArticulo(string id)
+        public DataSet ObtenerNombreArticulo(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Descripion from [dbo].[tbl_Articulo] where [Int_IdArticulo] = {0}", id);
-            return id;
+            resuelva.CommandText = String.Format("Select vrch_Descripion from [dbo].[tbl_Articulo] where Int_IdArticulo = {0}", id);
+            return ConsultarFiltros(resuelva, "dbo.tbl_Articulo");
         }
-        public String ObtenerNombreServicio(string id)
+        public DataSet ObtenerNombreServicio(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Descripcion from [dbo].[tbl_Servicio] where [Int_IdServicio] = {0}", id);
-            return id;
+            resuelva.CommandText = String.Format("Select vrch_Descripcion from [dbo].[tbl_Servicio] where Int_IdServicio = {0}", id);
+            return ConsultarFiltros(resuelva, "dbo.tbl_Servicio");
         }
         
         public DataSet ListarFactura()
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select top 50  * from [dbo].[tbl_Factura] order by [dtm_Fecha] desc");
+            resuelva.CommandText = String.Format("select top 50  int_IdFactura'ID',int_IdEmpleado'Empleado',int_IdCliente'Cliente',mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Factura] order by [dtm_Fecha] desc");
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
         
         public DataSet ListarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select * from [dbo].[tbl_DetalleFactura] where [Int_IdFactura] = {0}", id);
+            resuelva.CommandText = String.Format("select int_IdDetalleFactura'ID',int_Linea'Linea',int_IdArticulo'Articulo',int_IdServicio'Servicio',int_Cantidad'Cantidad',mny_Monto'Monto',mny_Impuesto'Impuesto',int_Descuento'Descuento' from [dbo].[tbl_DetalleFactura] where [Int_IdFactura] = {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 
