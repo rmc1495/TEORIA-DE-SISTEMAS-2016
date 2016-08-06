@@ -61,7 +61,7 @@ namespace ProyectoProgra3.Devolucion
         }
         public void EliminarDevolucion(string param)
         {
-            Facturacion.CD_Facturacion capa = new Facturacion.CD_Facturacion();
+            Devolucion.CD_Devolucion capa = new Devolucion.CD_Devolucion();
             capa.EliminarFactura(param);
         }
         public DataSet ComboBoxNombreColumna()

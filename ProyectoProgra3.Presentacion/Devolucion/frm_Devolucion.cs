@@ -54,8 +54,8 @@ namespace ProyectoProgra3.Devolucion
                 int ColumnaSeleccionada = gvDevolucion.CurrentCell.RowIndex;
 
                 Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
-                DataTable ConsultaNombre = CN.ObtenerNombreEmpleado(gvDevolucion.Rows[ColumnaSeleccionada].Cells[1].FormattedValue.ToString().Trim()).Tables[0];
-                txtNombreEmpleado.Text = ConsultaNombre.Rows[0][0].ToString().Trim() + " " + ConsultaNombre.Rows[1][0].ToString().Trim() + " " + ConsultaNombre.Rows[2][0].ToString().Trim();
+                DataTable ConsultaNombre = CN.ObtenerNombreEmpleado(gvDevolucion.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim()).Tables[0];
+                txtNombreEmpleado.Text = ConsultaNombre.Rows[0][0].ToString().Trim() + " " + ConsultaNombre.Rows[0][1].ToString().Trim() + " " + ConsultaNombre.Rows[0][2].ToString().Trim();
 
 
             }
@@ -83,6 +83,8 @@ namespace ProyectoProgra3.Devolucion
             if (ColumnaSeleccionada >= 0)
             {
                 CN.EliminarDevolucion(gvDevolucion.Rows[ColumnaSeleccionada].Cells[0].FormattedValue.ToString().Trim());
+                MessageBox.Show("Dato eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                tlsBtnRegis_Limpiar_Click(sender,e);
             }
             else
             {

@@ -55,13 +55,13 @@ namespace ProyectoProgra3.Devolucion
         public DataSet ListarDevolucion()
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select top 50 int_IdDevolucion'ID' Int_IdDetalleFactura'DetalleFactura' Int_IdEmpleado'Empleado',Int_Cantidad'Cantidad',Mny_Total'Total',Vrch_Detalle'Detalle ' from [dbo].[tbl_Devolucion] order by [Int_IdDetalleFactura] desc");
+            resuelva.CommandText = String.Format("select top 50 int_IdDevolucion'ID', Int_IdDetalleFactura'DetalleFactura', Int_IdEmpleado'Empleado',Int_Cantidad'Cantidad',Mny_Total'Total',Vrch_Detalle'Detalle ' from [dbo].[tbl_Devolucion] order by [Int_IdDetalleFactura] desc");
             return ConsultarFiltros(resuelva, "dbo.tbl_Devolucion");
         }
         public DataSet FiltrarDevolucion(string tipo, string param)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select int_IdFactura'ID',Int_IdEmpleado'Empleado',int_IdCliente'Cliente',Mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Devolucion] where {0} like '{1}%' ", tipo, param);
+            resuelva.CommandText = String.Format("select int_IdDevolucion'ID', Int_IdDetalleFactura'DetalleFactura', Int_IdEmpleado'Empleado',Int_Cantidad'Cantidad',Mny_Total'Total',Vrch_Detalle'Detalle ' from [dbo].[tbl_Devolucion] where {0} like '{1}%' ", tipo, param);
             return ConsultarFiltros(resuelva, "dbo.tbl_Devolucion");
         }
         public DataSet EliminarFactura(string id)

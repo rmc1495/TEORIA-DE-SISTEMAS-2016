@@ -40,12 +40,6 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtFiltrar = new System.Windows.Forms.ToolStripTextBox();
             this.gvDevolucion = new System.Windows.Forms.DataGridView();
-            this.IdDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdDetalleFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.int_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mny_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vrch_Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlsBtnRegis_Guardar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDevolucion)).BeginInit();
             this.SuspendLayout();
@@ -163,13 +157,6 @@
             this.gvDevolucion.AllowUserToDeleteRows = false;
             this.gvDevolucion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDevolucion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdDevolucion,
-            this.IdDetalleFactura,
-            this.IdEmpleado,
-            this.int_Cantidad,
-            this.mny_Total,
-            this.vrch_Detalle});
             this.gvDevolucion.Location = new System.Drawing.Point(9, 52);
             this.gvDevolucion.Name = "gvDevolucion";
             this.gvDevolucion.ReadOnly = true;
@@ -177,42 +164,6 @@
             this.gvDevolucion.Size = new System.Drawing.Size(530, 327);
             this.gvDevolucion.TabIndex = 51;
             this.gvDevolucion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDevolucion_CellClick);
-            // 
-            // IdDevolucion
-            // 
-            this.IdDevolucion.HeaderText = "Devolucion";
-            this.IdDevolucion.Name = "IdDevolucion";
-            this.IdDevolucion.ReadOnly = true;
-            // 
-            // IdDetalleFactura
-            // 
-            this.IdDetalleFactura.HeaderText = "ID Detalle Factura";
-            this.IdDetalleFactura.Name = "IdDetalleFactura";
-            this.IdDetalleFactura.ReadOnly = true;
-            // 
-            // IdEmpleado
-            // 
-            this.IdEmpleado.HeaderText = "Empleado";
-            this.IdEmpleado.Name = "IdEmpleado";
-            this.IdEmpleado.ReadOnly = true;
-            // 
-            // int_Cantidad
-            // 
-            this.int_Cantidad.HeaderText = "Cantidad";
-            this.int_Cantidad.Name = "Int_Cantidad";
-            this.int_Cantidad.ReadOnly = true;
-            // 
-            // mny_Total
-            // 
-            this.mny_Total.HeaderText = "Total";
-            this.mny_Total.Name = "Mny_Total";
-            this.mny_Total.ReadOnly = true;
-            // 
-            // vrch_Detalle
-            // 
-            this.vrch_Detalle.HeaderText = "Detalle";
-            this.vrch_Detalle.Name = "Vrch_Detalle";
-            this.vrch_Detalle.ReadOnly = true;
             // 
             // frm_Devolucion
             // 
@@ -248,9 +199,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox txtFiltrar;
         private System.Windows.Forms.DataGridView gvDevolucion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDevolucion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn int_Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn mny_Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrch_Detalle;

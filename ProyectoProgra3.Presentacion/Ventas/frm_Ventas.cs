@@ -344,28 +344,36 @@ namespace ProyectoProgra3.Ventas
         private void gvVentas_KeyPress(object sender, KeyPressEventArgs e)
         {
             int ColumnaSeleccionada = gvVentas.CurrentCell.ColumnIndex;
-
-            if (ColumnaSeleccionada == 5 || ColumnaSeleccionada == 8)
+            try
             {
-                if (e.KeyChar >= '0' && e.KeyChar <= '9' || Char.IsControl(e.KeyChar))
+                if (ColumnaSeleccionada == 5 || ColumnaSeleccionada == 8)
                 {
-                    e.Handled = false;
+                    if (e.KeyChar >= '0' && e.KeyChar <= '9' || Char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
                 }
-                else
+                else { }
+                if (ColumnaSeleccionada == 7)
                 {
+                    if (Char.IsDigit(e.KeyChar)) return;
+                    if (Char.IsControl(e.KeyChar)) return;
+                    if ((e.KeyChar == '.') && ((sender as TextBox).Text.Contains('.') == false)) return;
+                    if ((e.KeyChar == '.') && ((sender as TextBox).SelectionLength == (sender as TextBox).TextLength)) return;
                     e.Handled = true;
                 }
-            }
-            else { }
-            if (ColumnaSeleccionada == 7)
+                else { }
+            }            
+            catch (Exception)
             {
-                if (Char.IsDigit(e.KeyChar)) return;
-                if (Char.IsControl(e.KeyChar)) return;
-                if ((e.KeyChar == '.') && ((sender as TextBox).Text.Contains('.') == false)) return;
-                if ((e.KeyChar == '.') && ((sender as TextBox).SelectionLength == (sender as TextBox).TextLength)) return;
-                e.Handled = true;
+                ColumnaSeleccionada = 0;
+                //throw;
             }
-            else { }
+
         }
 
         private void gvVentas_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -384,7 +392,7 @@ namespace ProyectoProgra3.Ventas
                 int ColumnaSeleccionada = gvVentas.CurrentCell.ColumnIndex;
                 int CeldaSeleccionada = gvVentas.CurrentCell.RowIndex;
 
-                
+                try{
 
                 if (ColumnaSeleccionada == 5 || ColumnaSeleccionada == 7 || ColumnaSeleccionada == 8)
                 {
@@ -392,6 +400,13 @@ namespace ProyectoProgra3.Ventas
                         ActualizarDatos();
                 }
                 else { }
+                            }
+            catch (Exception)
+            {
+                ColumnaSeleccionada = 0;
+                //throw;
+            }
+
             }
             else { }
         }

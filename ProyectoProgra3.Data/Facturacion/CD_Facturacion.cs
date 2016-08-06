@@ -128,7 +128,7 @@ namespace ProyectoProgra3.Facturacion
         public DataSet ObtenerNombreEmpleado(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Empleado] where Int_IdEmpleado = {0}", id);
+            resuelva.CommandText = String.Format("Select vrch_Nombre,vrch_Apellido1,vrch_Apellido2 from [dbo].[tbl_Empleado] where Int_IdEmpleado = {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_Empleado");
         }
 

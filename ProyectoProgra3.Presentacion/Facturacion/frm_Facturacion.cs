@@ -69,18 +69,44 @@ namespace ProyectoProgra3.Facturacion
         private void gvDetalleFactura_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int ColumnaSeleccionada = gvFactura.CurrentCell.RowIndex;
-            Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
-            DataTable ConsultaNombreArticulo = CN.ObtenerNombreArticulo(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].Value.ToString().Trim()).Tables[0];
-            txtNombreArticulo.Text = ConsultaNombreArticulo.Rows[0][0].ToString().Trim();
-            DataTable ConsultaNombreServicio = CN.ObtenerNombreServicio(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].Value.ToString().Trim()).Tables[0];
-            txtNombreServicio.Text = ConsultaNombreServicio.Rows[0][0].ToString().Trim();
+            try
+            {
+                Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
+                if (gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].Value.ToString().Trim() != "")
+                {
+                    DataTable ConsultaNombreArticulo = CN.ObtenerNombreArticulo(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].Value.ToString().Trim()).Tables[0];
+                    txtNombreArticulo.Text = ConsultaNombreArticulo.Rows[0][0].ToString().Trim();
+                }
+                else
+                { }
+                if (gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].Value.ToString().Trim() != "")
+                {
+                    DataTable ConsultaNombreServicio = CN.ObtenerNombreServicio(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].Value.ToString().Trim()).Tables[0];
+                    txtNombreServicio.Text = ConsultaNombreServicio.Rows[0][0].ToString().Trim();
+                }
+                else { }
+            }
+                        
+            catch (Exception)
+            {
+                ColumnaSeleccionada = 0;
+                //throw;
+            }
+
 
         }
 
         private void txtFiltrar_TextChanged(object sender, EventArgs e)
         {
+            try{
             Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
             gvFactura.DataSource = CN.FiltrarFactura(cBoxFiltrar.SelectedValue.ToString(),txtFiltrar.Text).Tables[0];
+            }
+            catch (Exception)
+            {
+                //throw;
+            }
+
         }
 
         private void cBoxFiltrar_SelectedValueChanged(object sender, EventArgs e)
