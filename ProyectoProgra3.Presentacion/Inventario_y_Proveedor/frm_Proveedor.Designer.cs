@@ -35,7 +35,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRegistrarProveedor = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtBuscarProveedor = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripButton();
             this.lblIDCliente = new System.Windows.Forms.Label();
             this.txtEmailProveedor = new System.Windows.Forms.TextBox();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
@@ -43,7 +45,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblNombrecli = new System.Windows.Forms.Label();
             this.lblApelli1 = new System.Windows.Forms.Label();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -102,6 +103,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnRegistrarProveedor,
             this.toolStripSeparator2,
+            this.txtBuscarProveedor,
             this.toolStripSeparator1,
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(5, 228);
@@ -126,10 +128,27 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
+            // txtBuscarProveedor
+            // 
+            this.txtBuscarProveedor.Name = "txtBuscarProveedor";
+            this.txtBuscarProveedor.Size = new System.Drawing.Size(100, 40);
+            this.txtBuscarProveedor.ToolTipText = "Buscar Proveedor";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Image = global::ProyectoProgra3.Properties.Resources.search_icon;
+            this.toolStripLabel1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(29, 37);
+            this.toolStripLabel1.Text = "Buscar:";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // lblIDCliente
             // 
@@ -156,6 +175,7 @@
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(124, 27);
             this.txtNombreProveedor.TabIndex = 0;
+            this.txtNombreProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreProveedor_KeyPress);
             // 
             // txtContactoProveedor
             // 
@@ -195,16 +215,6 @@
             this.lblApelli1.TabIndex = 3;
             this.lblApelli1.Text = "Contacto:";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Image = global::ProyectoProgra3.Properties.Resources.search_icon;
-            this.toolStripLabel1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(29, 37);
-            this.toolStripLabel1.Text = "Buscar:";
-            // 
             // frm_Proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +249,6 @@
         private System.Windows.Forms.Label lblApelli1;
         private System.Windows.Forms.MaskedTextBox txtTelefonoProveedor;
         private System.Windows.Forms.ToolStripButton toolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox txtBuscarProveedor;
     }
 }

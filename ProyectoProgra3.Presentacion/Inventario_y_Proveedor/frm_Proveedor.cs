@@ -51,5 +51,20 @@ namespace ProyectoProgra3.Inventario_y_Proveedor
                 }
             }
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+            //ProyectoCN.Inventario_y_Proveedores.CN_Productos cn_P = new ProyectoCN.Inventario_y_Proveedores.CN_Productos();
+            ProyectoCN.Inventario_y_Proveedores.CN_Proveedores cnp = new ProyectoCN.Inventario_y_Proveedores.CN_Proveedores();
+            string param = txtBuscarProveedor.Text;
+            dgvProveedor.DataSource = cnp.BuscarProveedores(param).Tables[0];
+
+        }
+
+        private void txtNombreProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

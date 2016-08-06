@@ -48,6 +48,7 @@
             this.btnRegistrarProducto = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@
             this.sp_ConsultarMarcaTableAdapter = new ProyectoProgra3.DB_TSistemasDataSetTableAdapters.sp_ConsultarMarcaTableAdapter();
             this.sp_ConsultarProveedorTableAdapter = new ProyectoProgra3.DB_TSistemasDataSetTableAdapters.sp_ConsultarProveedorTableAdapter();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripButton();
+            this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spConsultarMarcaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_TSistemasDataSet)).BeginInit();
@@ -209,6 +210,7 @@
             this.btnRegistrarProducto,
             this.toolStripSeparator2,
             this.toolStripSeparator1,
+            this.txtBuscar,
             this.toolStripLabel1,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(5, 233);
@@ -237,6 +239,17 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Image = global::ProyectoProgra3.Properties.Resources.search_icon;
+            this.toolStripLabel1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(29, 37);
+            this.toolStripLabel1.Text = "Buscar:";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // toolStripSeparator3
             // 
@@ -311,15 +324,13 @@
             // 
             this.sp_ConsultarProveedorTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStripLabel1
+            // txtBuscar
             // 
-            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Image = global::ProyectoProgra3.Properties.Resources.search_icon;
-            this.toolStripLabel1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(29, 37);
-            this.toolStripLabel1.Text = "Buscar:";
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 40);
+            this.txtBuscar.Text = " ";
+            this.txtBuscar.ToolTipText = "Buscar";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // frm_Producto
             // 
@@ -374,5 +385,6 @@
         private DB_TSistemasDataSetTableAdapters.sp_ConsultarProveedorTableAdapter sp_ConsultarProveedorTableAdapter;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ToolStripButton toolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox txtBuscar;
     }
 }

@@ -162,10 +162,10 @@ namespace ProyectoProgra3.ProyectoCN.Inventario_y_Proveedores
         }
 
       
-        public DataSet BuscarProductos(ref CN_Productos pro)
+        public DataSet BuscarProductos(string param)
         {
             ProyectoCD.Inventario_y_Proveedores.CD_Productos capa = new ProyectoCD.Inventario_y_Proveedores.CD_Productos();
-            DataSet obtenerdts = capa.ObtenerProductos(pro.Descripcion);
+            DataSet obtenerdts = capa.ObtenerProductos(param);
             return obtenerdts;
 
         }

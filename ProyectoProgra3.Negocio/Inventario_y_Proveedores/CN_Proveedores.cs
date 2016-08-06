@@ -94,10 +94,10 @@ namespace ProyectoProgra3.ProyectoCN.Inventario_y_Proveedores
             capa.InsertarProveedor(capa);
         }
 
-        public DataSet BuscarProveedores(ref CN_Proveedores Prove)
+        public DataSet BuscarProveedores(string param)
         {
             ProyectoCD.Inventario_y_Proveedores.CD_Proveedores capa = new ProyectoCD.Inventario_y_Proveedores.CD_Proveedores();
-            DataSet obtenerDts = capa.ObtenerProveedores(Prove.Nombre);
+            DataSet obtenerDts = capa.ObtenerProveedores(param);
             return obtenerDts;
 
         }

@@ -9,7 +9,7 @@ namespace ProyectoProgra3.ProyectoCD.Inventario_y_Proveedores
 
         #region stored Procedures
         string INSERTAR_PROVEEDOR = "sp_AgregarProveedor";
-        string OBTENER_PROVEEDOR = "sp_ConsultarProveedo";
+        string OBTENER_PROVEEDOR = "sp_ConsultarProveedorEspecifico";
 
         //string ACTUALIZAR_PROVEEDOR = "sp_actualizar_proveedores";
         #endregion

@@ -179,7 +179,7 @@ namespace ProyectoProgra3.ProyectoCD.Inventario_y_Proveedores
         {
             SqlCommand resuelva = new SqlCommand();
             resuelva.CommandText = OBTENER_PRODUCTO;
-            resuelva.Parameters.Add(new SqlParameter("@id", id));
+            resuelva.Parameters.Add(new SqlParameter("@IdArticulo", id));
             return Consultar(resuelva, "Marca");
         }
 
