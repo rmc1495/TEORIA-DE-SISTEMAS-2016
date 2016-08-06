@@ -111,5 +111,17 @@ namespace ProyectoProgra3
             Mantenimineto.Inventario_y_Proveedores.frm_Marcas marcas = new Mantenimineto.Inventario_y_Proveedores.frm_Marcas();
             marcas.Show();
         }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ventas.frm_Ventas ventas = new Ventas.frm_Ventas();
+            ventas.Show();
+        }
+
+        private void cerrarCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facturacion.frm_Facturacion facturacion = new Facturacion.frm_Facturacion();
+            facturacion.Show();
+        }
     }
 }
