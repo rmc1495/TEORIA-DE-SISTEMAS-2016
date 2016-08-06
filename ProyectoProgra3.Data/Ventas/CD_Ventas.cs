@@ -131,7 +131,7 @@ namespace ProyectoProgra3.Ventas
         public DataSet InsertarFacturayDevolverValor(CD_Ventas objeto)
         { 
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("INSERT INTO tbl_Factura (int_IdEmpleado,int_IdCliente,mny_Total,dtm_Fecha) VALUES ({0},{1},{2},'{3}') SELECT SCOPE_IDENTITY(tbl_Factura)", objeto.int_IdEmpleado, objeto.int_IdCliente, objeto.mny_Total, objeto.dtm_Fecha);
+            resuelva.CommandText = String.Format("INSERT INTO tbl_Factura (Int_IdEmpleado,int_IdCliente,Mny_Total,dtm_Fecha) VALUES ({0},{1},{2},'{3}') SELECT SCOPE_IDENTITY()", objeto.int_IdEmpleado, objeto.int_IdCliente, objeto.mny_Total, objeto.dtm_Fecha);
             //Ejecutar(resuelva);
             return ConsultarFiltros(resuelva, "dbo.tbl_Factura");
         }
@@ -141,12 +141,13 @@ namespace ProyectoProgra3.Ventas
             resuelva.CommandText = String.Format("Select int_IdCliente,vrch_Nombre From tbl_Cliente where vrch_NumCedula = {0}", param);
             return ConsultarFiltros(resuelva, "dbo.tbl_Cliente");
         }
-        public void AgregarDetallesFactura(CD_Ventas objeto)
+        public DataSet AgregarDetallesFactura(CD_Ventas objeto)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("INSERT INTO tbl_DetalleFactura (int_IdDetalleFactura,Int_IdFactura,Int_Linea,Int_IdArticulo,Int_IdServicio,Int_Cantidad,Mny_Monto,Mny_Impuesto,int_Descuento) VALUES ({0},{1},{2},{3},{4},{5},{6},{7},{8})", objeto.int_IdEmpleado, objeto.int_IdCliente, objeto.mny_Total, objeto.dtm_Fecha);        
+            resuelva.CommandText = String.Format("INSERT INTO tbl_DetalleFactura (Int_IdFactura,Int_Linea,Int_IdArticulo,Int_IdServicio,Int_Cantidad,Mny_Monto,Mny_Impuesto,int_Descuento) VALUES ({0},{1},{2},{3},{4},{5},{6},{7})", objeto.Int_IdFactura, objeto.Int_Linea,objeto.Int_IdArticulo, objeto.Int_IdServicio, objeto.Int_Cantidad, objeto.Mny_Monto,objeto.Mny_Impuesto,objeto.Mny_Descuento);
+            return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
-
+        
         #endregion
     }
 }

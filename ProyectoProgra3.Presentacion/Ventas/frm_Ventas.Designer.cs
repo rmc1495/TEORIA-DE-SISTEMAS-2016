@@ -59,22 +59,18 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.cmbDevolucionCantidad = new System.Windows.Forms.ComboBox();
+            this.txtDevolucionMonto = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtDevolucionMotivo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDevolucionNombreUsuario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDevolucionCodigoFactura = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -92,6 +88,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1041, 570);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -128,6 +125,7 @@
             this.txtIDUsuario.Name = "txtIDUsuario";
             this.txtIDUsuario.Size = new System.Drawing.Size(126, 20);
             this.txtIDUsuario.TabIndex = 18;
+            this.txtIDUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDUsuario_KeyPress);
             this.txtIDUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp_1);
             // 
             // label5
@@ -154,6 +152,7 @@
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(910, 483);
             this.txtTotal.Name = "txtTotal";
@@ -175,6 +174,7 @@
             // txtSubTotal
             // 
             this.txtSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSubTotal.Enabled = false;
             this.txtSubTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubTotal.Location = new System.Drawing.Point(910, 422);
             this.txtSubTotal.Name = "txtSubTotal";
@@ -191,6 +191,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -226,6 +227,7 @@
             // cbMetodoPago
             // 
             this.cbMetodoPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMetodoPago.FormattingEnabled = true;
             this.cbMetodoPago.Items.AddRange(new object[] {
             "Efectivo",
@@ -235,7 +237,6 @@
             this.cbMetodoPago.Name = "cbMetodoPago";
             this.cbMetodoPago.Size = new System.Drawing.Size(121, 21);
             this.cbMetodoPago.TabIndex = 1;
-            this.cbMetodoPago.Text = "Efectivo";
             // 
             // txtUsuario
             // 
@@ -281,6 +282,9 @@
             this.gvVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.gvVentas.Size = new System.Drawing.Size(1030, 368);
             this.gvVentas.TabIndex = 4;
+            this.gvVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvVentas_CellEndEdit);
+            this.gvVentas.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gvVentas_EditingControlShowing);
+            this.gvVentas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gvVentas_KeyPress);
             // 
             // Int_Linea
             // 
@@ -367,6 +371,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // label1
@@ -381,22 +386,18 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.tabPage2.Controls.Add(this.textBox10);
+            this.tabPage2.Controls.Add(this.cmbDevolucionCantidad);
+            this.tabPage2.Controls.Add(this.txtDevolucionMonto);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox9);
+            this.tabPage2.Controls.Add(this.txtDevolucionMotivo);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.txtDevolucionNombreUsuario);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.txtDevolucionCodigoFactura);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -404,140 +405,139 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Devolucion";
             // 
-            // textBox10
+            // cmbDevolucionCantidad
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(109, 274);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 20;
+            this.cmbDevolucionCantidad.FormattingEnabled = true;
+            this.cmbDevolucionCantidad.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cmbDevolucionCantidad.Location = new System.Drawing.Point(134, 86);
+            this.cmbDevolucionCantidad.Name = "cmbDevolucionCantidad";
+            this.cmbDevolucionCantidad.Size = new System.Drawing.Size(100, 21);
+            this.cmbDevolucionCantidad.TabIndex = 23;
+            this.cmbDevolucionCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDevolucionCantidad_KeyPress);
+            // 
+            // txtDevolucionMonto
+            // 
+            this.txtDevolucionMonto.Location = new System.Drawing.Point(134, 127);
+            this.txtDevolucionMonto.Name = "txtDevolucionMonto";
+            this.txtDevolucionMonto.Size = new System.Drawing.Size(100, 20);
+            this.txtDevolucionMonto.TabIndex = 22;
+            this.txtDevolucionMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDevolucionMonto_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Monto del Articulo";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 277);
+            this.label13.Location = new System.Drawing.Point(13, 89);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 13);
+            this.label13.Size = new System.Drawing.Size(49, 13);
             this.label13.TabIndex = 19;
-            this.label13.Text = "Codigo Articulo";
+            this.label13.Text = "Cantidad";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(513, 351);
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button4.Location = new System.Drawing.Point(529, 289);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 19);
+            this.button4.Size = new System.Drawing.Size(88, 46);
             this.button4.TabIndex = 18;
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(388, 351);
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button3.Location = new System.Drawing.Point(396, 289);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 19);
+            this.button3.Size = new System.Drawing.Size(112, 46);
             this.button3.TabIndex = 17;
             this.button3.Text = "Efectuar Proceso";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox9
+            // txtDevolucionMotivo
             // 
-            this.textBox9.Location = new System.Drawing.Point(682, 140);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(268, 150);
-            this.textBox9.TabIndex = 16;
+            this.txtDevolucionMotivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDevolucionMotivo.Location = new System.Drawing.Point(716, 89);
+            this.txtDevolucionMotivo.Multiline = true;
+            this.txtDevolucionMotivo.Name = "txtDevolucionMotivo";
+            this.txtDevolucionMotivo.Size = new System.Drawing.Size(268, 150);
+            this.txtDevolucionMotivo.TabIndex = 16;
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(565, 213);
+            this.label12.Location = new System.Drawing.Point(599, 162);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 13);
             this.label12.TabIndex = 15;
             this.label12.Text = "Motivo de Devolucion";
             // 
-            // textBox8
+            // txtDevolucionNombreUsuario
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(109, 41);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 14;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 44);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Codigo Devolucion";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(109, 229);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 232);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Fecha de la Factura";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(850, 41);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
+            this.txtDevolucionNombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDevolucionNombreUsuario.Enabled = false;
+            this.txtDevolucionNombreUsuario.Location = new System.Drawing.Point(884, 41);
+            this.txtDevolucionNombreUsuario.Name = "txtDevolucionNombreUsuario";
+            this.txtDevolucionNombreUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtDevolucionNombreUsuario.TabIndex = 5;
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(744, 44);
+            this.label8.Location = new System.Drawing.Point(778, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 13);
             this.label8.TabIndex = 4;
             this.label8.Text = "Nombre del Usuario";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(109, 183);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Cliente";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 144);
+            this.label6.Location = new System.Drawing.Point(13, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Codigo de la Factura";
+            this.label6.Text = "Codigo Detalle Factura";
             // 
-            // textBox4
+            // txtDevolucionCodigoFactura
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 141);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 0;
+            this.txtDevolucionCodigoFactura.Location = new System.Drawing.Point(134, 45);
+            this.txtDevolucionCodigoFactura.Name = "txtDevolucionCodigoFactura";
+            this.txtDevolucionCodigoFactura.Size = new System.Drawing.Size(100, 20);
+            this.txtDevolucionCodigoFactura.TabIndex = 0;
+            this.txtDevolucionCodigoFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDevolucionCodigoFactura_KeyPress);
+            this.txtDevolucionCodigoFactura.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDevolucionCodigoFactura_KeyUp);
             // 
             // timer1
             // 
@@ -552,6 +552,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frm_Ventas";
             this.Text = "Ventas";
+            this.Activated += new System.EventHandler(this.frm_Ventas_Activated);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -579,22 +580,15 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtDevolucionMotivo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDevolucionNombreUsuario;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDevolucionCodigoFactura;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label16;
@@ -617,5 +611,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Int_Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mny_Monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mny_Impuesto;
+        private System.Windows.Forms.TextBox txtDevolucionMonto;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbDevolucionCantidad;
     }
 }

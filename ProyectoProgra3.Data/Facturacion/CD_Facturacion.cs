@@ -98,23 +98,23 @@ namespace ProyectoProgra3.Facturacion
 
          public void EliminarFactura(string id)
         {
-            SqlCommand resuelva = new SqlCommand();
+            //SqlCommand resuelva = new SqlCommand();
             //resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_Devolucion] WHERE int_IdFactura = {0}", id);
-            resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_DetalleFactura] WHERE int_IdFactura = {0}", id);
-            resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_Factura] WHERE int_IdFactura = {0}", id);        
+            //resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_DetalleFactura] WHERE int_IdFactura = {0}", id);
+            //resuelva.CommandText = String.Format("DELETE FROM [dbo].[tbl_Factura] WHERE int_IdFactura = {0}", id);        
         }
 
          public DataSet FiltrarFactura(string tipo, string param)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select int_IdFactura'ID',int_IdEmpleado'Empleado',int_IdCliente'Cliente',mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Factura] where {0} like '{1}%' ", tipo, param);
+            resuelva.CommandText = String.Format("select int_IdFactura'ID',Int_IdEmpleado'Empleado',int_IdCliente'Cliente',Mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Factura] where {0} like '{1}%' ", tipo, param);
             return ConsultarFiltros(resuelva, "dbo.tbl_Factura");
         }
 
          public DataSet FiltrarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select int_IdDetalleFactura'ID',int_Linea'Linea',int_IdArticulo'Articulo',int_IdServicio'Servicio',int_Cantidad'Cantidad',mny_Monto'Monto',mny_Impuesto'Impuesto',int_Descuento'Descuento' from [dbo].[tbl_DetalleFactura] where [Int_IdFactura]= {0}", id);
+            resuelva.CommandText = String.Format("select Int_IdDetalleFactura'ID',int_Linea'Linea',int_IdArticulo'Articulo',int_IdServicio'Servicio',Int_Cantidad'Cantidad',mny_Monto'Monto',mny_Impuesto'Impuesto',int_Descuento'Descuento' from [dbo].[tbl_DetalleFactura] where [Int_IdFactura]= {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 
@@ -128,7 +128,7 @@ namespace ProyectoProgra3.Facturacion
         public DataSet ObtenerNombreEmpleado(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Empleado] where int_IdEmpleado = {0}", id);
+            resuelva.CommandText = String.Format("Select vrch_Nombre from [dbo].[tbl_Empleado] where Int_IdEmpleado = {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_Empleado");
         }
 
@@ -155,14 +155,14 @@ namespace ProyectoProgra3.Facturacion
         public DataSet ListarFactura()
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select top 50  int_IdFactura'ID',int_IdEmpleado'Empleado',int_IdCliente'Cliente',mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Factura] order by [dtm_Fecha] desc");
+            resuelva.CommandText = String.Format("select top 50  int_IdFactura'ID',Int_IdEmpleado'Empleado',int_IdCliente'Cliente',Mny_Total'Total',dtm_Fecha'Fecha' from [dbo].[tbl_Factura] order by [dtm_Fecha] desc");
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
         
         public DataSet ListarDetalleFactura(string id)
         {
             SqlCommand resuelva = new SqlCommand();
-            resuelva.CommandText = String.Format("select int_IdDetalleFactura'ID',int_Linea'Linea',int_IdArticulo'Articulo',int_IdServicio'Servicio',int_Cantidad'Cantidad',mny_Monto'Monto',mny_Impuesto'Impuesto',int_Descuento'Descuento' from [dbo].[tbl_DetalleFactura] where [Int_IdFactura] = {0}", id);
+            resuelva.CommandText = String.Format("select Int_IdDetalleFactura'ID',int_Linea'Linea',int_IdArticulo'Articulo',int_IdServicio'Servicio',Int_Cantidad'Cantidad',mny_Monto'Monto',mny_Impuesto'Impuesto',int_Descuento'Descuento' from [dbo].[tbl_DetalleFactura] where [Int_IdFactura] = {0}", id);
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 

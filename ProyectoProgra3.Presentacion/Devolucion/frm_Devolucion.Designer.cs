@@ -199,19 +199,19 @@
             // int_Cantidad
             // 
             this.int_Cantidad.HeaderText = "Cantidad";
-            this.int_Cantidad.Name = "int_Cantidad";
+            this.int_Cantidad.Name = "Int_Cantidad";
             this.int_Cantidad.ReadOnly = true;
             // 
             // mny_Total
             // 
             this.mny_Total.HeaderText = "Total";
-            this.mny_Total.Name = "mny_Total";
+            this.mny_Total.Name = "Mny_Total";
             this.mny_Total.ReadOnly = true;
             // 
             // vrch_Detalle
             // 
             this.vrch_Detalle.HeaderText = "Detalle";
-            this.vrch_Detalle.Name = "vrch_Detalle";
+            this.vrch_Detalle.Name = "Vrch_Detalle";
             this.vrch_Detalle.ReadOnly = true;
             // 
             // frm_Devolucion

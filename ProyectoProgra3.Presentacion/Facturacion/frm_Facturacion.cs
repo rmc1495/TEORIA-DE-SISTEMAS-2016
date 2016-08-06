@@ -70,9 +70,9 @@ namespace ProyectoProgra3.Facturacion
         {
             int ColumnaSeleccionada = gvFactura.CurrentCell.RowIndex;
             Facturacion.CN_Facturacion CN = new Facturacion.CN_Facturacion();
-            DataTable ConsultaNombreArticulo = CN.ObtenerNombreArticulo(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].FormattedValue.ToString().Trim()).Tables[0];
+            DataTable ConsultaNombreArticulo = CN.ObtenerNombreArticulo(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[2].Value.ToString().Trim()).Tables[0];
             txtNombreArticulo.Text = ConsultaNombreArticulo.Rows[0][0].ToString().Trim();
-            DataTable ConsultaNombreServicio = CN.ObtenerNombreServicio(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].FormattedValue.ToString().Trim()).Tables[0];
+            DataTable ConsultaNombreServicio = CN.ObtenerNombreServicio(gvDetalleFactura.Rows[ColumnaSeleccionada].Cells[3].Value.ToString().Trim()).Tables[0];
             txtNombreServicio.Text = ConsultaNombreServicio.Rows[0][0].ToString().Trim();
 
         }

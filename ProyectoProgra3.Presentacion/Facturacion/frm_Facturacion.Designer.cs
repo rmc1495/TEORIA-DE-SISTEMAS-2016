@@ -32,7 +32,6 @@
             this.gvFactura = new System.Windows.Forms.DataGridView();
             this.gvDetalleFactura = new System.Windows.Forms.DataGridView();
             this.tlsBtnRegis_Guardar = new System.Windows.Forms.ToolStrip();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnRegis_Limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -47,6 +46,7 @@
             this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.txtNombreArticulo = new System.Windows.Forms.TextBox();
             this.cBoxFiltrar = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.gvFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleFactura)).BeginInit();
             this.tlsBtnRegis_Guardar.SuspendLayout();
@@ -100,16 +100,6 @@
             this.tlsBtnRegis_Guardar.Size = new System.Drawing.Size(528, 40);
             this.tlsBtnRegis_Guardar.TabIndex = 41;
             this.tlsBtnRegis_Guardar.Text = "Registrar Empleado";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(29, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -243,6 +233,16 @@
             this.cBoxFiltrar.TabIndex = 50;
             this.cBoxFiltrar.SelectedValueChanged += new System.EventHandler(this.cBoxFiltrar_SelectedValueChanged);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(29, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frm_Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,7 +278,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridView gvDetalleFactura;
         private System.Windows.Forms.ToolStrip tlsBtnRegis_Guardar;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton tlsBtnRegis_Limpiar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -293,5 +292,6 @@
         private System.Windows.Forms.TextBox txtNombreServicio;
         private System.Windows.Forms.TextBox txtNombreArticulo;
         private System.Windows.Forms.ComboBox cBoxFiltrar;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }

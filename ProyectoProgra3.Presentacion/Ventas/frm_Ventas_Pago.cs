@@ -54,8 +54,8 @@ namespace ProyectoProgra3.Ventas
          
             //CN.Mny_Total = CN.Int_IdCliente;
             CN.Dtm_Fecha = DateTime.Now;
-            CN.Int_IdFactura = (CN.AgregarFacturayDevolverValor(CN).Tables[0]).ToString().Trim(); // Revisar si me retorna un valor y enviar el insert
-
+            DataTable FacturaID = CN.AgregarFacturayDevolverValor(CN).Tables[0];
+            CN.Int_IdFactura = FacturaID.Rows[0][0].ToString().Trim();
             int i = 1;
             while (i <= CN.DetalleFactura.Rows.Count) //pasa los datos del datagridview al datatable
             {
@@ -63,21 +63,56 @@ namespace ProyectoProgra3.Ventas
 
                 CN.Int_IdFactura = CN.DetalleFactura.Rows[i - 1][1].ToString().Trim();
                 CN.Int_Linea = CN.DetalleFactura.Rows[i - 1][2].ToString().Trim();
+                if (CN.DetalleFactura.Rows[i - 1][3].ToString().Trim() == "")
+                {
+                CN.Int_IdArticulo = "NULL";
+                }else
+                {
                 CN.Int_IdArticulo = CN.DetalleFactura.Rows[i - 1][3].ToString().Trim();
+                }
+                if (CN.DetalleFactura.Rows[i - 1][4].ToString().Trim() == "")
+                {
+                CN.Int_IdServicio = "NULL";
+                }
+                else
+                {
                 CN.Int_IdServicio = CN.DetalleFactura.Rows[i - 1][4].ToString().Trim();
+                }
                 CN.Int_Cantidad = CN.DetalleFactura.Rows[i - 1][5].ToString().Trim();
                 CN.Mny_Monto = CN.DetalleFactura.Rows[i - 1][6].ToString().Trim();
                 CN.Mny_Impuesto = CN.DetalleFactura.Rows[i - 1][7].ToString().Trim();
                 CN.Mny_Descuento = CN.DetalleFactura.Rows[i - 1][8].ToString().Trim();
 
                 CN.AgregarDetallesFactura(CN);
+                i = i+1;
             }
-
-                
+            this.Close();    
             frm_Ventas frmPadre = new frm_Ventas();
             frmPadre.limpiartabla();
             CN.Int_IdCliente = 1; //Cliente Default
             
+            CN.Int_IdFactura = "";
+            CN.Int_Linea = "";
+            CN.Int_IdArticulo = "";
+            CN.Int_IdServicio = "";
+            CN.Int_Cantidad = "";
+            CN.Mny_Monto = "";
+            CN.Mny_Impuesto = "";
+            CN.Mny_Descuento = "";
+            CN.EmpleadoNombre = "";
+            CN.Total = 0;
+            CN.Limpiar = true;
+            MessageBox.Show("Datos Actualizados", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frm_Ventas frmPadre = new frm_Ventas();
+            frmPadre.limpiartabla();
+            CN.Int_IdCliente = 1; //Cliente Default
+
             CN.Int_IdFactura = "";
             CN.Int_Linea = "";
             CN.Int_IdArticulo = "";

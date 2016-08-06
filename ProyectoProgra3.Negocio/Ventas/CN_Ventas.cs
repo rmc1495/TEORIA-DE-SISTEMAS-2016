@@ -28,11 +28,18 @@ namespace ProyectoProgra3.Ventas
 
        private static string empleadoNombre;
        private static double total;
+       
+       private static string devolucionempleadoNombre;
+       private static int devolucionempleadoID;
+       private static bool loginC;
+
+       private static bool limpiar;
 
         #endregion
 
         #region Propiedades
-          public DataTable DetalleFactura
+          
+            public DataTable DetalleFactura
             {
                 get { return detalleFactura; }
                 set { detalleFactura = value; }
@@ -113,6 +120,27 @@ namespace ProyectoProgra3.Ventas
                 get { return total; }
                 set { total = value; }
             }
+            public bool LoginC
+            {
+                get { return loginC; }
+                set { loginC = value; }
+            }
+            public string DevolucionempleadoNombre
+            {
+                get { return devolucionempleadoNombre; }
+                set { devolucionempleadoNombre = value; }
+            }
+            public int DevolucionempleadoID
+            {
+                get { return devolucionempleadoID; }
+                set { devolucionempleadoID = value; }
+            }
+            public bool Limpiar
+            {
+                get { return limpiar; }
+                set { limpiar = value; }
+            }
+
         #endregion
 
         #region Metodos
@@ -147,12 +175,15 @@ namespace ProyectoProgra3.Ventas
             public void AgregarDetallesFactura(CN_Ventas CN)
             {
                 Ventas.CD_Ventas CD = new Ventas.CD_Ventas();
-                
-                CD.DetalleFactura = CN.DetalleFactura;
-                CD.Int_IdEmpleado = CN.Int_IdEmpleado;
-                CD.Int_IdCliente = CN.Int_IdCliente;
-                CD.Mny_Total = CN.Mny_Total;
-                CD.Dtm_Fecha = CN.Dtm_Fecha;
+
+                CD.Int_IdFactura = CN.Int_IdFactura;
+                CD.Int_Linea = CN.Int_Linea;
+                CD.Int_IdArticulo = CN.Int_IdArticulo;
+                CD.Int_IdServicio = CN.Int_IdServicio;
+                CD.Int_Cantidad = CN.Int_Cantidad;
+                CD.Mny_Monto = CN.Mny_Monto;
+                CD.Mny_Impuesto = CN.Mny_Impuesto;
+                CD.Mny_Descuento = CN.Mny_Descuento;
                 CD.AgregarDetallesFactura(CD);
             }
 
