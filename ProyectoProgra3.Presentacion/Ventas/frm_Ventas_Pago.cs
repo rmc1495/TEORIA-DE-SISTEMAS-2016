@@ -124,5 +124,20 @@ namespace ProyectoProgra3.Ventas
             CN.EmpleadoNombre = "";
             CN.Total = 0;
         }
+
+        private void txtPagaEfectivo_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            txtVueltoEfectivo.Text = Convert.ToString(Convert.ToDouble(txtPagaEfectivo.Text) - Convert.ToDouble(txtTotalEfectivo.Text));
+        }
+
+        private void txtPagaEfectivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.Contains('.') == false)) return;
+            if ((e.KeyChar == '.') && ((sender as TextBox).SelectionLength == (sender as TextBox).TextLength)) return;
+            e.Handled = true;
+        }
     }
 }

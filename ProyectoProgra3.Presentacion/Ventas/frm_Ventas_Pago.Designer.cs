@@ -214,6 +214,8 @@
             this.txtPagaEfectivo.Name = "txtPagaEfectivo";
             this.txtPagaEfectivo.Size = new System.Drawing.Size(147, 20);
             this.txtPagaEfectivo.TabIndex = 14;
+            this.txtPagaEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagaEfectivo_KeyPress);
+            this.txtPagaEfectivo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPagaEfectivo_KeyUp);
             // 
             // label7
             // 

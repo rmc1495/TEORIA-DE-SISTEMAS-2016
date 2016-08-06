@@ -130,6 +130,17 @@ namespace ProyectoProgra3.Facturacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            int ColumnaSeleccionada = gvFactura.CurrentCell.RowIndex;
+            try
+            {
+
+            }
+
+            catch (Exception)
+            {
+                // ColumnaSeleccionada = 0;
+                //throw;
+            }
 
         }
 

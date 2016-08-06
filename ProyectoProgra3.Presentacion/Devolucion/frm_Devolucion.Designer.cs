@@ -57,6 +57,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 387);
@@ -67,6 +68,7 @@
             // 
             // txtNombreEmpleado
             // 
+            this.txtNombreEmpleado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtNombreEmpleado.Enabled = false;
             this.txtNombreEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreEmpleado.Location = new System.Drawing.Point(200, 385);
@@ -77,6 +79,8 @@
             // 
             // tlsBtnRegis_Guardar
             // 
+            this.tlsBtnRegis_Guardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlsBtnRegis_Guardar.AutoSize = false;
             this.tlsBtnRegis_Guardar.BackColor = System.Drawing.Color.LightGreen;
             this.tlsBtnRegis_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -155,6 +159,9 @@
             // 
             this.gvDevolucion.AllowUserToAddRows = false;
             this.gvDevolucion.AllowUserToDeleteRows = false;
+            this.gvDevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvDevolucion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDevolucion.Location = new System.Drawing.Point(9, 52);

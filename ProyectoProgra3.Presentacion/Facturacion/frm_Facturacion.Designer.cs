@@ -32,6 +32,7 @@
             this.gvFactura = new System.Windows.Forms.DataGridView();
             this.gvDetalleFactura = new System.Windows.Forms.DataGridView();
             this.tlsBtnRegis_Guardar = new System.Windows.Forms.ToolStrip();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnRegis_Limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -46,7 +47,6 @@
             this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.txtNombreArticulo = new System.Windows.Forms.TextBox();
             this.cBoxFiltrar = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.gvFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleFactura)).BeginInit();
             this.tlsBtnRegis_Guardar.SuspendLayout();
@@ -56,6 +56,8 @@
             // 
             this.gvFactura.AllowUserToAddRows = false;
             this.gvFactura.AllowUserToDeleteRows = false;
+            this.gvFactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gvFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvFactura.Location = new System.Drawing.Point(12, 56);
@@ -70,6 +72,8 @@
             // 
             this.gvDetalleFactura.AllowUserToAddRows = false;
             this.gvDetalleFactura.AllowUserToDeleteRows = false;
+            this.gvDetalleFactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDetalleFactura.Location = new System.Drawing.Point(539, 286);
@@ -100,6 +104,16 @@
             this.tlsBtnRegis_Guardar.Size = new System.Drawing.Size(528, 40);
             this.tlsBtnRegis_Guardar.TabIndex = 41;
             this.tlsBtnRegis_Guardar.Text = "Registrar Empleado";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(29, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -148,6 +162,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(575, 105);
@@ -158,6 +173,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(575, 56);
@@ -168,6 +184,7 @@
             // 
             // txtNombreCliente
             // 
+            this.txtNombreCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombreCliente.Enabled = false;
             this.txtNombreCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCliente.Location = new System.Drawing.Point(763, 103);
@@ -177,6 +194,7 @@
             // 
             // txtNombreEmpleado
             // 
+            this.txtNombreEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombreEmpleado.Enabled = false;
             this.txtNombreEmpleado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreEmpleado.Location = new System.Drawing.Point(763, 54);
@@ -186,6 +204,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(60, 353);
@@ -196,6 +215,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(61, 308);
@@ -206,6 +226,7 @@
             // 
             // txtNombreServicio
             // 
+            this.txtNombreServicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNombreServicio.Enabled = false;
             this.txtNombreServicio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreServicio.Location = new System.Drawing.Point(248, 351);
@@ -215,6 +236,7 @@
             // 
             // txtNombreArticulo
             // 
+            this.txtNombreArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNombreArticulo.Enabled = false;
             this.txtNombreArticulo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreArticulo.Location = new System.Drawing.Point(248, 302);
@@ -232,16 +254,6 @@
             this.cBoxFiltrar.Size = new System.Drawing.Size(149, 28);
             this.cBoxFiltrar.TabIndex = 50;
             this.cBoxFiltrar.SelectedValueChanged += new System.EventHandler(this.cBoxFiltrar_SelectedValueChanged);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(29, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frm_Facturacion
             // 
