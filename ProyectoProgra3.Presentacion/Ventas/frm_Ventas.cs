@@ -135,38 +135,45 @@ namespace ProyectoProgra3.Ventas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CN.DetalleFactura.Clear();
-
-            int i = 1;
-            while (i <= gvVentas.Rows.Count) //pasa los datos del datagridview al datatable
+            if (txtIDUsuario.Text.Trim() != "")
             {
-            DataRow dr = CN.DetalleFactura.NewRow();
-            dr[2] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[0].Value.ToString().Trim());
-            if (String.IsNullOrEmpty(gvVentas.Rows[i - 1].Cells[1].Value as String))
-            { }
-            else { dr[3] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[1].Value.ToString().Trim()); }
-            if (String.IsNullOrEmpty(gvVentas.Rows[i - 1].Cells[3].Value as String))
-            { }
-            else { dr[4] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[3].Value.ToString().Trim()); }
-            dr[5] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[5].Value.ToString().Trim()); 
-            dr[6] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[6].Value.ToString().Trim());
-            dr[7] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[7].Value.ToString().Trim());
-            dr[8] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[8].Value.ToString().Trim());
+                CN.DetalleFactura.Clear();
 
-            CN.DetalleFactura.Rows.Add(dr);
-            i = i + 1;
+                int i = 1;
+                while (i <= gvVentas.Rows.Count) //pasa los datos del datagridview al datatable
+                {
+                    DataRow dr = CN.DetalleFactura.NewRow();
+                    dr[2] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[0].Value.ToString().Trim());
+                    if (String.IsNullOrEmpty(gvVentas.Rows[i - 1].Cells[1].Value as String))
+                    { }
+                    else { dr[3] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[1].Value.ToString().Trim()); }
+                    if (String.IsNullOrEmpty(gvVentas.Rows[i - 1].Cells[3].Value as String))
+                    { }
+                    else { dr[4] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[3].Value.ToString().Trim()); }
+                    dr[5] = Convert.ToInt32(gvVentas.Rows[i - 1].Cells[5].Value.ToString().Trim());
+                    dr[6] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[6].Value.ToString().Trim());
+                    dr[7] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[7].Value.ToString().Trim());
+                    dr[8] = Convert.ToDouble(gvVentas.Rows[i - 1].Cells[8].Value.ToString().Trim());
+
+                    CN.DetalleFactura.Rows.Add(dr);
+                    i = i + 1;
+                }
+
+
+                CN.Metodo_de_Pago = cbMetodoPago.SelectedItem.ToString().Trim();
+                CN.EmpleadoNombre = txtUsuario.Text;
+                CN.Mny_Total = Convert.ToDouble(txtTotal.Text);
+
+                frm_Ventas_Pago frmHijo = new frm_Ventas_Pago();
+                frmHijo.Owner = this;
+
+                frmHijo.WindowState = FormWindowState.Normal;
+                frmHijo.Show();
             }
-            
-
-            CN.Metodo_de_Pago = cbMetodoPago.SelectedItem.ToString().Trim();
-            CN.EmpleadoNombre = txtUsuario.Text;
-            CN.Mny_Total = Convert.ToDouble(txtTotal.Text);
-
-            frm_Ventas_Pago frmHijo = new frm_Ventas_Pago();
-            frmHijo.Owner = this;
-            
-            frmHijo.WindowState = FormWindowState.Normal;
-            frmHijo.Show();
+            else
+            {
+                MessageBox.Show("Falta llenar el codigo del cliente. Presione ''Enter'' para validar el nombre del cliente en el cuadro de texto", "Hay Espacios Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBox1_KeyUp_1(object sender, KeyEventArgs e)

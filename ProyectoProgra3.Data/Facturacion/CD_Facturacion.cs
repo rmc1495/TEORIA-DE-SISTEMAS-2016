@@ -166,7 +166,12 @@ namespace ProyectoProgra3.Facturacion
             return ConsultarFiltros(resuelva, "dbo.tbl_DetalleFactura");
         }
 
-
+        public DataSet BuscarDetalleFactura (string id)
+        {
+            SqlCommand resuelva = new SqlCommand();
+            resuelva.CommandText = String.Format("Select vrch_Descripion from [dbo].[tbl_Articulo] where Int_IdArticulo = {0}", id);
+            return ConsultarFiltros(resuelva, "dbo.tbl_Articulo");
+        }
 
         #endregion
 

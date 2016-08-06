@@ -32,7 +32,6 @@
             this.gvFactura = new System.Windows.Forms.DataGridView();
             this.gvDetalleFactura = new System.Windows.Forms.DataGridView();
             this.tlsBtnRegis_Guardar = new System.Windows.Forms.ToolStrip();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnRegis_Limpiar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -93,7 +92,6 @@
             this.tlsBtnRegis_Guardar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsBtnRegis_Guardar.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.tlsBtnRegis_Guardar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEliminar,
             this.btnModificar,
             this.tlsBtnRegis_Limpiar,
             this.toolStripSeparator1,
@@ -104,16 +102,6 @@
             this.tlsBtnRegis_Guardar.Size = new System.Drawing.Size(528, 40);
             this.tlsBtnRegis_Guardar.TabIndex = 41;
             this.tlsBtnRegis_Guardar.Text = "Registrar Empleado";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(29, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -304,6 +292,5 @@
         private System.Windows.Forms.TextBox txtNombreServicio;
         private System.Windows.Forms.TextBox txtNombreArticulo;
         private System.Windows.Forms.ComboBox cBoxFiltrar;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }
